@@ -265,6 +265,9 @@
   .isolate {
     isolation: isolate;
   }
+  .-z-2 {
+    z-index: calc(2 * -1);
+  }
   .-z-10 {
     z-index: calc(10 * -1);
   }
@@ -710,6 +713,9 @@
   }
   .bg-\[\#2957E3\]\/100 {
     background-color: #2957E3;
+  }
+  .bg-\[\#F4FFFF\]\/100 {
+    background-color: #F4FFFF;
   }
   .bg-blue-100 {
     background-color: var(--color-blue-100);
