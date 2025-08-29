@@ -96,7 +96,7 @@
     </div>
   </header>
   <!-- ====== Hero / Banner ====== -->
-  <section class="relative isolate overflow-hidden pt-20 pb-120 sm:pt-50 sm:pb-128">
+  <section class="relative pt-20 pb-120 sm:pt-30 sm:pb-68 z-0">
     <!-- background lights -->
     <div class="pointer-events-none absolute inset-0 -z-10">
       <div class="absolute inset-x-0 top-0 h-full bg-[url(../img/hero-bg-2.svg)] bg-no-repeat bg-top bg-cover z-0">
@@ -123,11 +123,103 @@
           Uptime you can trust, analytics you can see.
         </p>
       </div>
+     
+       
       <!-- Right: Illustration -->
       <div class="relative mx-auto w-full max-w-[460px]">
         <img src="./public/img/server_1.svg" alt="Server 1">
       </div>
     </div>
+    <!-- === Domain Search Bar === -->
+  <!-- Card -->
+  <div class="absolute bottom-[5%] left-[50%] transform -translate-x-[50%] w-full mx-auto max-w-7xl rounded-3xl bg-white shadow-xl
+              ring-1 ring-black/5 px-4 sm:px-6 py-5">
+    <!-- Top row: title -->
+    <p class="px-1 pb-3 text-sm font-medium text-slate-600">Register a Domain Name</p>
+
+    <!-- Search row -->
+    <div class="flex items-stretch gap-3">
+      <!-- Input -->
+      <div class="flex-1">
+        <label class="sr-only" for="domain">Search Domain Name</label>
+        <div class="flex items-center rounded-xl border border-slate-200 bg-white px-4">
+          <svg class="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m21 21-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/>
+          </svg>
+          <input id="domain" type="text" placeholder="Search Domain Name"
+                 class="w-full bg-transparent py-3 pl-3 pr-2 text-slate-800 placeholder-slate-400
+                        focus:outline-none" />
+        </div>
+      </div>
+
+      <!-- TLD dropdown -->
+      <button type="button"
+              class="shrink-0 inline-flex items-center gap-1 rounded-xl border border-slate-200
+                     bg-white px-3 md:px-4 text-slate-700">
+        .com
+        <svg class="h-4 w-4 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z"
+                clip-rule="evenodd"/>
+        </svg>
+      </button>
+
+      <!-- Submit -->
+      <button type="button"
+              class="shrink-0 inline-flex items-center justify-center rounded-2xl
+                     bg-gradient-to-br from-blue-500 to-indigo-500 p-3 text-white shadow
+                     hover:from-blue-600 hover:to-indigo-600 transition">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- TLD chips row -->
+    <div class="mt-4 flex items-center justify-between">
+      <!-- left: chips -->
+      <div class="flex flex-wrap gap-2">
+        <!-- chip -->
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-[#379BFD] font-semibold">.com</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-emerald-500 font-semibold">.xyz</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-blue-500 font-semibold">.shop</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-emerald-500 font-semibold">.store</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-blue-500 font-semibold">.site</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-emerald-500 font-semibold">.fun</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+      </div>
+
+      <!-- right: next chevron -->
+      <button type="button"
+              class="hidden sm:inline-flex h-8 w-8 items-center justify-center rounded-full
+                     border border-slate-200 bg-white text-slate-500 hover:bg-slate-50">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
   </section>
   <!-- ======= End Hero Block ======  -->
   <!-- ======= Services Block ======  -->
@@ -260,9 +352,9 @@
 
   <!-- ======= Features Block ======  -->
   <section
-    class="relative pt-20 pb-20 sm:pt-32 sm:pb-32 isolate overflow-hidden bg-[#02060A]/100 pt-20 pb-20 sm:pt-20 sm:pb-20 text-white z-1">
+    class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 isolate overflow-hidden bg-[#02060A]/100 pt-20 pb-20 sm:pt-20 sm:pb-20 text-white z-1">
     <div
-      class="absolute inset-x-0 -bottom-0 h-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-bottom bg-[length:100%_auto] z-0">
+      class="absolute inset-x-0 -bottom-0 h-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-[left_center] bg-cover z-0">
     </div>
     <div class="mx-auto max-w-7xl px-4 grid gap-3 lg:gap-4 lg:grid-cols-[1fr_1.4fr] relative z-2 items-center">
       <!-- Section Title Block -->
@@ -287,7 +379,7 @@
       <div>
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-[1.5fr_1fr] mb-4">
           <!-- Top-left card (2 columns wide) -->
-          <div class="bg-white p-6 rounded-2xl shadow-md text-center overflow-hidden">
+          <div class="bg-white p-6 rounded-2xl shadow-md text-center overflow-hidden flex flex-col align-center justify-center items-center">
             <div class="mb-4">
               <div class="w-[60px] h-[60px] bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto">
                 <img src="./public/img/protection.png" alt="">
@@ -304,7 +396,7 @@
             <img class="absolute top-0 right-0 z-0" src="./public/img/ram.png" alt="">
             <div class="relative z-1">
                   <h3 class="text-xl text-black font-bold mb-7">SSD Storage,<br>SSL, Email & More</h3>
-                <p class="text-4xl font-extrabold text-blue-600">4x</p>
+                <p class="text-4xl font-extrabold text-[#379BFD]">4x</p>
                 <p class="text-gray-600 text-sm">Everything you need – SSD storage, free SSL, email, and unlimited domains.
                 </p>
             </div>
@@ -313,7 +405,7 @@
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2 overflow-hidden">
           <!-- Bottom-left card -->
           <div class="bg-white p-6 rounded-2xl shadow-md ">
-            <img src="./public/img/world-map.png" class="mb-2 text-left -ml-15" />
+            <img src="./public/img/world-map.png" class="mb-2 text-left -ml-17 -mt-10" />
             <div class="text-right">
                   <h3 class="text-xl text-black font-bold mb-1">Unlimited Bandwidth & Traffic</h3>
                   <p class="text-gray-600 text-sm">
@@ -330,7 +422,7 @@
             </p>
             </div>
             <div class="flex items-center gap-2 mt-4 justify-between">
-              <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center"><img src="./public/img/server.png" alt=""></div>
+              <div class="w-8 h-8 bg-blue-100 text-[#379BFD] rounded-full flex items-center justify-center"><img src="./public/img/server.png" alt=""></div>
               <div class="text-sm text-gray-600"><img src="./public/img/users.png" alt=""></div>
             </div>
           </div>
@@ -356,7 +448,7 @@
         Monthly
       </button>
       <button id="yearlyBtn"
-        class="cursor-pointer px-4 py-2 text-sm font-medium text-blue-600 hover:text-white hover:bg-green-500 rounded-full transition-all group">
+        class="cursor-pointer px-4 py-2 text-sm font-medium text-[#379BFD] hover:text-white hover:bg-green-500 rounded-full transition-all group">
         Yearly
         <span class="ml-1 text-xs bg-[#2957E3]/10 rounded-full px-3 py-1 text-blue-500 group-[&.bg-green-500]:text-white">-15% Off</span>
       </button>
@@ -639,7 +731,7 @@
 
   <!-- ======= End Global Coverage Block ======  -->
 
-
+<!-- ======= Partners Block ======  -->
 
 <section class="relative bg-gradient-to-b from-[#02060A] to-[#0a1c3a] text-white py-20">
   <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
@@ -707,49 +799,167 @@
       </div>
 
       <!-- Orbit Icons -->
-      <div class="absolute top-10 left-1/6 -translate-x-1/2 flex flex-col items-center animate-hole-pulse">
-        <img src="./public/img/arch-linux.png" class="w-12 h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+      <div class="absolute top-10 left-1/6 -translate-x-1/2 flex flex-col items-center animate-pin-bounce">
+        <img src="./public/img/arch-linux.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Alma Linux</span>
       </div>
 
-      <div class="absolute right-1/5 top-0 flex flex-col items-center animate-hole-pulse">
-        <img src="./public/img/rocky-linux.png" class="w-12 h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+      <div class="absolute right-1/5 top-0 flex flex-col items-center animate-pin-bounce">
+        <img src="./public/img/rocky-linux.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
       </div>
-      <div class="absolute -right-6 top-1/3 flex flex-col items-center animate-hole-pulse">
-        <img src="./public/img/arch-linux.png" class="w-12 h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+      <div class="absolute -right-6 top-1/3 flex flex-col items-center animate-pin-bounce">
+        <img src="./public/img/arch-linux.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Arch Linux</span>
       </div>
 
-      <div class="absolute bottom-44 right-1/4 flex flex-col items-center animate-hole-pulse">
-        <img src="./public/img/ubuntu.png" class="w-12 h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+      <div class="absolute bottom-1/4 right-1/4 flex flex-col items-center animate-pin-bounce">
+        <img src="./public/img/ubuntu.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Ubuntu</span>
       </div>
-      <div class="absolute right-1/3 bottom-10 flex flex-col items-center animate-hole-pulse">
-        <img src="./public/img/centos.png" class="w-12 h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+      <div class="absolute right-1/2 bottom-10 flex flex-col items-center animate-pin-bounce">
+        <img src="./public/img/centos.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
       </div>
-      <div class="absolute bottom-7 left-1/7 flex flex-col items-center animate-hole-pulse">
-        <img src="./public/img/docker.png" class="w-12 h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+      <div class="absolute bottom-1/23 left-1/7 flex flex-col items-center animate-pin-bounce">
+        <img src="./public/img/docker.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Docker</span>
       </div>
 
-    <div class="absolute left-1/11 top-1/2 flex flex-col items-center animate-hole-pulse">
-        <img src="./public/img/rocky-linux.png" class="w-12 h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+    <div class="absolute left-1/11 top-1/2 flex flex-col items-center animate-pin-bounce">
+        <img src="./public/img/rocky-linux.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
       </div>
 
-      <div class="absolute left-1/2.3 top-1/5 flex flex-col items-center animate-hole-pulse">
-        <img src="./public/img/centos.png" class="w-12 h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+      <div class="absolute left-1/2.3 top-1/5 flex flex-col items-center animate-pin-bounce">
+        <img src="./public/img/centos.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ========= End Partners Block ========= -->
+<!-- ========= Testimonial Block ========= -->
 
+<section class="relative py-20 bg-[#F9FAFC]">
+  <!-- soft dotted backdrop (very subtle) -->
+  <div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]
+              bg-[radial-gradient(circle_at_1px_1px,#0b1220_1px,transparent_1.2px)]
+              bg-[length:22px_22px]"></div>
 
+  <div class="mx-auto max-w-7xl px-6">
+    <!-- Tag -->
+    <div class="flex justify-center">
+      <span  class="bg-white rounded-full px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">  Testimonial
+      </span>
+    </div>
 
+    <!-- Heading -->
+    <h2 class="mt-6 text-center text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+      Trust the <span class="text-[#328DE6]">Experts</span>, Hear Their Stories
+    </h2>
+
+    <!-- Subcopy -->
+    <p class="mx-auto mt-4 max-w-3xl text-center text-slate-500">
+      Experience unmatched reliability for websites, apps, or servers. Our skilled team ensures 24/7 support for
+      your thriving business, earning a 4.8 out of 5 star rating!
+    </p>
+
+    <!-- Grid -->
+    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Card 1 -->
+      <article class="rounded-3xl bg-white/80 shadow-xs p-6">
+        <header class="flex items-center gap-4">
+          <img src="./public/img/testimonial-img-1.png" alt="Jona Steinecke" class="h-12 w-12 rounded-full object-cover" />
+          <div>
+            <h3 class="font-semibold text-slate-900">Jona Steinecke</h3>
+            <p class="text-sm text-slate-500">Developer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600">
+          Tellus massa aliquam tempus elementum mi nunc massa posuere porta. Erat sodales fames faucibus.
+        </p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="rounded-3xl bg-white/80 shadow-xs p-6">
+        <header class="flex items-center gap-4">
+          <img src="./public/img/testimonial-img-2.png" alt="Sinja Noack" class="h-12 w-12 rounded-full object-cover" />
+          <div>
+            <h3 class="font-semibold text-slate-900">Sinja Noack</h3>
+            <p class="text-sm text-slate-500">Designer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600">
+          Pulsefy is a game-changer for our team—easy for beginners and powerful for digging beyond average data.
+          It's our daily ally in unearthing those pivotal marketing insights that really drive strategy!
+        </p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="rounded-3xl bg-white/80 shadow-xs p-6">
+        <header class="flex items-center gap-4">
+          <img src="./public/img/testimonial-img-3.png" alt="Jay Zender DDS" class="h-12 w-12 rounded-full object-cover" />
+          <div>
+            <h3 class="font-semibold text-slate-900">Jay Zender DDS</h3>
+            <p class="text-sm text-slate-500">Designer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600">
+          Pulsefy is a game-changer for our team—easy for beginners and powerful for digging beyond average data.
+          It's our daily ally in.
+        </p>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="rounded-3xl bg-white/80 shadow-xs p-6">
+        <header class="flex items-center gap-4">
+          <img src="./public/img/testimonial-img-4.png" alt="Guy Hawkins" class="h-12 w-12 rounded-full object-cover" />
+          <div>
+            <h3 class="font-semibold text-slate-900">Guy Hawkins</h3>
+            <p class="text-sm text-slate-500">Designer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600">
+          Pulsefy is a game-changer for our team—easy for beginners and powerful for digging beyond average data.
+          It's our daily ally in unearthing insights that really drive strategy!
+        </p>
+      </article>
+
+      <!-- Card 5 (accent left border like screenshot) -->
+      <article class="rounded-3xl bg-white/80 shadow-xs p-6">
+        <header class="flex items-center gap-4">
+          <img src="./public/img/testimonial-img-5.png" alt="Oskar Liebach" class="h-12 w-12 rounded-full object-cover ring-4 ring-emerald-100" />
+          <div>
+            <h3 class="font-semibold text-slate-900">Oskar Liebach</h3>
+            <p class="text-sm text-slate-500">Developer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600">
+          Lorem ipsum dolor sit amet consectetur. Tellus massa aliquam tempus elementum mi nunc massa posuere porta.
+          Erat sodales fames faucibus ipsum aenean. Amet nibh condimentum.
+        </p>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="rounded-3xl bg-white/80 shadow-xs p-6">
+        <header class="flex items-center gap-4">
+          <img src="./public/img/testimonial-img-6.png" alt="Viola Heist" class="h-12 w-12 rounded-full object-cover" />
+          <div>
+            <h3 class="font-semibold text-slate-900">Viola Heist</h3>
+            <p class="text-sm text-slate-500">Developer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600">
+          Pulsefy is a game-changer for our team—easy for beginners and powerful for digging beyond average data.
+          It's our daily ally in unearthing those pivotal insights every day!
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ========= End Testimonial Block ========= -->
 
 
   <!-- Footer -->
