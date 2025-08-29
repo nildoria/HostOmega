@@ -1,6 +1,3 @@
-// Year at the bottom
-document.getElementById('year').innerHTML = new Date().getFullYear();
-
 // Pricing Table Toggle Buttons
   const monthlyBtn = document.getElementById('monthlyBtn');
   const yearlyBtn = document.getElementById('yearlyBtn');
@@ -21,3 +18,5 @@ document.getElementById('year').innerHTML = new Date().getFullYear();
     prices.forEach(p => p.textContent = p.dataset.yearly);
   });
 
+// Year at the bottom
+document.getElementById('year').innerHTML = new Date().getFullYear();
