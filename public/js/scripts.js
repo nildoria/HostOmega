@@ -18,7 +18,6 @@ document.getElementById('year').innerHTML = new Date().getFullYear();
     yearlyBtn.classList.add('bg-green-500', 'text-white');
     monthlyBtn.classList.remove('bg-green-500', 'text-white');
     monthlyBtn.classList.add('text-black');
-
     prices.forEach(p => p.textContent = p.dataset.yearly);
   });
 
