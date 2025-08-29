@@ -1,0 +1,24 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 851" width="1440" height="851">
+	<title>hero-bg</title>
+	<defs>
+		<filter x="-50%" y="-50%" width="200%" height="200%" id="f1"> <feGaussianBlur stdDeviation="100.7"/> </filter>
+		<radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-189.166,189.166,0,720.5,808.17)">
+			<stop offset=".347" stop-color="#fcfcfc" stop-opacity="1"/>
+			<stop offset="1" stop-color="#fcfcfc" stop-opacity="0"/>
+		</radialGradient>
+		<radialGradient id="g2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0,-714,714,0,720.5,1338)">
+			<stop offset=".187" stop-color="#fcfcfc"/>
+			<stop offset=".541" stop-color="#379bfd"/>
+		</radialGradient>
+	</defs>
+	<style>
+		.s0 { filter: url(#f1);fill: url(#g1) } 
+		.s1 { filter: url(#f1);fill: url(#g2) } 
+	</style>
+	<g>
+		<path fill-rule="evenodd" class="s0" d="m720.5 1788c-893.9 0-1616.5-261.3-1616.5-584.5 0-323.2 722.6-584.5 1616.5-584.5 893.9 0 1616.5 261.3 1616.5 584.5 0 323.2-722.6 584.5-1616.5 584.5z"/>
+	</g>
+	<g>
+		<path class="s1" d="m1651 1208.5c0 322.8-416.6 584.5-930.5 584.5-513.9 0-930.5-261.7-930.5-584.5 0-322.8 416.6-864.5 930.5-864.5 513.9 0 930.5 541.7 930.5 864.5z"/>
+	</g>
+</svg>
