@@ -96,7 +96,7 @@
     </div>
   </header>
   <!-- ====== Hero / Banner ====== -->
-  <section class="relative isolate overflow-hidden pt-20 pb-120 sm:pt-50 sm:pb-128">
+  <section class="relative pt-20 pb-120 sm:pt-30 sm:pb-68 z-0">
     <!-- background lights -->
     <div class="pointer-events-none absolute inset-0 -z-10">
       <div class="absolute inset-x-0 top-0 h-full bg-[url(../img/hero-bg-2.svg)] bg-no-repeat bg-top bg-cover z-0">
@@ -123,11 +123,103 @@
           Uptime you can trust, analytics you can see.
         </p>
       </div>
+     
+       
       <!-- Right: Illustration -->
       <div class="relative mx-auto w-full max-w-[460px]">
         <img src="./public/img/server_1.svg" alt="Server 1">
       </div>
     </div>
+    <!-- === Domain Search Bar === -->
+  <!-- Card -->
+  <div class="absolute bottom-[5%] left-[50%] transform -translate-x-[50%] w-full mx-auto max-w-7xl rounded-3xl bg-white shadow-xl
+              ring-1 ring-black/5 px-4 sm:px-6 py-5">
+    <!-- Top row: title -->
+    <p class="px-1 pb-3 text-sm font-medium text-slate-600">Register a Domain Name</p>
+
+    <!-- Search row -->
+    <div class="flex items-stretch gap-3">
+      <!-- Input -->
+      <div class="flex-1">
+        <label class="sr-only" for="domain">Search Domain Name</label>
+        <div class="flex items-center rounded-xl border border-slate-200 bg-white px-4">
+          <svg class="h-5 w-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m21 21-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/>
+          </svg>
+          <input id="domain" type="text" placeholder="Search Domain Name"
+                 class="w-full bg-transparent py-3 pl-3 pr-2 text-slate-800 placeholder-slate-400
+                        focus:outline-none" />
+        </div>
+      </div>
+
+      <!-- TLD dropdown -->
+      <button type="button"
+              class="shrink-0 inline-flex items-center gap-1 rounded-xl border border-slate-200
+                     bg-white px-3 md:px-4 text-slate-700">
+        .com
+        <svg class="h-4 w-4 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+                d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z"
+                clip-rule="evenodd"/>
+        </svg>
+      </button>
+
+      <!-- Submit -->
+      <button type="button"
+              class="shrink-0 inline-flex items-center justify-center rounded-2xl
+                     bg-gradient-to-br from-blue-500 to-indigo-500 p-3 text-white shadow
+                     hover:from-blue-600 hover:to-indigo-600 transition">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 12h14M13 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- TLD chips row -->
+    <div class="mt-4 flex items-center justify-between">
+      <!-- left: chips -->
+      <div class="flex flex-wrap gap-2">
+        <!-- chip -->
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-[#379BFD] font-semibold">.com</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-emerald-500 font-semibold">.xyz</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-blue-500 font-semibold">.shop</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-emerald-500 font-semibold">.store</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-blue-500 font-semibold">.site</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm">
+          <span class="text-emerald-500 font-semibold">.fun</span>
+          <span class="text-slate-400">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+      </div>
+
+      <!-- right: next chevron -->
+      <button type="button"
+              class="hidden sm:inline-flex h-8 w-8 items-center justify-center rounded-full
+                     border border-slate-200 bg-white text-slate-500 hover:bg-slate-50">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5l7 7-7 7"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
   </section>
   <!-- ======= End Hero Block ======  -->
   <!-- ======= Services Block ======  -->
@@ -304,7 +396,7 @@
             <img class="absolute top-0 right-0 z-0" src="./public/img/ram.png" alt="">
             <div class="relative z-1">
                   <h3 class="text-xl text-black font-bold mb-7">SSD Storage,<br>SSL, Email & More</h3>
-                <p class="text-4xl font-extrabold text-blue-600">4x</p>
+                <p class="text-4xl font-extrabold text-[#379BFD]">4x</p>
                 <p class="text-gray-600 text-sm">Everything you need – SSD storage, free SSL, email, and unlimited domains.
                 </p>
             </div>
@@ -330,7 +422,7 @@
             </p>
             </div>
             <div class="flex items-center gap-2 mt-4 justify-between">
-              <div class="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center"><img src="./public/img/server.png" alt=""></div>
+              <div class="w-8 h-8 bg-blue-100 text-[#379BFD] rounded-full flex items-center justify-center"><img src="./public/img/server.png" alt=""></div>
               <div class="text-sm text-gray-600"><img src="./public/img/users.png" alt=""></div>
             </div>
           </div>
@@ -356,7 +448,7 @@
         Monthly
       </button>
       <button id="yearlyBtn"
-        class="cursor-pointer px-4 py-2 text-sm font-medium text-blue-600 hover:text-white hover:bg-green-500 rounded-full transition-all group">
+        class="cursor-pointer px-4 py-2 text-sm font-medium text-[#379BFD] hover:text-white hover:bg-green-500 rounded-full transition-all group">
         Yearly
         <span class="ml-1 text-xs bg-[#2957E3]/10 rounded-full px-3 py-1 text-blue-500 group-[&.bg-green-500]:text-white">-15% Off</span>
       </button>
