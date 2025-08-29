@@ -7,6 +7,25 @@
   --font-heading: "Inter", "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
+/* Animations */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+@keyframes pin-bounce {
+  0%,100% { transform: translateY(0) }
+  50%     { transform: translateY(-4px) }
+}
+@keyframes hole-pulse {
+  0%,100% { transform: scale(1); opacity: .55 }
+  50%     { transform: scale(1.12); opacity: .9 }
+}
+
+@utility animate-fade-up     { animation: fade-up .65s cubic-bezier(.2,.6,.2,1) both; }
+@utility animate-pin-bounce  { animation: pin-bounce 3s ease-in-out infinite; }
+@utility animate-hole-pulse  { animation: hole-pulse 2.8s ease-in-out infinite; }
+
+
 @layer base {
   body { @apply font-text; }
   h1, h2, h3, h4 { @apply font-heading; }
