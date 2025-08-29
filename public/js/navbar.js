@@ -3,8 +3,8 @@ let hamburger = document.getElementById("hamburger");
 let links = document.getElementById("links");
 let main = document.querySelector("main");
 
-hamburger.addEventListener("click", hideLinks); // When hamburger is clicked, the links appear or disappear
-hamburger.addEventListener("click", changeMenuState); // When hamburger is clicked, it changes into menu or x
+hamburger.addEventListener("click", hideLinks); 
+hamburger.addEventListener("click", changeMenuState);
 
 // When one of the links is clicked, the links disappear
 let link = document.querySelectorAll("ul#links > *");

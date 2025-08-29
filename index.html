@@ -344,27 +344,27 @@
 
   <!-- Toggle Section -->
   <section class="px-4 py-20 bg-gray-50 text-center">
-        <span
-        class="bg-white rounded-full px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">Features</span>
-      <h2
-        class="text-[30px] font-heading font-extrabold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-6">
-        Web Hosting Plans for <span class="text-[#2957E3]">Your Site</span>
-      </h2>
+    <span class="bg-white rounded-full px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">Pricing</span>
+    <h2 class="text-[30px] font-heading font-extrabold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-6">
+      Web Hosting Plans for <span class="text-[#2957E3]">Your Site</span>
+    </h2>
 
     <!-- Pricing Toggle -->
     <div class="inline-flex items-center justify-center bg-white rounded-full shadow-md px-1 py-1 mb-10 gap-1">
       <button id="monthlyBtn"
-        class="px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-full transition-all">
+        class="cursor-pointer px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-full transition-all">
         Monthly
       </button>
       <button id="yearlyBtn"
-        class="px-4 py-2 text-sm font-medium text-blue-600 hover:text-white hover:bg-green-500 rounded-full transition-all group">
-        Yearly <span class="ml-1 text-xs bg-[#2957E3]/10 rounded-full px-3 py-1 text-blue-500 group-[&.bg-green-500]:text-white">-15% Off</span>
+        class="cursor-pointer px-4 py-2 text-sm font-medium text-blue-600 hover:text-white hover:bg-green-500 rounded-full transition-all group">
+        Yearly
+        <span class="ml-1 text-xs bg-[#2957E3]/10 rounded-full px-3 py-1 text-blue-500 group-[&.bg-green-500]:text-white">-15% Off</span>
       </button>
     </div>
-  <!-- Pricing Toggle End -->
+    <!-- Pricing Toggle End -->
+
     <!-- Pricing Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-15">
 
       <!-- Plan 1 -->
       <div class="bg-white rounded-2xl p-6 shadow flex flex-col justify-between">
@@ -373,9 +373,9 @@
           <p class="text-gray-500 mb-4">Perfect for blogs, personal sites, and content creators.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$3.00" data-yearly="$2.55">$3.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
-          <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold">Get Started →</a>
+          <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200">Get Started →</a>
         </div>
-        <ul class="mt-6 text-left text-sm space-y-2 text-gray-600">
+        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600">
           <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 5GB SSD storage</li>
           <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 2 hosted domains</li>
           <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 250 GB bandwidth</li>
@@ -385,27 +385,36 @@
         </ul>
       </div>
 
-      <!-- Plan 2 (highlighted) -->
-      <div class="bg-white rounded-2xl p-6 shadow-xl border-4 border-blue-500 relative flex flex-col justify-between">
+      <!-- Plan 2 -->
+      <div
+  class="relative flex flex-col justify-between rounded-2xl bg-white p-2.5 -mt-10 shadow-xl
+         before:content-[''] before:absolute before:inset-0 before:rounded-2xl before:p-2
+         before:bg-[url('../img/pricing-bg.png')] before:bg-no-repeat before:bg-left-bottom before:bg-[length:100%_auto]
+         before:[-webkit-mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]
+         before:[-webkit-mask-composite:xor]
+         before:[mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]
+         before:[mask-composite:exclude]">
         <span
-          class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
-          Recommended For Your Business
+          class="text-white inline-flex justify-center gap-2 pb-2 z-0">
+          <img src="./public/img/badge-check.svg" alt=""> Recommended For Your Business
         </span>
-        <div class="text-left">
-          <h3 class="text-xl font-bold mb-1">VPS Starter Plan</h3>
-          <p class="text-gray-500 mb-4">Power and flexibility for growing websites and personal projects.</p>
-          <div class="text-3xl font-bold mb-1" data-monthly="$5.00" data-yearly="$4.25">$5.00</div>
-          <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
-          <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full bg-blue-500 text-white font-semibold">Get Started</a>
+        <div class="bg-white rounded-2xl p-6 flex flex-col justify-between z-0">
+          <div class="text-left">
+            <h3 class="text-xl font-bold mb-1">VPS Starter Plan</h3>
+            <p class="text-gray-500 mb-4">Power and flexibility for growing websites and personal projects.</p>
+            <div class="text-3xl font-bold mb-1" data-monthly="$5.00" data-yearly="$4.25">$5.00</div>
+            <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
+            <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-blue-500 bg-blue-500 text-white hover:bg-white hover:border-black hover:text-black transition-colors duration-200 font-semibold">Get Started →</a>
+          </div>
+          <ul class="mt-6 text-left text-sm space-y-4 text-gray-600">
+            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 20 GB SSD storage</li>
+            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 25 Cpanel accounts</li>
+            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 250 GB bandwidth</li>
+            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> Unlimited subdomains</li>
+            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> Free SSL certificate</li>
+            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 24/7 Monitoring & support</li>
+          </ul>
         </div>
-        <ul class="mt-6 text-left text-sm space-y-2 text-gray-600">
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 20 GB SSD storage</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 25 Cpanel accounts</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 250 GB bandwidth</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> Unlimited subdomains</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> Free SSL certificate</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 24/7 Monitoring & support</li>
-        </ul>
       </div>
 
       <!-- Plan 3 -->
@@ -415,9 +424,9 @@
           <p class="text-gray-500 mb-4">Start your own hosting business with scalable reseller plans.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$20.00" data-yearly="$17.00">$20.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
-          <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold">Get Started →</a>
+          <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200">Get Started →</a>
         </div>
-        <ul class="mt-6 text-left text-sm space-y-2 text-gray-600">
+        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600">
           <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 20 GB SSD storage</li>
           <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 25 Cpanel accounts</li>
           <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 500 GB bandwidth</li>
@@ -433,9 +442,9 @@
           <p class="text-gray-500 mb-4">Ultimate control with enterprise-grade servers.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$199.00" data-yearly="$169.15">$199.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
-          <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold">Get Started →</a>
+          <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200">Get Started →</a>
         </div>
-        <ul class="mt-6 text-left text-sm space-y-2 text-gray-600">
+        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600">
           <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 1 processor</li>
           <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 4x3.4 GHz cores</li>
           <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 16GB DDR3 RAM</li>
