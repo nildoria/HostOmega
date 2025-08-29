@@ -1,3 +1,5 @@
+
+
 // Pricing Toggle
 const monthlyBtn = document.getElementById("monthlyBtn");
 const yearlyBtn = document.getElementById("yearlyBtn");
@@ -62,3 +64,16 @@ document.querySelectorAll("[data-reveal]").forEach((el) => {
 
 // Set current year in footer
 document.getElementById("year").innerHTML = new Date().getFullYear();
+
+
+// Sticky header background on scroll
+  window.addEventListener("scroll", function () {
+    const header = document.getElementById("site-header");
+    if (window.scrollY > 100) {
+      header.classList.add("bg-black", "shadow-md");
+      header.classList.remove("bg-transparent");
+    } else {
+      header.classList.remove("bg-black", "shadow-md");
+      header.classList.add("bg-transparent");
+    }
+  });
