@@ -1,4 +1,4 @@
-/* This lets the bar to transform into a 'X' when it is clicked. */
+/* Hamburger Menu */
 #hamburger.active .bar:nth-of-type(1) {
 	transform: rotate(45deg) translateY(10px);
 }
@@ -7,4 +7,39 @@
 }
 #hamburger.active .bar:nth-of-type(3) {
 	transform: rotate(-45deg) translateX(-4px) translateY(-5px);
+}
+
+.neon-hero{
+  position: relative;
+  background:#02060A;
+  overflow:hidden;
+}
+
+
+.neon-hero::after{
+  content:"";
+  position:absolute;
+  left:-10vw; right:0; bottom:-50px;
+  height:700px;
+  width: 120vw;
+  background:
+    radial-gradient(100vw 700px at 50% 100%,
+      rgb(255, 255, 255) 0%,
+      rgba(156, 194, 255, 0.864) 28%,
+      rgba(62, 110, 255, 0.883) 50%,
+      rgba(49, 100, 255, 0.0) 78%);
+  background-repeat:no-repeat;
+  background-position:bottom center;
+  background-size:100% 700px;
+
+  filter:blur(14px);
+  opacity:.95;
+  animation:neonPulse 4.8s ease-in-out infinite;
+  pointer-events:none;
+  z-index:-1;
+}
+
+@keyframes neonPulse{
+  0%,100%{ filter:blur(4px) brightness(1);   opacity:.75; }
+  50%    { filter:blur(40px) brightness(1.42); opacity:1;   }
 }

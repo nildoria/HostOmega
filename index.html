@@ -96,17 +96,16 @@
     </div>
   </header>
   <!-- ====== Hero / Banner ====== -->
-  <section class="relative pt-20 pb-120 sm:pt-30 sm:pb-68 z-0">
-    <!-- background lights -->
-    <div class="pointer-events-none absolute inset-0 -z-10">
-      <div class="absolute inset-x-0 top-0 h-full bg-[url(../img/hero-bg-2.svg)] bg-no-repeat bg-top bg-cover z-0">
-      </div>
-      <div class="absolute inset-x-0 bottom-0 w-full h-full bg-[url(../img/hero-bg.svg)] bg-no-repeat bg-bottom bg-[length:100%_auto] z-0">
-      </div>
-      
-    </div>
+  <section class="relative neon-hero pt-20 pb-120 sm:pt-30 sm:pb-68 z-0">
     <div
       class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[3fr_2fr] lg:gap-16 lg:px-8 relative z-10">
+      <!-- background lights -->
+      <div class="pointer-events-none absolute inset-0 -z-10">
+        <div class="absolute inset-x-0 top-0 -left-7 h-full bg-[url(../img/banner-left.svg)] bg-no-repeat bg-top-left bg-auto z-0">
+        </div>
+        <div class="absolute inset-x-0 bottom-0 left-20 w-full h-full bg-[url(../img/banner-right.svg)] bg-no-repeat bg-top-right bg-auto z-0">
+        </div>
+      </div>
       <!-- Left: Headings -->
       <div>
         <p class="mb-4 text-base font-medium text-slate-300">Build your cloud infrastructure with</p>
@@ -126,7 +125,7 @@
      
        
       <!-- Right: Illustration -->
-      <div class="relative mx-auto w-full max-w-[460px]">
+      <div class="relative animate-pin-bounce mx-auto w-full max-w-[460px]">
         <img src="./public/img/server_1.svg" alt="Server 1">
       </div>
     </div>
