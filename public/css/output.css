@@ -544,6 +544,12 @@
   .h-1\.5 {
     height: calc(var(--spacing) * 1.5);
   }
+  .h-3 {
+    height: calc(var(--spacing) * 3);
+  }
+  .h-3\/12 {
+    height: calc(3/12 * 100%);
+  }
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
@@ -564,6 +570,12 @@
   }
   .h-16 {
     height: calc(var(--spacing) * 16);
+  }
+  .h-80 {
+    height: calc(var(--spacing) * 80);
+  }
+  .h-96 {
+    height: calc(var(--spacing) * 96);
   }
   .h-\[25px\] {
     height: 25px;
@@ -1055,6 +1067,9 @@
   .bg-\[url\(\'\.\.\/img\/service-hover-bg\.svg\'\)\] {
     background-image: url('../img/service-hover-bg.svg');
   }
+  .bg-\[url\(\.\.\/img\/HostOmegaFooter\.svg\)\] {
+    background-image: url(../img/HostOmegaFooter.svg);
+  }
   .bg-\[url\(\.\.\/img\/banner-left\.svg\)\] {
     background-image: url(../img/banner-left.svg);
   }
@@ -1097,8 +1112,14 @@
   .bg-\[length\:100\%_auto\] {
     background-size: 100% auto;
   }
+  .bg-\[size\:100\%_100\%\] {
+    background-size: 100% 100%;
+  }
   .bg-auto {
     background-size: auto;
+  }
+  .bg-contain {
+    background-size: contain;
   }
   .bg-cover {
     background-size: cover;
@@ -1108,6 +1129,9 @@
   }
   .bg-\[left_center\] {
     background-position: left center;
+  }
+  .bg-bottom {
+    background-position: bottom;
   }
   .bg-center {
     background-position: center;
@@ -1123,6 +1147,9 @@
   }
   .bg-no-repeat {
     background-repeat: no-repeat;
+  }
+  .bg-origin-content {
+    background-origin: content-box;
   }
   .object-contain {
     object-fit: contain;
@@ -1219,6 +1246,9 @@
   }
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
+  }
+  .pb-0 {
+    padding-bottom: calc(var(--spacing) * 0);
   }
   .pb-2 {
     padding-bottom: calc(var(--spacing) * 2);
