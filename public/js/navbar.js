@@ -1,39 +1,50 @@
-// This is for the navbar only.
-let hamburger = document.getElementById("hamburger");
-let links = document.getElementById("links");
-let main = document.querySelector("main");
+// navbar.js (robust & vanilla)
+document.addEventListener("DOMContentLoaded", () => {
+  // support either #hamburger or #navToggle
+  const toggle =
+    document.getElementById("hamburger") ||
+    document.getElementById("navToggle");
+  const links = document.getElementById("links");
+  const main = document.querySelector("main") || document.body;
 
-hamburger.addEventListener("click", hideLinks); 
-hamburger.addEventListener("click", changeMenuState);
+  // if markup isn't present, bail gracefully
+  if (!toggle || !links) return;
 
-// When one of the links is clicked, the links disappear
-let link = document.querySelectorAll("ul#links > *");
-for (let i = 0; i < link.length; i++) {
-	let allLinks = link[i];
-	allLinks.addEventListener("click", hideLinks);
-	allLinks.addEventListener("click", removeActive);
-}
+  const HIDDEN = "hidden";
 
-// When the outer part of the hamburger menu is clicked the links disappear
-main.addEventListener("click", hideLinksOnly);
-main.addEventListener("click", removeActive);
+  function toggleMenu() {
+    const willOpen = links.classList.contains(HIDDEN);
+    links.classList.toggle(HIDDEN);
+    toggle.classList.toggle("active", willOpen);
+    toggle.setAttribute("aria-expanded", String(willOpen));
+  }
 
-// Function Components
-function hideLinks() {
-	if (links.classList.contains("hidden")) {
-		links.classList.remove("hidden");
-	} else {
-		links.classList.add("hidden");
-	}
-}
-function hideLinksOnly() {
-	if (links.classList.contains("hidden") === false) {
-		links.classList.add("hidden");
-	}
-}
-function changeMenuState() {
-	hamburger.classList.toggle("active");
-}
-function removeActive() {
-	hamburger.classList.remove("active");
-}
+  function closeMenu() {
+    if (!links.classList.contains(HIDDEN)) {
+      links.classList.add(HIDDEN);
+      toggle.classList.remove("active");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  // toggle button
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // close when clicking a link inside the menu
+  links.addEventListener("click", (e) => {
+    if (e.target.closest("a")) closeMenu();
+  });
+
+  // click outside to close
+  document.addEventListener("click", (e) => {
+    const insideMenu = e.target.closest("#links");
+    const insideToggle = e.target.closest("#hamburger, #navToggle");
+    if (!insideMenu && !insideToggle) closeMenu();
+  });
+
+  // optional: close if main area is clicked
+  main.addEventListener("click", closeMenu);
+});

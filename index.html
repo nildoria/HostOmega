@@ -9,9 +9,9 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="./public/img/favicon.ico" type="image/x-icon">
   <!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <!-- Font Awesome-->
   <link rel="stylesheet" href="./public/css/all.min.css">
   <!-- Core theme TailwindCSS-->
@@ -96,7 +96,7 @@
     </div>
   </header>
   <!-- ====== Hero / Banner ====== -->
-  <section class="relative neon-hero pt-20 pb-120 sm:pt-30 sm:pb-68 z-0">
+  <section id="bannerStar" class="relative neon-hero pt-20 pb-120 sm:pt-30 sm:pb-68 z-0">
     <div
       class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[3fr_2fr] lg:gap-16 lg:px-8 relative z-10">
       <!-- background lights -->
@@ -125,7 +125,7 @@
      
        
       <!-- Right: Illustration -->
-      <div class="relative animate-pin-bounce mx-auto w-full max-w-[460px]">
+      <div class="relative mx-auto w-full max-w-[460px]">
         <img src="./public/img/server_1.svg" alt="Server 1">
       </div>
     </div>
@@ -276,7 +276,7 @@
           <!-- Content -->
           <img src="./public/img/services-icon-2.svg" alt="Feature 1" class="h-[43px] w-[48px] mb-4 relative z-10">
           <h3 class="text-[28px] transition font-bold mb-2 relative z-10 group-hover:text-white">
-            VPN Hosting
+            VPS Hosting
           </h3>
           <p class="relative z-10 text-black transition group-hover:text-white">
             Power and flexibility for growing websites and personal projects.
@@ -352,8 +352,10 @@
   <!-- ======= Features Block ======  -->
   <section
     class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 isolate overflow-hidden bg-[#02060A]/100 pt-20 pb-20 sm:pt-20 sm:pb-20 text-white z-1">
-    <div
-      class="absolute inset-x-0 -bottom-0 h-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-[left_center] bg-cover z-0">
+    <div class="absolute inset-x-0 -bottom-0 overflow-hidden h-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-[left_center] bg-cover z-0">
+      <div id='omegastars'></div>
+      <div id='omegastars2'></div>
+      <div id='omegastars3'></div>
     </div>
     <div class="mx-auto max-w-7xl px-4 grid gap-3 lg:gap-4 lg:grid-cols-[1fr_1.4fr] relative z-2 items-center">
       <!-- Section Title Block -->
