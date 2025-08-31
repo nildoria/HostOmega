@@ -42,6 +42,169 @@
   }
 })();
 
+// === TLD chips carousel: show exactly 6 items ===
+(function initTldCarousel() {
+  const chips = document.getElementById('tldChips');
+  if (!chips) return;
+
+  const prev = document.getElementById('chipsPrev'); // may be null (ok)
+  const next = document.getElementById('chipsNext');
+  const wrap = chips.parentElement; // viewport container
+
+  // Ensure the viewport clips the track
+  wrap.style.overflow = 'hidden';
+
+  // Helper: width of first N chips + gaps
+  function widthOfFirst(n) {
+    const items = Array.from(chips.children);
+    const count = Math.min(n, items.length);
+    if (!count) return 0;
+
+    const cs = getComputedStyle(chips);
+    const gap = parseFloat(cs.columnGap || cs.gap || 0);
+
+    let w = 0;
+    for (let i = 0; i < count; i++) w += items[i].offsetWidth;
+    w += gap * (count - 1);
+    return Math.round(w);
+  }
+
+  // Make the track show exactly 6 chips (unless screen is too small)
+  function sizeViewportToSix() {
+    const sixWidth = widthOfFirst(6);
+    const max = wrap.clientWidth; // available space
+    chips.style.width = Math.min(sixWidth, max) + 'px';
+  }
+
+  function stepSize() {
+    // One "page" = current viewport (i.e., 6 chips)
+    return chips.clientWidth || widthOfFirst(6);
+  }
+
+  function updateArrows() {
+    const max = chips.scrollWidth - chips.clientWidth - 1;
+    if (prev) prev.disabled = chips.scrollLeft <= 0;
+    if (next) next.disabled = chips.scrollLeft >= max;
+  }
+
+  // Buttons
+  next?.addEventListener('click', () => {
+    chips.scrollBy({ left: stepSize(), behavior: 'smooth' });
+  });
+  prev?.addEventListener('click', () => {
+    chips.scrollBy({ left: -stepSize(), behavior: 'smooth' });
+  });
+
+  // Drag to scroll (mouse/touch via Pointer Events)
+  let dragging = false, startX = 0, startLeft = 0;
+  chips.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    startX = e.clientX;
+    startLeft = chips.scrollLeft;
+    chips.setPointerCapture(e.pointerId);
+  });
+  chips.addEventListener('pointermove', (e) => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+    chips.scrollLeft = startLeft - dx;
+  });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(t =>
+    chips.addEventListener(t, () => (dragging = false))
+  );
+
+  chips.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', () => {
+    sizeViewportToSix();
+    // keep the current page aligned to the new width
+    const page = Math.round(chips.scrollLeft / stepSize());
+    sizeViewportToSix();
+    chips.scrollLeft = page * stepSize();
+    updateArrows();
+  });
+
+  // Initial layout after fonts/images load
+  (document.fonts?.ready || Promise.resolve()).then(() => {
+    requestAnimationFrame(() => {
+      sizeViewportToSix();
+      updateArrows();
+    });
+  });
+})();
+
+
+// TLD dropdown
+const tldBtn     = document.getElementById('tldBtn');
+const tldMenu    = document.getElementById('tldMenu');
+const tldCurrent = document.getElementById('tldCurrent');
+const domainInp  = document.getElementById('domain');
+const submitBtn  = document.getElementById('domainSubmit');
+
+function isMenuOpen() {
+  return tldMenu?.dataset.open === 'true';
+}
+function toggleMenu(open) {
+  if (!tldMenu || !tldBtn) return;
+  tldMenu.dataset.open = String(open);
+  tldBtn.setAttribute('aria-expanded', String(open));
+}
+
+// open/close on button
+tldBtn?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleMenu(!isMenuOpen());
+});
+
+// choose a TLD (event delegation)
+tldMenu?.addEventListener('click', (e) => {
+  const li = e.target.closest('.tld-item');
+  if (!li) return;
+  const ext = li.dataset.ext || li.textContent.trim();
+  tldCurrent.textContent = ext;
+  toggleMenu(false);
+  domainInp?.focus();
+});
+
+// close on outside click
+document.addEventListener('click', (e) => {
+  if (!tldMenu || !isMenuOpen()) return;
+  const inMenu  = e.target.closest('#tldMenu');
+  const inBtn   = e.target.closest('#tldBtn');
+  if (!inMenu && !inBtn) toggleMenu(false);
+});
+
+// close on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') toggleMenu(false);
+  // submit with Enter from input
+  if (e.key === 'Enter' && document.activeElement === domainInp) {
+    e.preventDefault();
+    submitBtn?.click();
+  }
+});
+
+// Submit action (replace with real search)
+submitBtn?.addEventListener('click', () => {
+  const name = (domainInp?.value || '')
+    .trim()
+    .replace(/^\.+/, '')
+    .replace(/\s+/g, '');
+  const ext  = (tldCurrent?.textContent || '').trim();
+  const query = name ? name + ext : ext;
+  console.log('Search domain:', query);
+  // TODO: trigger your search request here
+});
+
+// Chips slider (arrow scrolls the chip row)
+const chipsNext = document.getElementById('chipsNext');
+const tldChips  = document.getElementById('tldChips');
+
+chipsNext?.addEventListener('click', () => {
+  if (!tldChips) return;
+  const step = Math.max(220, Math.floor(tldChips.clientWidth * 0.85));
+  tldChips.scrollBy({ left: step, behavior: 'smooth' });
+});
+
+
 // Pricing Toggle
 const monthlyBtn = document.getElementById("monthlyBtn");
 const yearlyBtn = document.getElementById("yearlyBtn");
