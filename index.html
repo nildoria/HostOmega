@@ -52,7 +52,7 @@
         <div class="hidden lg:flex items-center gap-8">
           <a href="#" class="text-sm font-medium text-white hover:text-slate-300 transition">Log in</a>
           <a href="#"
-            class="inline-flex items-center gap-2 rounded-full  bg-[#2957E3]/100 px-5 py-2 text-sm font-semibold text-white hover:text-slate-300 shadow-lg shadow-sky-500/20 hover:opacity-95 transition">
+            class="inline-flex items-center gap-2 rounded-full  bg-blue-500/100 px-5 py-2 text-sm font-semibold text-white hover:text-slate-300 shadow-lg shadow-sky-500/20 hover:opacity-95 transition">
             Sign Up
             <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
               <path
@@ -141,8 +141,11 @@
         <img src="./public/img/server_1.svg" alt="Server 1">
       </div>
     </div>
+  </section>
+  <!-- ======= End Hero Block ======  -->
+  <section class="relative mx-auto max-w-7xl px-4 sm:px-6">
     <!-- === Domain Search Bar === -->
-    <div class="absolute bottom-[5%] left-1/2 w-full -translate-x-1/2 mx-auto max-w-7xl rounded-3xl bg-white shadow-xl ring-1 ring-black/5 px-4 sm:px-6 py-5">
+    <div class="absolute -top-[250px] w-full rounded-3xl bg-white shadow-xl ring-1 ring-black/5 px-4 sm:px-6 py-5">
       <!-- Top row: title -->
       <p class="px-1 pb-3 text-xl font-medium text-slate-950">Register a Domain Name</p>
 
@@ -214,7 +217,7 @@
               class="flex gap-2 relative z-1 overflow-x-auto scroll-smooth select-none cursor-grab active:cursor-grabbing [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             <!-- chips (same as before) -->
             <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-[#379BFD] font-semibold">.com</span>
+              <span class="text-blue-500 font-semibold">.com</span>
               <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
             </span>
             <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
@@ -273,16 +276,18 @@
     </div>
     <!-- === End Domain Search Bar === -->
   </section>
-  <!-- ======= End Hero Block ======  -->
   <!-- ======= Services Block ======  -->
   <section class="relative pt-20 pb-20 sm:pt-32 sm:pb-32 bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Section Title Block -->
       <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8 mb-20">
-        <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
-          <h2 class="text-4xl font-heading font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl mb-0">
-            Our Services
-          </h2>
+        <div class="flex flex-col items-center text-center lg:items-start lg:text-left max-w-[560px]">
+          <span
+            class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">Plans</span>
+          <h2
+          class="text-[30px] font-heading font-extrabold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-0">
+          Flexible Hosting Plans <span class="text-blue-500">for Every Need</span>
+        </h2>
         </div>
         <div>
           <p class="mt-4 max-w-2xl text-lg ">
@@ -292,17 +297,17 @@
         </div>
       </div>
       <!-- Services Grid -->
-      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-3">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-4">
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white rounded-2xl px-4 py-8  overflow-hidden group transition border border-gray-200 shadow-md">
+          class="relative flex flex-col bg-white rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           </div>
           <!-- Content -->
           <img src="./public/img/services-icon-1.svg" alt="Feature 1" class="h-[43px] w-[48px] mb-4 relative z-10">
-          <h3 class="text-[28px] transition font-bold mb-2 relative z-10 group-hover:text-white">
+          <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
             WordPress Hosting
           </h3>
           <p class="relative z-10 text-black transition group-hover:text-white">
@@ -321,14 +326,14 @@
         <!-- End Single Services -->
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white rounded-2xl px-4 py-8  overflow-hidden group transition border border-gray-200 shadow-md">
+          class="relative flex flex-col bg-white rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           </div>
           <!-- Content -->
           <img src="./public/img/services-icon-2.svg" alt="Feature 1" class="h-[43px] w-[48px] mb-4 relative z-10">
-          <h3 class="text-[28px] transition font-bold mb-2 relative z-10 group-hover:text-white">
+          <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
             VPS Hosting
           </h3>
           <p class="relative z-10 text-black transition group-hover:text-white">
@@ -347,14 +352,14 @@
         <!-- End Single Services -->
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white rounded-2xl px-4 py-8  overflow-hidden group transition border border-gray-200 shadow-md">
+          class="relative flex flex-col bg-white rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           </div>
           <!-- Content -->
           <img src="./public/img/services-icon-3.svg" alt="Feature 1" class="h-[43px] w-[48px] mb-4 relative z-10">
-          <h3 class="text-[28px] transition font-bold mb-2 relative z-10 group-hover:text-white">
+          <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
             Reseller Hosting
           </h3>
           <p class="relative z-10 text-black transition group-hover:text-white">
@@ -373,14 +378,14 @@
         <!-- End Single Services -->
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white rounded-2xl px-4 py-8  overflow-hidden group transition border border-gray-200 shadow-md">
+          class="relative flex flex-col bg-white rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
           </div>
           <!-- Content -->
           <img src="./public/img/services-icon-4.svg" alt="Feature 1" class="h-[43px] w-[48px] mb-4 relative z-10">
-          <h3 class="text-[28px] transition font-bold mb-2 relative z-10 group-hover:text-white">
+          <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
             Dedicated Hosting
           </h3>
           <p class="relative z-10 text-black transition group-hover:text-white">
@@ -414,17 +419,17 @@
       <!-- Section Title Block -->
       <div class="mb-2">
         <span
-          class="bg-white rounded-full px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">Features</span>
+          class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">Features</span>
         <h2
           class="text-[30px] font-heading font-extrabold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-0">
-          Powerful <span class="text-[#2957E3]">VPS Hosting</span> Features at a Glance
+          Powerful <span class="text-blue-500">VPS Hosting</span> Features at a Glance
         </h2>
         <p class="mt-4 text-lg ">
           Experience next-level performance, speed, and security with our fully optimized VPS plans - ideal for
           developers, businesses, and resellers.
         </p>
         <a href="#"
-          class="inline-flex items-center gap-2 px-[28px] py-[14px] rounded-full font-semibold text-white bg-[#2957E3] hover:opacity-95 mt-8">Explore
+          class="inline-flex items-center gap-2 px-[28px] py-[14px] rounded-full font-semibold text-white bg-blue-500 hover:opacity-95 mt-8">Explore
           All Features <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <!-- End Section Title Block -->
@@ -450,7 +455,7 @@
             <img class="absolute top-0 right-0 z-0" src="./public/img/ram.png" alt="">
             <div class="relative z-1">
                   <h3 class="text-xl text-black font-bold mb-7">SSD Storage,<br>SSL, Email & More</h3>
-                <p class="text-4xl font-extrabold text-[#379BFD]">4x</p>
+                <p class="text-4xl font-extrabold text-blue-500">4x</p>
                 <p class="text-gray-600 text-sm">Everything you need – SSD storage, free SSL, email, and unlimited domains.
                 </p>
             </div>
@@ -476,7 +481,7 @@
             </p>
             </div>
             <div class="flex items-center gap-2 mt-4 justify-between">
-              <div class="w-8 h-8 bg-blue-100 text-[#379BFD] rounded-full flex items-center justify-center"><img src="./public/img/server.png" alt=""></div>
+              <div class="w-8 h-8 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center"><img src="./public/img/server.png" alt=""></div>
               <div class="text-sm text-gray-600"><img src="./public/img/users.png" alt=""></div>
             </div>
           </div>
@@ -490,9 +495,9 @@
 
   <!-- ======= Pricing Block ======  -->
   <section class="px-4 py-20 bg-gray-50 text-center">
-    <span class="bg-white rounded-full px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">Pricing</span>
+    <span class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">Pricing</span>
     <h2 class="text-[30px] font-heading font-extrabold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-6">
-      Web Hosting Plans for <span class="text-[#2957E3]">Your Site</span>
+      Web Hosting Plans for <span class="text-blue-500">Your Site</span>
     </h2>
 
     <!-- Pricing Toggle -->
@@ -502,32 +507,32 @@
         Monthly
       </button>
       <button id="yearlyBtn"
-        class="cursor-pointer px-4 py-2 text-sm font-medium text-[#379BFD] hover:text-white hover:bg-green-500 rounded-full transition-all group">
+        class="cursor-pointer px-4 py-2 text-sm font-medium text-blue-500 hover:text-white hover:bg-green-500 rounded-full transition-all group">
         Yearly
-        <span class="ml-1 text-xs bg-[#2957E3]/10 rounded-full px-3 py-1 text-blue-500 group-[&.bg-green-500]:text-white">-15% Off</span>
+        <span class="ml-1 text-xs bg-blue-500/10 rounded-full px-3 py-1 text-blue-500 group-[&.bg-green-500]:text-white">-15% Off</span>
       </button>
     </div>
     <!-- Pricing Toggle End -->
 
     <!-- Pricing Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-15">
+    <div class="hostomega-pricing-table grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-15">
 
       <!-- Plan 1 -->
-      <div class="bg-white rounded-2xl p-6 shadow flex flex-col justify-between">
-        <div class="text-left">
+      <div class="card-item bg-white rounded-2xl p-6 shadow flex flex-col justify-between">
+        <div class="text-left z-1">
           <h3 class="text-xl font-bold mb-1">WordPress Starter Plan</h3>
           <p class="text-gray-500 mb-4">Perfect for blogs, personal sites, and content creators.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$3.00" data-yearly="$2.55">$3.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
           <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200">Get Started →</a>
         </div>
-        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600">
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 5GB SSD storage</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 2 hosted domains</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 250 GB bandwidth</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> Unlimited subdomains</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> Free SSL certificate</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 24/7 Monitoring & support</li>
+        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600 z-1">
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 5GB SSD storage</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 2 hosted domains</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 250 GB bandwidth</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> Unlimited subdomains</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> Free SSL certificate</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 24/7 Monitoring & support</li>
         </ul>
       </div>
 
@@ -553,49 +558,49 @@
             <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-blue-500 bg-blue-500 text-white hover:bg-white hover:border-black hover:text-black transition-colors duration-200 font-semibold">Get Started →</a>
           </div>
           <ul class="mt-6 text-left text-sm space-y-4 text-gray-600">
-            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 20 GB SSD storage</li>
-            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 25 Cpanel accounts</li>
-            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 250 GB bandwidth</li>
-            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> Unlimited subdomains</li>
-            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> Free SSL certificate</li>
-            <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 24/7 Monitoring & support</li>
+            <li><i class="fa-solid fa-circle-check text-blue-500"></i> 20 GB SSD storage</li>
+            <li><i class="fa-solid fa-circle-check text-blue-500"></i> 25 Cpanel accounts</li>
+            <li><i class="fa-solid fa-circle-check text-blue-500"></i> 250 GB bandwidth</li>
+            <li><i class="fa-solid fa-circle-check text-blue-500"></i> Unlimited subdomains</li>
+            <li><i class="fa-solid fa-circle-check text-blue-500"></i> Free SSL certificate</li>
+            <li><i class="fa-solid fa-circle-check text-blue-500"></i> 24/7 Monitoring & support</li>
           </ul>
         </div>
       </div>
 
       <!-- Plan 3 -->
-      <div class="bg-white rounded-2xl p-6 shadow flex flex-col justify-between">
-        <div class="text-left">
+      <div class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
+        <div class="text-left z-1">
           <h3 class="text-xl font-bold mb-1">Reseller Starter Plan</h3>
           <p class="text-gray-500 mb-4">Start your own hosting business with scalable reseller plans.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$20.00" data-yearly="$17.00">$20.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
           <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200">Get Started →</a>
         </div>
-        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600">
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 20 GB SSD storage</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 25 Cpanel accounts</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 500 GB bandwidth</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> cPanel/WHM/Softaculous</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> Private name server</li>
+        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600 z-1">
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 20 GB SSD storage</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 25 Cpanel accounts</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 500 GB bandwidth</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> cPanel/WHM/Softaculous</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> Private name server</li>
         </ul>
       </div>
 
       <!-- Plan 4 -->
-      <div class="bg-white rounded-2xl p-6 shadow flex flex-col justify-between">
-        <div class="text-left">
+      <div class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
+        <div class="text-left z-1">
           <h3 class="text-xl font-bold mb-1">Dedicated Starter Plan</h3>
           <p class="text-gray-500 mb-4">Ultimate control with enterprise-grade servers.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$199.00" data-yearly="$169.15">$199.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
           <a href="#" class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200">Get Started →</a>
         </div>
-        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600">
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 1 processor</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 4x3.4 GHz cores</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 16GB DDR3 RAM</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 1GB SATA storage</li>
-          <li><i class="fa-solid fa-circle-check text-[#379BFD]"></i> 10TB Transfer</li>
+        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600 z-1">
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 1 processor</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 4x3.4 GHz cores</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 16GB DDR3 RAM</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 1GB SATA storage</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 10TB Transfer</li>
         </ul>
       </div>
 
@@ -733,7 +738,7 @@
 
       <!-- Right: Copy -->
       <div class="relative z-1">
-        <span class="bg-white rounded-full px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt=""> Country
+        <span class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt=""> Country
         </span>
 
         <h2 class="mt-4 font-heading text-[34px] font-extrabold leading-tight tracking-tight sm:text-[42px] lg:text-[50px]">
@@ -746,7 +751,7 @@
 
         <div class="mt-6 grid grid-cols-2 gap-4 max-w-md">
           <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-xs">
-            <span class="grid h-[56px] w-[56px] place-items-center rounded-sm bg-[#EBF5FF] text-[#2957E3]">
+            <span class="grid h-[56px] w-[56px] place-items-center rounded-sm bg-[#EBF5FF] text-blue-500">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M14 1.45898C9.6565 1.45898 6.125 5.02198 6.125 9.41682C6.125 10.9055 6.78067 12.7523 7.735 14.5945C9.83617 18.651 13.3362 22.7367 13.3362 22.7367C13.5018 22.9303 13.7445 23.0423 14 23.0423C14.2555 23.0423 14.4982 22.9303 14.6638 22.7367C14.6638 22.7367 18.1638 18.651 20.265 14.5945C21.2193 12.7523 21.875 10.9055 21.875 9.41682C21.875 5.02198 18.3435 1.45898 14 1.45898ZM14 6.12565C12.229 6.12565 10.7917 7.56298 10.7917 9.33398C10.7917 11.105 12.229 12.5423 14 12.5423C15.771 12.5423 17.2083 11.105 17.2083 9.33398C17.2083 7.56298 15.771 6.12565 14 6.12565Z" fill="#379BFD"/>
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5817 20.2742C20.5302 20.5588 21.3118 20.9112 21.852 21.3242C22.202 21.5902 22.4587 21.8503 22.4587 22.1677C22.4587 22.3543 22.3525 22.5235 22.2032 22.6927C21.9558 22.9715 21.5883 23.2223 21.1333 23.4557C19.5257 24.2782 16.9263 24.7927 14.0003 24.7927C11.0743 24.7927 8.47499 24.2782 6.86733 23.4557C6.41233 23.2223 6.04483 22.9715 5.79749 22.6927C5.64816 22.5235 5.54199 22.3543 5.54199 22.1677C5.54199 21.8503 5.79866 21.5902 6.14866 21.3242C6.68883 20.9112 7.47049 20.5588 8.41899 20.2742C8.88099 20.1353 9.14349 19.6465 9.00466 19.1845C8.86583 18.7213 8.37699 18.4588 7.91499 18.5977C6.47066 19.0328 5.34833 19.629 4.67399 20.2882C4.08133 20.8657 3.79199 21.512 3.79199 22.1677C3.79199 22.9867 4.25516 23.8033 5.19666 24.4847C6.84866 25.6793 10.1667 26.5427 14.0003 26.5427C17.834 26.5427 21.152 25.6793 22.804 24.4847C23.7455 23.8033 24.2087 22.9867 24.2087 22.1677C24.2087 21.512 23.9193 20.8657 23.3267 20.2882C22.6523 19.629 21.53 19.0328 20.0857 18.5977C19.6237 18.4588 19.1348 18.7213 18.996 19.1845C18.8572 19.6465 19.1197 20.1353 19.5817 20.2742Z" fill="#379BFD"/>
@@ -758,7 +763,7 @@
             </div>
           </div>
           <div class="flex items-center gap-3 rounded-xl bg-white p-4 shadow-xs">
-            <span class="grid h-[56px] w-[56px] place-items-center rounded-sm bg-[#EBF5FF] text-[#2957E3]">
+            <span class="grid h-[56px] w-[56px] place-items-center rounded-sm bg-[#EBF5FF] text-blue-500">
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
                 <path d="M4.71598 17.2158C3.21838 17.2158 2 18.4419 2 19.949C2 20.4261 2.12469 20.8963 2.36052 21.3089C2.37158 21.3284 2.3818 21.3481 2.39117 21.3681L4.33789 24.8516C4.45489 25.061 4.75217 25.0675 4.87813 24.8634L6.96856 21.4764C7.01811 21.3965 7.03784 21.365 7.04816 21.3485C7.05402 21.3391 7.05519 21.3372 7.06034 21.3287C7.06311 21.3235 7.06597 21.3185 7.06888 21.3134C7.30639 20.8997 7.43192 20.4279 7.43192 19.9491C7.43192 18.4419 6.21355 17.2158 4.71598 17.2158ZM4.71598 21.0486C4.11219 21.0486 3.62272 20.556 3.62272 19.9484C3.62272 19.3407 4.11219 18.8481 4.71598 18.8481C5.31978 18.8481 5.80925 19.3408 5.80925 19.9484C5.80925 20.556 5.31978 21.0486 4.71598 21.0486Z" fill="#379BFD"/>
                 <path d="M23.132 12.4786C23.1263 12.4786 23.1205 12.4786 23.1146 12.4784C22.833 12.4723 22.5755 12.3169 22.4374 12.0698L19.5407 6.88646C19.5313 6.86963 19.5226 6.85257 19.5144 6.83523C19.1608 6.19379 18.9742 5.46868 18.9742 4.73359C18.9742 4.37818 19.0179 4.03295 19.0984 3.70215C18.4935 3.46688 17.8094 3.24624 17.1112 3.06934C17.1632 4.35212 16.8205 5.59932 16.1132 6.69034C15.403 7.78566 14.3608 8.67493 13.0993 9.26204C12.8553 9.37566 12.6085 9.47354 12.3698 9.56818C11.802 9.79332 11.2657 10.0059 10.9322 10.3699C10.7461 10.573 10.596 10.8548 10.4371 11.153C10.2729 11.4611 10.0868 11.8104 9.82873 12.1276C9.28034 12.8018 8.43654 13.283 7.45282 13.4827C6.47032 13.6821 5.63009 13.694 4.88402 13.5192C3.95754 13.302 3.66115 13.4379 3.39968 13.5574C3.28235 13.6111 3.14937 13.672 2.98648 13.7094C2.96735 13.7137 2.86863 13.7319 2.74179 13.7544C2.73246 13.9462 2.72754 14.1391 2.72754 14.3332C2.72754 14.7974 2.7851 15.4504 2.8587 16.0361C3.42143 15.7645 4.05129 15.6121 4.71593 15.6121C7.0923 15.6121 9.02562 17.5577 9.02562 19.9491C9.02562 20.6971 8.83254 21.4345 8.46682 22.0842C8.45909 22.0992 8.45079 22.114 8.44202 22.1287L8.43035 22.1483C8.41099 22.1806 8.41099 22.1806 8.39618 22.2042C8.38638 22.2198 8.36773 22.2496 8.32151 22.3241L7.45648 23.7256C7.90484 24.0494 8.28091 24.2927 8.77929 24.5572C9.19784 24.2478 8.90646 24.4624 9.19784 24.2478C10.0408 23.6269 11.0182 22.4291 11.2149 21.4538C11.424 20.4167 11.3695 19.3341 11.3119 18.1878L11.2992 17.9346C11.2549 17.0286 11.2379 16.1439 11.5135 15.2798C11.8681 14.1679 12.6921 13.3321 13.664 13.0988C14.6669 12.8579 15.57 13.2506 16.3669 13.5971C16.5262 13.6664 16.6768 13.7319 16.8248 13.7911C18.594 14.4979 20.6232 14.408 22.3866 14.2681C22.4834 14.2605 22.5803 14.2526 22.6774 14.2447C23.729 14.159 24.8154 14.0714 25.9139 14.2444C25.8988 12.9076 25.5465 11.3382 25.0836 10.0345L23.8089 12.0999C23.6633 12.3356 23.4071 12.4786 23.132 12.4786Z" fill="#379BFD"/>
@@ -775,7 +780,7 @@
         </div>
 
         <a href="#"
-          class="mt-8 inline-flex items-center gap-2 rounded-full bg-[#2957E3] px-7 py-3 font-semibold text-white shadow hover:opacity-95">
+          class="mt-8 inline-flex items-center gap-2 rounded-full bg-blue-500 px-7 py-3 font-semibold text-white shadow hover:opacity-95">
           Explore Location
           <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z"/></svg>
         </a>
@@ -792,7 +797,7 @@
     <!-- Left Side -->
     <div>
       <!-- Tag -->
-      <span class="bg-white rounded-full px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt=""> Partners
+      <span class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt=""> Partners
       </span>
 
       <!-- Heading -->
@@ -853,34 +858,37 @@
       </div>
 
       <!-- Orbit Icons -->
-      <div class="absolute top-10 left-1/6 -translate-x-1/2 flex flex-col items-center animate-pin-bounce">
+      <div class="absolute top-10 left-1/6 -translate-x-1/2 flex flex-col items-center animate-pin-bounce [animation-duration:2.4s] [animation-delay:200ms]">
         <img src="./public/img/arch-linux.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Alma Linux</span>
       </div>
 
-      <div class="absolute right-1/5 top-0 flex flex-col items-center animate-pin-bounce">
+      <div class="absolute right-1/5 top-0 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
         <img src="./public/img/rocky-linux.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
       </div>
-      <div class="absolute -right-6 top-1/3 flex flex-col items-center animate-pin-bounce">
+
+      <div class="absolute -right-6 top-1/3 flex flex-col items-center animate-pin-bounce  [animation-duration:2.0s] [animation-delay:400ms]">
         <img src="./public/img/arch-linux.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Arch Linux</span>
       </div>
 
-      <div class="absolute bottom-1/4 right-1/4 flex flex-col items-center animate-pin-bounce">
+      <div class="absolute bottom-1/4 right-1/4 flex flex-col items-center animate-pin-bounce [animation-duration:3.4s] [animation-delay:500ms]">
         <img src="./public/img/ubuntu.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Ubuntu</span>
       </div>
-      <div class="absolute right-1/2 bottom-10 flex flex-col items-center animate-pin-bounce">
+
+      <div class="absolute right-1/2 bottom-10 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
         <img src="./public/img/centos.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
       </div>
-      <div class="absolute bottom-1/23 left-1/7 flex flex-col items-center animate-pin-bounce">
+
+      <div class="absolute bottom-1/23 left-1/7 flex flex-col items-center animate-pin-bounce [animation-duration:3.5s] [animation-delay:300ms]">
         <img src="./public/img/docker.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Docker</span>
       </div>
 
-    <div class="absolute left-1/11 top-1/2 flex flex-col items-center animate-pin-bounce">
+      <div class="absolute left-1/11 top-1/2 flex flex-col items-center animate-pin-bounce">
         <img src="./public/img/rocky-linux.png" class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
         <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
       </div>
@@ -905,7 +913,7 @@
   <div class="mx-auto max-w-7xl px-6">
     <!-- Tag -->
     <div class="flex justify-center">
-      <span  class="bg-white rounded-full px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">  Testimonial
+      <span  class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex "><img class="mr-1 block" src="./public/img/flash-icon.png" alt="">  Testimonial
       </span>
     </div>
 

@@ -136,11 +136,11 @@
 }
 /* Meteor */
 .meteor {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-bottom: 60px solid #fff;
   position: absolute;
   transform-origin: top right;
-  animation: shower 0.5s;
+  animation: shower 2s;
   opacity: 0;
 }
 .meteor:after {
@@ -148,8 +148,8 @@
   position: absolute;
   top: 58px;
   left: 50%;
-  height: 4px;
-  width: 4px;
+  height: 1px;
+  width: 1px;
   border-radius: 100%;
   background: #fff;
   transform: translateX(-50%);
@@ -298,3 +298,87 @@
     opacity: 0;
   }
 }
+
+/* Pricing Table Border */
+
+.hostomega-pricing-table {
+  --gradient: conic-gradient(
+    from 90deg at 50% 50%,
+    rgb(43, 127, 255),
+    rgba(43, 127, 255, 1),
+    rgba(43, 127, 255, 1),
+    rgba(43, 127, 255, 1),
+    rgba(43, 127, 255, 1),
+    rgba(43, 127, 255, 1),
+    rgba(43, 127, 255, 1)
+  );
+}
+
+.hostomega-pricing-table > .card-item {
+  --start: 0;
+  position: relative;
+/*   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px;
+  padding: 10px 40px;
+  border-radius: 0px; */
+  transition: border-color 0.3s ease-in-out;
+}
+
+.hostomega-pricing-table > .card-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  background: var(--gradient);
+  background-attachment: fixed;
+  mask:
+    linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start) - (20 * 1.1)) * 1deg),
+      #ffffff1f 0deg,
+      white,
+      #ffffff00 100deg
+    );
+  mask-composite: intersect;
+  mask-clip: padding-box, border-box;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.hostomega-pricing-table > .card-item .glow {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  transform: translateZ(0);
+  filter: blur(14px);
+	display: none;
+}
+
+.hostomega-pricing-table > .card-item .glow::before {
+  content: "";
+  position: absolute;
+  inset: 1%;
+  border-radius: 14px;
+  border: 15px solid transparent;
+  background: var(--gradient);
+  background-attachment: fixed;
+  mask:
+    linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start) - (20 * 1.1)) * 1deg),
+      #ffffff1f 0deg,
+      white,
+      #ffffff00 100deg
+    );
+  mask-composite: intersect;
+  mask-clip: padding-box, border-box;
+  opacity: 1;
+  transition: 1s ease;
+}
+
+.hostomega-pricing-table > .card-item:hover > .glow::before { opacity: 1; }
+.hostomega-pricing-table > .card-item:hover::before { opacity: 0.9; }

@@ -40,6 +40,69 @@
   for (var i = 0; i < meteors.length; i++) {
     meteors[i].addEventListener("animationend", reset);
   }
+
+  // Pricing Table Border
+  const SELECTOR = ".hostomega-pricing-table .card-item";
+  const BOUND = new WeakSet();
+
+  function ensureGlow(el) {
+    if (!el.querySelector(":scope > .glow")) {
+      const glow = document.createElement("div");
+      glow.className = "glow";
+      el.prepend(glow);
+    }
+  }
+
+  function bind(el) {
+    if (BOUND.has(el)) return;
+    BOUND.add(el);
+
+    ensureGlow(el);
+
+    let raf = 0;
+    function onMove(e) {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const r = el.getBoundingClientRect();
+        const x = e.clientX - (r.left + r.width / 2);
+        const y = e.clientY - (r.top + r.height / 2);
+        let angle = Math.atan2(y, x) * (180 / Math.PI);
+        angle = (angle + 360) % 360;
+        el.style.setProperty("--start", angle + 60);
+      });
+    }
+
+    el.addEventListener("mousemove", onMove, { passive: true });
+    el.addEventListener(
+      "mouseleave",
+      () => {
+        el.style.removeProperty("--start");
+      },
+      { passive: true }
+    );
+  }
+
+  function init(root = document) {
+    root.querySelectorAll(SELECTOR).forEach(bind);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => init());
+  } else {
+    init();
+  }
+
+  const mo = new MutationObserver((muts) => {
+    for (const m of muts) {
+      m.addedNodes &&
+        m.addedNodes.forEach((n) => {
+          if (!(n instanceof Element)) return;
+          if (n.matches && n.matches(SELECTOR)) bind(n);
+          if (n.querySelectorAll) init(n);
+        });
+    }
+  });
+  mo.observe(document.documentElement, { childList: true, subtree: true });
 })();
 
 // === TLD chips carousel: show exactly 6 items ===
