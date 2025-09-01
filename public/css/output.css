@@ -2648,7 +2648,7 @@
   #links .active {
     color: var(--color-gray-200);
   }
-  ::-webkit-scrollbar-thumb {
+  /* ::-webkit-scrollbar-thumb {
     background-color: var(--color-slate-900);
   }
   ::-webkit-scrollbar-thumb {
@@ -2658,7 +2658,7 @@
   ::-webkit-scrollbar {
     background-color: transparent;
     width: 8px;
-  }
+  } */
 }
 @property --tw-translate-x {
   syntax: "*";
