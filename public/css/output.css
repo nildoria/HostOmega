@@ -2363,6 +2363,11 @@
       width: 100%;
     }
   }
+  .lg\:max-w-0 {
+    @media (width >= 64rem) {
+      max-width: calc(var(--spacing) * 0);
+    }
+  }
   .lg\:max-w-2xl {
     @media (width >= 64rem) {
       max-width: var(--container-2xl);
@@ -2378,9 +2383,19 @@
       max-width: var(--container-7xl);
     }
   }
+  .lg\:max-w-100 {
+    @media (width >= 64rem) {
+      max-width: calc(var(--spacing) * 100);
+    }
+  }
   .lg\:max-w-\[460px\] {
     @media (width >= 64rem) {
       max-width: 460px;
+    }
+  }
+  .lg\:max-w-full {
+    @media (width >= 64rem) {
+      max-width: 100%;
     }
   }
   .lg\:max-w-xl {
