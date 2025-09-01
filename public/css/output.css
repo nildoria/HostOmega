@@ -2084,6 +2084,11 @@
       width: calc(var(--spacing) * 10);
     }
   }
+  .sm\:w-\[75\%\] {
+    @media (width >= 40rem) {
+      width: 75%;
+    }
+  }
   .sm\:max-w-lg {
     @media (width >= 40rem) {
       max-width: var(--container-lg);
@@ -2643,7 +2648,7 @@
   #links .active {
     color: var(--color-gray-200);
   }
-  ::-webkit-scrollbar-thumb {
+  /* ::-webkit-scrollbar-thumb {
     background-color: var(--color-slate-900);
   }
   ::-webkit-scrollbar-thumb {
@@ -2653,7 +2658,7 @@
   ::-webkit-scrollbar {
     background-color: transparent;
     width: 8px;
-  }
+  } */
 }
 @property --tw-translate-x {
   syntax: "*";
