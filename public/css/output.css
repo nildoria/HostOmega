@@ -2084,6 +2084,11 @@
       width: calc(var(--spacing) * 10);
     }
   }
+  .sm\:w-\[75\%\] {
+    @media (width >= 40rem) {
+      width: 75%;
+    }
+  }
   .sm\:max-w-lg {
     @media (width >= 40rem) {
       max-width: var(--container-lg);
