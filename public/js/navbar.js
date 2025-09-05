@@ -191,3 +191,27 @@
   applyBillingMode('monthly');
 })();
 
+// Faq accordion
+(function(){
+  const items = document.querySelectorAll('.faq-toggle');
+  items.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling;
+      const icon  = btn.querySelector('svg');
+      const isOpen = !panel.classList.contains('hidden');
+
+      // close all except clicked (optional; comment out if you want multiple open)
+      document.querySelectorAll('.faq-panel').forEach(p => {
+        if (p !== panel) {
+          p.classList.add('hidden');
+          const sv = p.previousElementSibling.querySelector('svg');
+          if (sv) sv.classList.remove('rotate-180');
+        }
+      });
+
+      // toggle current
+      panel.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    });
+  });
+})();
