@@ -132,3 +132,62 @@
     if (e.key === 'Tab'){ close(); }
   });
 })();
+
+
+
+
+// Pricing Scripts (CPU switch + monthly/yearly apply to visible) 
+
+(function(){
+  const grid = document.querySelector('.hostomega-pricing-table');
+  const amdBtn = document.getElementById('cpuAmd');
+  const intelBtn = document.getElementById('cpuIntel');
+  const monthlyBtn = document.getElementById('monthlyBtn');
+  const yearlyBtn  = document.getElementById('yearlyBtn');
+  if(!grid || !amdBtn || !intelBtn) return;
+
+  function setPillActive(on, off){
+    on.classList.add('border-blue-500','text-blue-600','bg-blue-50');
+    on.classList.remove('border-gray-300','text-slate-700','bg-white');
+    off.classList.remove('border-blue-500','text-blue-600','bg-blue-50');
+    off.classList.add('border-gray-300','text-slate-700','bg-white');
+  }
+
+  function showCPU(cpu){
+    grid.querySelectorAll('[data-cpu]').forEach(card=>{
+      const match = card.getAttribute('data-cpu') === cpu;
+      card.classList.toggle('hidden', !match);
+    });
+    // Re-apply current billing mode so visible prices are correct
+    applyBillingMode(currentMode);
+  }
+
+  let currentMode = 'monthly';
+  function applyBillingMode(mode){
+    currentMode = mode;
+    const visiblePrices = grid.querySelectorAll('[data-cpu]:not(.hidden) .text-3xl.font-bold.mb-1');
+    visiblePrices.forEach(el=>{
+      const m = el.getAttribute('data-monthly');
+      const y = el.getAttribute('data-yearly');
+      el.textContent = (mode === 'yearly' && y) ? y : (m || el.textContent);
+    });
+    // Optional visual toggle you already use:
+    monthlyBtn?.classList.toggle('bg-green-500', mode === 'monthly');
+    monthlyBtn?.classList.toggle('text-white',  mode === 'monthly');
+    yearlyBtn?.classList.toggle('bg-green-500',  mode === 'yearly');
+    yearlyBtn?.classList.toggle('text-white',   mode === 'yearly');
+  }
+
+  // Wire up
+  amdBtn.addEventListener('click',  ()=>{ setPillActive(amdBtn,intelBtn);  showCPU('amd');  });
+  intelBtn.addEventListener('click',()=>{ setPillActive(intelBtn,amdBtn);  showCPU('intel');});
+
+  monthlyBtn?.addEventListener('click', ()=> applyBillingMode('monthly'));
+  yearlyBtn?.addEventListener('click',  ()=> applyBillingMode('yearly'));
+
+  // Init
+  setPillActive(amdBtn,intelBtn);
+  showCPU('amd');
+  applyBillingMode('monthly');
+})();
+
