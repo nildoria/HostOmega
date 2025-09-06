@@ -1,50 +1,217 @@
-// navbar.js (robust & vanilla)
-document.addEventListener("DOMContentLoaded", () => {
-  // support either #hamburger or #navToggle
-  const toggle =
-    document.getElementById("hamburger") ||
-    document.getElementById("navToggle");
-  const links = document.getElementById("links");
-  const main = document.querySelector("main") || document.body;
+// Mobile nav drawer
 
-  // if markup isn't present, bail gracefully
-  if (!toggle || !links) return;
+(function () {
+  const navToggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  const overlay   = document.getElementById('mobileOverlay');
+  if (!navToggle || !mobileNav || !overlay) return;
 
-  const HIDDEN = "hidden";
+  const body = document.body;
 
-  function toggleMenu() {
-    const willOpen = links.classList.contains(HIDDEN);
-    links.classList.toggle(HIDDEN);
-    toggle.classList.toggle("active", willOpen);
-    toggle.setAttribute("aria-expanded", String(willOpen));
+  function firstFocusable(container){
+    return container.querySelector('a,button,input,select,textarea,[tabindex]:not([tabindex="-1"])');
   }
 
-  function closeMenu() {
-    if (!links.classList.contains(HIDDEN)) {
-      links.classList.add(HIDDEN);
-      toggle.classList.remove("active");
-      toggle.setAttribute("aria-expanded", "false");
-    }
+  function openNav(){
+    mobileNav.classList.remove('-translate-x-full');
+    mobileNav.setAttribute('aria-hidden','false');
+
+    overlay.classList.remove('pointer-events-none');
+    overlay.classList.add('opacity-100');  // implicit via CSS transition
+    overlay.style.opacity = '1';
+
+    navToggle.setAttribute('aria-expanded','true');
+    body.classList.add('overflow-hidden'); // prevent background scroll
+
+    const el = firstFocusable(mobileNav);
+    if (el) setTimeout(()=>el.focus(), 120);
   }
 
-  // toggle button
-  toggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    toggleMenu();
+  function closeNav(){
+    mobileNav.classList.add('-translate-x-full');
+    mobileNav.setAttribute('aria-hidden','true');
+
+    overlay.classList.add('pointer-events-none');
+    overlay.classList.remove('opacity-100');
+    overlay.style.opacity = '0';
+
+    navToggle.setAttribute('aria-expanded','false');
+    body.classList.remove('overflow-hidden');
+  }
+
+  function isOpen(){
+    return !mobileNav.classList.contains('-translate-x-full');
+  }
+
+  // Toggle click
+  navToggle.addEventListener('click', (e)=>{
+    e.preventDefault();
+    isOpen() ? closeNav() : openNav();
   });
 
-  // close when clicking a link inside the menu
-  links.addEventListener("click", (e) => {
-    if (e.target.closest("a")) closeMenu();
+  // Click overlay to close
+  overlay.addEventListener('click', closeNav);
+
+  // ESC to close
+  document.addEventListener('keydown', (e)=>{
+    if (e.key === 'Escape' && isOpen()) closeNav();
   });
 
-  // click outside to close
-  document.addEventListener("click", (e) => {
-    const insideMenu = e.target.closest("#links");
-    const insideToggle = e.target.closest("#hamburger, #navToggle");
-    if (!insideMenu && !insideToggle) closeMenu();
+  // Close when resizing to desktop
+  const mq = window.matchMedia('(min-width: 1024px)');
+  mq.addEventListener('change', () => { if (mq.matches) closeNav(); });
+
+  // Optional: close when clicking any link inside the drawer
+  mobileNav.addEventListener('click', (e)=>{
+    const a = e.target.closest('a[href]');
+    if (a) closeNav();
+  });
+})();
+(function(){
+  const closeBtn = document.getElementById('mobileNavClose');
+  const navToggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  const overlay   = document.getElementById('mobileOverlay');
+
+  if (closeBtn) closeBtn.addEventListener('click', () => {
+    mobileNav.classList.add('-translate-x-full');
+    overlay.classList.add('pointer-events-none');
+    overlay.style.opacity = '0';
+    navToggle.setAttribute('aria-expanded','false');
+    document.body.classList.remove('overflow-hidden');
+  });
+})();
+// END Mobile nav drawer
+
+
+// Language selection (robust & vanilla)
+(function(){
+  const btn   = document.getElementById('langBtn');
+  const menu  = document.getElementById('langMenu');
+  const label = document.getElementById('langLabel');
+  if (!btn || !menu || !label) return;
+
+  // Persist selection
+  const LS_KEY = 'site_lang';
+  const names  = { en: 'English', bn: 'বাংলা', he: 'עברית' };
+
+  // Init label from storage
+  const saved = localStorage.getItem(LS_KEY);
+  if (saved && names[saved]) label.textContent = names[saved];
+
+  const open  = () => { menu.classList.remove('hidden'); btn.setAttribute('aria-expanded','true'); };
+  const close = () => { menu.classList.add('hidden');  btn.setAttribute('aria-expanded','false'); };
+  const isOpen = () => !menu.classList.contains('hidden');
+
+  // Toggle
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); isOpen() ? close() : open(); });
+
+  // Select language (desktop + mobile share .lang-item)
+  document.querySelectorAll('.lang-item').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      const code = e.currentTarget.getAttribute('data-lang');
+      if (!code) return;
+      localStorage.setItem(LS_KEY, code);
+      if (names[code]) label.textContent = names[code];
+      close();
+      // Hook: perform actual i18n swap here if you have one.
+      // e.g., window.location.search='?lang='+code; or trigger your i18n router.
+    });
   });
 
-  // optional: close if main area is clicked
-  main.addEventListener("click", closeMenu);
-});
+  // Close on outside click / ESC
+  document.addEventListener('click', (e)=>{ if (isOpen() && !btn.contains(e.target) && !menu.contains(e.target)) close(); });
+  document.addEventListener('keydown', (e)=>{ if (e.key==='Escape' && isOpen()) close(); });
+
+  // Basic focus handling for accessibility
+  menu.addEventListener('keydown', (e)=>{
+    const items = Array.from(menu.querySelectorAll('.lang-item'));
+    const i = items.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown'){ e.preventDefault(); (items[i+1]||items[0]).focus(); }
+    if (e.key === 'ArrowUp'){   e.preventDefault(); (items[i-1]||items.at(-1)).focus(); }
+    if (e.key === 'Tab'){ close(); }
+  });
+})();
+
+
+
+
+// Pricing Scripts (CPU switch + monthly/yearly apply to visible) 
+
+(function(){
+  const grid = document.querySelector('.hostomega-pricing-table');
+  const amdBtn = document.getElementById('cpuAmd');
+  const intelBtn = document.getElementById('cpuIntel');
+  const monthlyBtn = document.getElementById('monthlyBtn');
+  const yearlyBtn  = document.getElementById('yearlyBtn');
+  if(!grid || !amdBtn || !intelBtn) return;
+
+  function setPillActive(on, off){
+    on.classList.add('border-blue-500','text-blue-600','bg-blue-50');
+    on.classList.remove('border-gray-300','text-slate-700','bg-white');
+    off.classList.remove('border-blue-500','text-blue-600','bg-blue-50');
+    off.classList.add('border-gray-300','text-slate-700','bg-white');
+  }
+
+  function showCPU(cpu){
+    grid.querySelectorAll('[data-cpu]').forEach(card=>{
+      const match = card.getAttribute('data-cpu') === cpu;
+      card.classList.toggle('hidden', !match);
+    });
+    // Re-apply current billing mode so visible prices are correct
+    applyBillingMode(currentMode);
+  }
+
+  let currentMode = 'monthly';
+  function applyBillingMode(mode){
+    currentMode = mode;
+    const visiblePrices = grid.querySelectorAll('[data-cpu]:not(.hidden) .text-3xl.font-bold.mb-1');
+    visiblePrices.forEach(el=>{
+      const m = el.getAttribute('data-monthly');
+      const y = el.getAttribute('data-yearly');
+      el.textContent = (mode === 'yearly' && y) ? y : (m || el.textContent);
+    });
+    // Optional visual toggle you already use:
+    monthlyBtn?.classList.toggle('bg-green-500', mode === 'monthly');
+    monthlyBtn?.classList.toggle('text-white',  mode === 'monthly');
+    yearlyBtn?.classList.toggle('bg-green-500',  mode === 'yearly');
+    yearlyBtn?.classList.toggle('text-white',   mode === 'yearly');
+  }
+
+  // Wire up
+  amdBtn.addEventListener('click',  ()=>{ setPillActive(amdBtn,intelBtn);  showCPU('amd');  });
+  intelBtn.addEventListener('click',()=>{ setPillActive(intelBtn,amdBtn);  showCPU('intel');});
+
+  monthlyBtn?.addEventListener('click', ()=> applyBillingMode('monthly'));
+  yearlyBtn?.addEventListener('click',  ()=> applyBillingMode('yearly'));
+
+  // Init
+  setPillActive(amdBtn,intelBtn);
+  showCPU('amd');
+  applyBillingMode('monthly');
+})();
+
+// Faq accordion
+(function(){
+  const items = document.querySelectorAll('.faq-toggle');
+  items.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling;
+      const icon  = btn.querySelector('svg');
+      const isOpen = !panel.classList.contains('hidden');
+
+      // close all except clicked (optional; comment out if you want multiple open)
+      document.querySelectorAll('.faq-panel').forEach(p => {
+        if (p !== panel) {
+          p.classList.add('hidden');
+          const sv = p.previousElementSibling.querySelector('svg');
+          if (sv) sv.classList.remove('rotate-180');
+        }
+      });
+
+      // toggle current
+      panel.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    });
+  });
+})();
