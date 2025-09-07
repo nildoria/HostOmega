@@ -70,6 +70,7 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --font-weight-extralight: 200;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -1126,6 +1127,9 @@
   .bg-\[\#1a253a\] {
     background-color: #1a253a;
   }
+  .bg-\[\#18D67C\] {
+    background-color: #18D67C;
+  }
   .bg-\[\#02060A\] {
     background-color: #02060A;
   }
@@ -1572,6 +1576,18 @@
   .align-bottom {
     vertical-align: bottom;
   }
+  .font-\[\'Inter\'\,_sans-serif\] {
+    font-family: 'Inter', sans-serif;
+  }
+  .font-\[\'Outfit\'\,_sans-serif\] {
+    font-family: 'Outfit', sans-serif;
+  }
+  .font-\[\'Poppins\'\,_sans-serif\] {
+    font-family: 'Poppins', sans-serif;
+  }
+  .font-\[inter\] {
+    font-family: inter;
+  }
   .font-heading {
     font-family: var(--font-heading);
   }
@@ -1586,6 +1602,10 @@
   .text-4xl {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
+  .text-5xl {
+    font-size: var(--text-5xl);
+    line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
   .text-base {
     font-size: var(--text-base);
@@ -1654,6 +1674,10 @@
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
   }
+  .font-extralight {
+    --tw-font-weight: var(--font-weight-extralight);
+    font-weight: var(--font-weight-extralight);
+  }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
@@ -1681,8 +1705,23 @@
   .text-\[\#328DE6\] {
     color: #328DE6;
   }
+  .text-\[\#379BFD\] {
+    color: #379BFD;
+  }
   .text-black {
     color: var(--color-black);
+  }
+  .text-black\/50 {
+    color: color-mix(in srgb, #000 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-black) 50%, transparent);
+    }
+  }
+  .text-black\/53 {
+    color: color-mix(in srgb, #000 53%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-black) 53%, transparent);
+    }
   }
   .text-black\/70 {
     color: color-mix(in srgb, #000 70%, transparent);
@@ -1822,6 +1861,10 @@
   }
   .shadow-md {
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-xl {
@@ -2718,6 +2761,21 @@
   .lg\:mb-24 {
     @media (width >= 64rem) {
       margin-bottom: calc(var(--spacing) * 24);
+    }
+  }
+  .lg\:ml-4 {
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * 4);
+    }
+  }
+  .lg\:ml-8 {
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * 8);
+    }
+  }
+  .lg\:ml-10 {
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * 10);
     }
   }
   .lg\:block {
