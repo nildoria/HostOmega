@@ -1225,6 +1225,12 @@
   .bg-\[url\(\.\.\/img\/banner-right\.svg\)\] {
     background-image: url(../img/banner-right.svg);
   }
+  .bg-\[url\(\.\.\/img\/features-bg\.png\)\] {
+    background-image: url(../img/features-bg.png);
+  }
+  .bg-\[url\(\.\.\/img\/features-block-bg-2\.svg\)\] {
+    background-image: url(../img/features-block-bg-2.svg);
+  }
   .bg-\[url\(\.\.\/img\/features-block-bg\.svg\)\] {
     background-image: url(../img/features-block-bg.svg);
   }
@@ -1657,6 +1663,18 @@
   .opacity-0 {
     opacity: 0%;
   }
+  .opacity-2 {
+    opacity: 2%;
+  }
+  .opacity-5 {
+    opacity: 5%;
+  }
+  .opacity-8 {
+    opacity: 8%;
+  }
+  .opacity-9 {
+    opacity: 9%;
+  }
   .opacity-70 {
     opacity: 70%;
   }
@@ -1669,11 +1687,23 @@
   .opacity-90 {
     opacity: 90%;
   }
+  .opacity-92 {
+    opacity: 92%;
+  }
+  .opacity-95 {
+    opacity: 95%;
+  }
   .opacity-100 {
     opacity: 100%;
   }
   .opacity-\[0\.04\] {
     opacity: 0.04;
+  }
+  .opacity-\[70\%\] {
+    opacity: 70%;
+  }
+  .opacity-\[80\%\] {
+    opacity: 80%;
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -2293,6 +2323,16 @@
       padding-block: calc(var(--spacing) * 16);
     }
   }
+  .sm\:pt-10 {
+    @media (width >= 40rem) {
+      padding-top: calc(var(--spacing) * 10);
+    }
+  }
+  .sm\:pt-15 {
+    @media (width >= 40rem) {
+      padding-top: calc(var(--spacing) * 15);
+    }
+  }
   .sm\:pt-16 {
     @media (width >= 40rem) {
       padding-top: calc(var(--spacing) * 16);
@@ -2316,6 +2356,16 @@
   .sm\:pr-28 {
     @media (width >= 40rem) {
       padding-right: calc(var(--spacing) * 28);
+    }
+  }
+  .sm\:pb-10 {
+    @media (width >= 40rem) {
+      padding-bottom: calc(var(--spacing) * 10);
+    }
+  }
+  .sm\:pb-15 {
+    @media (width >= 40rem) {
+      padding-bottom: calc(var(--spacing) * 15);
     }
   }
   .sm\:pb-16 {
@@ -2564,6 +2614,11 @@
   .lg\:grid-cols-\[1fr_1\.4fr\] {
     @media (width >= 64rem) {
       grid-template-columns: 1fr 1.4fr;
+    }
+  }
+  .lg\:grid-cols-\[1fr_1fr\] {
+    @media (width >= 64rem) {
+      grid-template-columns: 1fr 1fr;
     }
   }
   .lg\:grid-cols-\[3fr_2fr\] {
