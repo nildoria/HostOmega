@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HostOmega - HostOmega</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./public/img/favicon.ico" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="./public/css/all.min.css">
+  <!-- Core theme TailwindCSS-->
+  <link rel="stylesheet" href="./public/css/output.css">
+  <!-- Core theme CSS-->
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+
+<body class="bg-gray-100">
+  <!-- ====== Header / Navbar ====== -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Brand -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="./public/img/header_logo.png" alt="HostOmega" class="h-16 w-25 sm:w-35 lg:w-50 object-contain" />
+        </a>
+        <!-- Desktop nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-[15px]">
+          <a href="index.html" class="font-medium text-white">Home</a>
+          <a href="vps.html" class="font-medium text-slate-300 hover:text-white transition">VPS
+            <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+            </svg>
+          </a>
+          <a href="web-hosting.html" class="font-medium text-slate-300 hover:text-white transition">Solutions
+            <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+            </svg>
+          </a>
+          <a href="#" class="font-medium text-slate-300 hover:text-white transition">Features</a>
+          <a href="about-us.html" class="font-medium text-slate-300 hover:text-white transition">About</a>
+          <a href="contact-us.html" class="font-medium text-slate-300 hover:text-white transition">Contact</a>
+        </nav>
+
+        <!-- Right: language + cart + auth -->
+        <div class="flex items-center gap-1 lg:gap-6">
+          <!-- Language -->
+          <div class="relative">
+            <button id="langBtn"
+              class="inline-flex items-center gap-2 rounded-md px-1.5 py-1 lg:px-2.5 lg:py-1.5 text-sm font-medium text-slate-200 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+              aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu">
+              <!-- Globe -->
+              <svg class="h-4 lg:h-5 w-4 lg:w-5 opacity-90" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5" />
+                <path d="M3 12h18M12 3c3.5 3.3 3.5 14.7 0 18M12 3c-3.5 3.3-3.5 14.7 0 18" stroke="currentColor"
+                  stroke-width="1.5" />
+              </svg>
+              <span id="langLabel">English</span>
+              <!-- Chevron -->
+              <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+              </svg>
+            </button>
+
+            <!-- Menu -->
+            <div id="langMenu"
+              class="absolute right-0 mt-2 w-44 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur hidden shadow-xl shadow-black/20"
+              role="menu" aria-labelledby="langBtn">
+              <button data-lang="en"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">English</button>
+              <button data-lang="bn"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">বাংলা</button>
+              <button data-lang="he"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">עברית</button>
+            </div>
+          </div>
+
+          <!-- Cart -->
+          <a href="#cart" class="inline-flex items-center justify-center rounded-md text-slate-200 hover:bg-white/5"
+            aria-label="Cart">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+              <path d="M3 4h2l2.4 12a1 1 0 0 0 .98.8h9.64a1 1 0 0 0 .98-.8L21 7H6" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="9" cy="20" r="1" fill="currentColor" />
+              <circle cx="18" cy="20" r="1" fill="currentColor" />
+            </svg>
+          </a>
+
+          <!-- Auth -->
+          <a href="#" class="hidden lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition">Log
+            in</a>
+          <a href="#"
+            class="hidden lg:inline-flex items-center gap-2 rounded-full bg-blue-500/100 px-5 py-2 text-sm font-semibold text-white hover:opacity-95 shadow-lg shadow-sky-500/20 transition">
+            Sign Up
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="navToggle"
+          class="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-slate-200 hover:bg-white/5"
+          aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile nav -->
+    <!-- Backdrop -->
+    <div id="mobileOverlay"
+      class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity lg:hidden">
+    </div>
+
+    <!-- Mobile flyout nav -->
+    <div id="mobileNav" class="fixed left-0 top-0 z-50 h-screen w-[88%] max-w-sm overflow-y-auto
+         border-r border-white/10 bg-slate-950/95 px-4 py-6 sm:px-6
+         transform -translate-x-full transition-transform duration-300
+         lg:hidden" aria-hidden="true">
+
+      <!-- Header row: Brand + Close -->
+      <div class="flex items-center justify-between mb-6">
+        <!-- Brand -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="./public/img/header_logo.png" alt="HostOmega" class="h-12 w-35 object-contain" />
+        </a>
+
+        <!-- Close button -->
+        <button id="mobileNavClose"
+          class="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-300 hover:bg-white/5 focus:outline-none"
+          aria-label="Close menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none">
+            <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Nav links -->
+      <nav class="grid gap-3 text-sm">
+        <a href="index.html" class="py-2 font-medium text-white">Home</a>
+        <a href="#" class="py-2 text-slate-300 hover:text-white">Services</a>
+        <a href="vps.html" class="py-2 text-slate-300 hover:text-white">VPS</a>
+        <a href="#" class="py-2 text-slate-300 hover:text-white">Features</a>
+        <a href="about-us.html" class="py-2 text-slate-300 hover:text-white">About</a>
+        <a href="contact-us.html" class="py-2 text-slate-300 hover:text-white">Contact</a>
+
+        <div class="mt-4 flex items-center gap-4">
+          <a href="#" class="text-slate-300 hover:text-white">Log in</a>
+          <a href="#"
+            class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 px-4 py-2 font-semibold text-slate-900">
+            Sign Up
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+  </header>
+  <!-- ====== Hero / Banner ====== -->
+  <section id="bannerStar"
+    class="relative pt-30 pb-30 sm:pt-40 sm:pb-38 z-0 bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-[left_center] bg-cover">
+
+    <div
+      class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[4fr_2fr] lg:gap-16 lg:px-8 relative z-10">
+      <!-- background lights -->
+      <div class="pointer-events-none absolute inset-0 z-0">
+        <div
+          class="absolute inset-x-0 top-0 -left-7 h-full bg-[url(../img/banner-left.svg)] bg-no-repeat bg-top-left bg-auto z-0">
+        </div>
+        <div
+          class="absolute inset-x-0 bottom-0 left-20 w-full h-full bg-[url(../img/banner-right.svg)] bg-no-repeat bg-top-right bg-auto z-0">
+        </div>
+      </div>
+      <!-- Left: Headings -->
+      <div class="text-center lg:text-left max-w-xl lg:max-w-full mx-auto lg:mx-0">
+        <p class="mb-4 text-2xl font-medium text-slate-300">Contact Us</p>
+        <h1
+          class="text-3xl font-['Outfit',_sans-serif] font-extrabold leading-[1.2] tracking-tight text-white sm:text-4xl lg:text-5xl">
+          Have Questions? We’ve<br> Got Answers
+        </h1>
+      </div>
+    </div>
+  </section>
+  <!-- ======= End Hero Block ======  -->
+
+
+ <!-- ======= Contact Form Block ======  -->
+<section class="relative isolate overflow-hidden bg-slate-50 pt-10 sm:pt-16 lg:pt-24 pb-10 sm:pb-16 lg:pb-24">
+  <div class="mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- Left: Form -->
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-2xl shadow ring-1 ring-slate-100 p-6 sm:p-8">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight mb-6">Tell us a bit about yourself</h2>
+
+          <form class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <!-- Full Name -->
+            <div class="sm:col-span-2">
+              <label for="cf_name" class="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
+              <input id="cf_name" name="name" type="text" placeholder="Full Name"
+                     class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500">
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="cf_email" class="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
+              <input id="cf_email" name="email" type="email" placeholder="Email Address"
+                     class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500">
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label for="cf_phone" class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+              <input id="cf_phone" name="phone" type="tel" placeholder="+880"
+                     class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500">
+            </div>
+
+            <!-- Required Service -->
+            <div class="sm:col-span-2">
+              <label for="cf_service" class="block text-sm font-medium text-slate-700 mb-1">Required Service</label>
+              <select id="cf_service" name="service"
+                      class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500">
+                <option value="" selected>Select your required services</option>
+                <option>Web Hosting</option>
+                <option>VPS / Cloud</option>
+                <option>Dedicated Server</option>
+                <option>Domain Registration</option>
+                <option>Managed Support</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="sm:col-span-2">
+              <label for="cf_message" class="block text-sm font-medium text-slate-700 mb-1">Messages</label>
+              <textarea id="cf_message" name="message" rows="5" placeholder="Type a message"
+                        class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500"></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="sm:col-span-2">
+              <button type="submit"
+                      class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-3 text-white font-semibold shadow hover:bg-blue-700 transition-colors">
+                Send a Mail
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M13.5 5.5l6 6-6 6m-9-6h15"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Right: Info cards -->
+      <div class="space-y-6">
+        <!-- Sales Enquiries -->
+        <div class="bg-white rounded-2xl shadow ring-1 ring-slate-100 p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500 text-white">
+              <!-- chat icon -->
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v10H7l-3 3V4z"/></svg>
+            </div>
+            <h3 class="text-lg font-semibold">Sales Enquiries</h3>
+          </div>
+
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4v16l4-4h12z"/></svg>
+              </span>
+              <div>
+                <p class="font-medium">Email:</p>
+                <p class="text-slate-600">sales@hostomega.com</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10v2H7zM5 6h14v14H5z"/><path d="M7 10h4v4H7z"/></svg>
+              </span>
+              <div>
+                <p class="font-medium">Available Days:</p>
+                <p class="text-slate-600">7 days/week</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8v5l3 3M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"/></svg>
+              </span>
+              <div>
+                <p class="font-medium">Available Time:</p>
+                <p class="text-slate-600">10:00 AM – 5:00 PM</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Map + Address -->
+        <div class="relative bg-white rounded-2xl shadow ring-1 ring-slate-100 overflow-hidden">
+          <iframe class="w-full h-[375px] object-cover select-none pointer-events-none" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d456.3107631723145!2d90.3723057524965!3d23.801307382251416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3755c0d2fe2312fd%3A0xd6f8a76d6e78a1eb!2s796%20N%20Kazipara%20Mosque%20Rd%2C%20Dhaka!3m2!1d23.801302999999997!2d90.3726918!5e0!3m2!1sen!2sbd!4v1757275652978!5m2!1sen!2sbd"  style="border:0;" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          <div class="absolute left-4 right-4 bottom-4 bg-white rounded-2xl shadow ring-1 ring-slate-100 p-5">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-blue-500 text-white">
+                <!-- pin -->
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7zm0 9.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></svg>
+              </div>
+              <h3 class="text-lg font-semibold">Our Address</h3>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-700">
+              <li class="flex items-start gap-3">
+                <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l10 9-1.5 1.6L12 5.7 3.5 12.6 2 11z"/><path d="M5 12v8h5v-5h4v5h5v-8"/></svg>
+                </span>
+                <div>
+                  <p class="font-medium">Address:</p>
+                  <p class="text-slate-600">796, Kazipara, Mirpur 2, Dhaka–1216</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10v2H7zM5 6h14v14H5z"/><path d="M7 10h4v4H7z"/></svg>
+                </span>
+                <div>
+                  <p class="font-medium">Available Days:</p>
+                  <p class="text-slate-600">7 days/week</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="inline-flex w-8 h-8 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8v5l3 3M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z"/></svg>
+                </span>
+                <div>
+                  <p class="font-medium">Available Time:</p>
+                  <p class="text-slate-600">10:00 AM – 5:00 PM</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Logos row -->
+    <div class="mt-10 sm:mt-16 lg:mt-20">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 place-items-center opacity-80">
+        <img class="h-8 object-contain" src="./public/img/logo-1.png"        alt="Idera">
+        <img class="h-8 object-contain" src="./public/img/logo-2.png"      alt="SolusVM">
+        <img class="h-8 object-contain" src="./public/img/logo-3.png"    alt="LiteSpeed">
+        <img class="h-8 object-contain" src="./public/img/logo-4.png"  alt="Softaculous">
+        <img class="h-8 object-contain" src="./public/img/logo-5.png"       alt="cPanel">
+        <img class="h-8 object-contain" src="./public/img/logo-6.png"   alt="CloudLinux OS">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ======= End Contact Form Block ======  -->
+
+  <!-- ======= Feature CTA Block ====== -->
+  <section class="relative pb-12 sm:pb-16 lg:pb-20 bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Section Title Block -->
+      <div
+        class="mb-5 lg:mb-0 sm:max-w-lg md:max-w-[516px] justify-center lg:justify-start text-center mx-auto mb-4 lg:mb-20">
+        <h2
+          class="text-[30px] font-['Outfit',_sans-serif] font-extrabold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-0">Need a tailored
+          Powerful <span class="text-blue-500">solution?</span></h2>
+        <p class="mt-4 text-lg ">
+          Get a personalized quote tailored to your needs—start today!
+        </p>
+      </div>
+      <!-- End Section Title Block -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- Card: BDIX Hosting -->
+        <div class="relative overflow-hidden rounded-3xl shadow-xl">
+          <!-- Gradient base -->
+          <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-700"></div>
+          <!-- Starry bg image layer (as requested) -->
+          <div
+            class="absolute inset-x-0 bottom-0 h-full w-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-cover bg-[left_-80px_bottom] opacity-80">
+          </div>
+
+          <!-- Content -->
+          <div class="relative z-10 flex flex-col items-center text-center px-6 py-10 sm:px-10 sm:py-12">
+            <!-- Badge icon -->
+            <span class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/90 text-white">
+              <i class="fa-solid fa-cloud"></i>
+            </span>
+
+            <h3 class="text-white text-2xl sm:text-[22px] font-extrabold leading-snug">
+              Explore Our BDIX<br class="hidden sm:block" /> Hosting Packages
+            </h3>
+
+            <p class="mt-3 max-w-xl text-slate-200">
+              Leverage intelligent insights and real-time data to act decisively and keep your business ahead
+              of the curve.
+            </p>
+
+            <a href="#"
+              class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 font-semibold text-slate-900 hover:opacity-95">
+              Explore More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card: WordPress Hosting -->
+        <div class="relative overflow-hidden rounded-3xl shadow-xl">
+          <!-- Gradient base -->
+          <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-700"></div>
+          <!-- Starry bg image layer (as requested) -->
+          <div
+            class="absolute inset-x-0 bottom-0 h-full w-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-cover bg-[left_-80px_bottom] opacity-80">
+          </div>
+
+          <!-- Content -->
+          <div class="relative z-10 flex flex-col items-center text-center px-6 py-10 sm:px-10 sm:py-12">
+            <!-- Badge icon -->
+            <span class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/90 text-white">
+              <i class="fa-brands fa-wordpress"></i>
+            </span>
+
+            <h3 class="text-white text-2xl sm:text-[22px] font-extrabold leading-snug">
+              Explore Our WordPress<br class="hidden sm:block" /> Hosting Packages
+            </h3>
+
+            <p class="mt-3 max-w-xl text-slate-200">
+              Leverage intelligent insights and real-time data to act decisively and keep your business ahead
+              of the curve.
+            </p>
+
+            <a href="#"
+              class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 font-semibold text-slate-900 hover:opacity-95">
+              Explore More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center">
+                <a href="#"
+          class="inline-flex items-center gap-2 px-[28px] py-[14px] rounded-full font-semibold text-white bg-blue-500 hover:opacity-95 mt-8">Explore
+          All Features <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- ======= End Feature CTA Block ====== -->
+
+
+  <!-- Footer -->
+  <footer class="relative pt-68 pb-0 text-white z-20">
+    <div class="pointer-events-none absolute bg-[#02060A] inset-0 z-0 overflow-hidden">
+      <!-- top glow -->
+      <div
+        class="absolute inset-x-0 -top-30 h-full bg-[url(../img/footer-radial-glow.svg)] bg-no-repeat bg-top bg-[length:100%_auto] -z-10">
+      </div>
+    </div>
+    <div class="mx-auto mb-10 max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div>
+          <a href="#" class="inline-flex items-center">
+            <img src="./public/img/header_logo.png" alt="HostOmega" class="h-10 w-auto" />
+          </a>
+          <p class="mt-6 max-w-md text-lg text-slate-300">
+            We provide top-tier technology and support for online success.
+          </p>
+          <!-- Socials -->
+          <div class="mt-6 flex gap-3">
+            <!-- GitHub -->
+            <a href="#"
+              class="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 .5a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.79.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.98 0-1.32.47-2.4 1.24-3.25-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.24a11.5 11.5 0 016 0c2.29-1.56 3.3-1.24 3.3-1.24.66 1.64.24 2.85.12 3.15.78.85 1.24 1.93 1.24 3.25 0 4.66-2.8 5.67-5.48 5.97.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0012 .5z" />
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#"
+              class="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M22 12.06C22 6.48 17.52 2 12 2S2 6.48 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.22.2 2.22.2v2.44h-1.25c-1.23 0-1.61.76-1.61 1.55v1.86h2.74l-.44 2.91h-2.3V22c4.78-.79 8.44-4.94 8.44-9.94z" />
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#"
+              class="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.75-.88a1.12 1.12 0 110 2.24 1.12 1.12 0 010-2.24z" />
+              </svg>
+            </a>
+            <!-- X -->
+            <a href="#"
+              class="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M18.9 2H22l-7.01 8.01L23.5 22h-6.77l-4.9-6.37L5.2 22H2l7.49-8.56L.5 2h6.86l4.43 5.82L18.9 2zm-1.19 18h2.03L8.33 4H6.3l11.41 16z" />
+              </svg>
+            </a>
+          </div>
+          <p class="mt-8 text-sm text-slate-400">
+            © Copyright <span id="year"></span> Host Omega. All rights reserved.
+          </p>
+        </div>
+        <!-- Company -->
+        <div>
+          <h3 class="text-xl font-semibold">Company</h3>
+          <ul class="mt-5 space-y-3 text-slate-300">
+            <li><a href="#" class="hover:text-white">About Us</a></li>
+            <li><a href="#" class="hover:text-white">Data Center</a></li>
+            <li><a href="#" class="hover:text-white">Information</a></li>
+            <li><a href="#" class="hover:text-white">Career</a></li>
+            <li><a href="#" class="hover:text-white">Blogs</a></li>
+          </ul>
+        </div>
+        <!-- Product -->
+        <div>
+          <h3 class="text-xl font-semibold">Product</h3>
+          <ul class="mt-5 space-y-3 text-slate-300">
+            <li><a href="#" class="hover:text-white">Domain</a></li>
+            <li><a href="#" class="hover:text-white">Hosting</a></li>
+            <li><a href="#" class="hover:text-white">Cloud</a></li>
+            <li><a href="#" class="hover:text-white">Server</a></li>
+            <li><a href="#" class="hover:text-white">Pricing</a></li>
+          </ul>
+        </div>
+        <!-- Legal Links -->
+        <div>
+          <h3 class="text-xl font-semibold">Legal Links</h3>
+          <ul class="mt-5 space-y-3 text-slate-300">
+            <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+            <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Huge watermark text -->
+    <div
+      class="pointer-events-none relative z-10 inset-x-0 bottom-0 h-80 bg-[url(../img/HostOmegaFooter.svg)] bg-no-repeat bg-bottom bg-[size:100%_100%]">
+    </div>
+    </div>
+  </footer>
+  </main>
+  <!-- Core Navbar JS-->
+  <script src="./public/js/navbar.js"></script>
+  <!-- FontAwesome JS-->
+  <script src="./public/js/all.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="./public/js/scripts.js"></script>
+</body>
+
+</html>
