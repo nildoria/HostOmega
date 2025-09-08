@@ -1469,6 +1469,12 @@
   .pt-3 {
     padding-top: calc(var(--spacing) * 3);
   }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
+  }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
+  }
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
   }
@@ -1480,6 +1486,12 @@
   }
   .pt-68 {
     padding-top: calc(var(--spacing) * 68);
+  }
+  .pt-\[30px\] {
+    padding-top: 30px;
+  }
+  .pt-\[40px\] {
+    padding-top: 40px;
   }
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
