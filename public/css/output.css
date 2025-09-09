@@ -1089,9 +1089,6 @@
   .bg-\[\#1a253a\] {
     background-color: #1a253a;
   }
-  .bg-\[\#18D67C\] {
-    background-color: #18D67C;
-  }
   .bg-\[\#02060A\] {
     background-color: #02060A;
   }
@@ -1469,12 +1466,6 @@
   .pt-3 {
     padding-top: calc(var(--spacing) * 3);
   }
-  .pt-4 {
-    padding-top: calc(var(--spacing) * 4);
-  }
-  .pt-5 {
-    padding-top: calc(var(--spacing) * 5);
-  }
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
   }
@@ -1489,9 +1480,6 @@
   }
   .pt-\[30px\] {
     padding-top: 30px;
-  }
-  .pt-\[40px\] {
-    padding-top: 40px;
   }
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
@@ -1791,10 +1779,6 @@
     --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .shadow-sm {
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .shadow-xl {
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -2048,13 +2032,6 @@
       }
     }
   }
-  .group-hover\:bg-green-500 {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        background-color: var(--color-green-500);
-      }
-    }
-  }
   .group-hover\:text-black {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -2074,11 +2051,6 @@
       @media (hover: hover) {
         opacity: 100%;
       }
-    }
-  }
-  .group-\[\&\.bg-green-500\]\:text-white {
-    &:is(:where(.group).bg-green-500 *) {
-      color: var(--color-white);
     }
   }
   .group-\[\.bg-green-500\]\:bg-green-300 {
@@ -2604,6 +2576,11 @@
   .md\:max-w-\[516px\] {
     @media (width >= 48rem) {
       max-width: 516px;
+    }
+  }
+  .md\:max-w-\[716px\] {
+    @media (width >= 48rem) {
+      max-width: 716px;
     }
   }
   .md\:max-w-md {
