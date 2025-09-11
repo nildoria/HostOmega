@@ -1293,11 +1293,18 @@
   .bg-\[url\(\.\.\/img\/features-block-bg-2\.svg\)\] {
     background-image: url(../img/features-block-bg-2.svg);
   }
+  .bg-\[url\(\.\.\/img\/features-block-bg\.svg\)\)\] {
+    background-image: url(../img/features-block-bg.svg);
+  }
   .bg-\[url\(\.\.\/img\/features-block-bg\.svg\)\] {
     background-image: url(../img/features-block-bg.svg);
   }
   .bg-\[url\(\.\.\/img\/footer-radial-glow\.svg\)\] {
     background-image: url(../img/footer-radial-glow.svg);
+  }
+  .from-\[\#0a1c3a\] {
+    --tw-gradient-from: #0a1c3a;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .from-\[\#02060A\] {
     --tw-gradient-from: #02060A;
@@ -1321,6 +1328,10 @@
   }
   .to-\[\#0a1c3a\] {
     --tw-gradient-to: #0a1c3a;
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-\[\#02060A\] {
+    --tw-gradient-to: #02060A;
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .to-blue-700 {
