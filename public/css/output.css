@@ -310,12 +310,6 @@
   .top-\[-10\%\] {
     top: -10%;
   }
-  .top-\[-15\%\] {
-    top: -15%;
-  }
-  .top-\[-18\%\] {
-    top: -18%;
-  }
   .top-\[10\%\] {
     top: 10%;
   }
@@ -420,12 +414,6 @@
   }
   .left-\[12\%\] {
     left: 12%;
-  }
-  .left-\[15\%\] {
-    left: 15%;
-  }
-  .left-\[18\%\] {
-    left: 18%;
   }
   .left-\[20\%\] {
     left: 20%;
@@ -538,6 +526,9 @@
   .mr-1 {
     margin-right: calc(var(--spacing) * 1);
   }
+  .mr-2 {
+    margin-right: calc(var(--spacing) * 2);
+  }
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
   }
@@ -640,9 +631,6 @@
   .h-\[15px\] {
     height: 15px;
   }
-  .h-\[25px\] {
-    height: 25px;
-  }
   .h-\[36px\] {
     height: 36px;
   }
@@ -726,9 +714,6 @@
   }
   .w-\[15px\] {
     width: 15px;
-  }
-  .w-\[25px\] {
-    width: 25px;
   }
   .w-\[48px\] {
     width: 48px;
@@ -845,6 +830,10 @@
   }
   .-translate-y-1\/2 {
     --tw-translate-y: calc(calc(1/2 * 100%) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+  .translate-y-2 {
+    --tw-translate-y: calc(var(--spacing) * 2);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-y-4 {
@@ -1055,6 +1044,10 @@
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
   }
   .border-r {
     border-right-style: var(--tw-border-style);
@@ -2059,6 +2052,14 @@
       }
     }
   }
+  .group-hover\:translate-y-0 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        --tw-translate-y: calc(var(--spacing) * 0);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
   .group-hover\:bg-green-300 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -2174,6 +2175,16 @@
     &::before {
       content: var(--tw-content);
       mask: linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    }
+  }
+  .hover\:scale-105 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-scale-x: 105%;
+        --tw-scale-y: 105%;
+        --tw-scale-z: 105%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
     }
   }
   .hover\:border-black {
@@ -2763,11 +2774,6 @@
       height: 35px;
     }
   }
-  .lg\:h-\[45px\] {
-    @media (width >= 64rem) {
-      height: 45px;
-    }
-  }
   .lg\:w-5 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 5);
@@ -2786,11 +2792,6 @@
   .lg\:w-\[35px\] {
     @media (width >= 64rem) {
       width: 35px;
-    }
-  }
-  .lg\:w-\[45px\] {
-    @media (width >= 64rem) {
-      width: 45px;
     }
   }
   .lg\:w-full {
@@ -2951,11 +2952,6 @@
   .lg\:py-20 {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 20);
-    }
-  }
-  .lg\:pt-10 {
-    @media (width >= 64rem) {
-      padding-top: calc(var(--spacing) * 10);
     }
   }
   .lg\:pt-14 {
@@ -3393,6 +3389,21 @@
   initial-value: "";
   inherits: false;
 }
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -3458,6 +3469,9 @@
       --tw-duration: initial;
       --tw-ease: initial;
       --tw-content: "";
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
     }
   }
 }

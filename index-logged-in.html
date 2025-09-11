@@ -22,32 +22,30 @@
 </head>
 
 <body class="bg-gray-100">
-  <!-- ====== Header / Navbar ====== -->
-  <header id="site-header" class="fixed inset-x-0 top-0 z-50">
-    <div class="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
-      <div class="flex h-16 items-center justify-between">
-        <!-- Brand -->
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="./public/img/header_logo.png" alt="HostOmega" class="h-16 w-25 sm:w-35 lg:w-50 object-contain" />
-        </a>
-        <!-- Desktop nav -->
-        <nav class="hidden lg:flex items-center gap-8 text-[15px]">
-          <a href="index.html" class="font-medium text-white">Home</a>
+<!-- ====== Header / Navbar ====== -->
+<header id="site-header" class="fixed inset-x-0 top-0 z-50">
+  <div class="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
+    <div class="flex h-16 items-center justify-between">
+      <!-- Brand -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./public/img/header_logo.png" alt="HostOmega" class="h-16 w-25 sm:w-35 lg:w-50 object-contain" />
+      </a>
 
-          <a href="vps.html" class="font-medium text-slate-300 hover:text-white transition">VPS</a>
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-8 text-[15px]">
+        <a href="index.html" class="font-medium text-white">Home</a>
+        <a href="vps.html" class="font-medium text-slate-300 hover:text-white transition">VPS</a>
 
-     <!-- Web Hosting dropdown -->
+        <!-- Web Hosting dropdown -->
         <div class="relative group">
           <button id="whBtn" class="inline-flex items-center font-medium text-slate-300 hover:text-white cursor-pointer transition"
             aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
             Web Hosting
             <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path
-                d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
             </svg>
           </button>
-          <div id="whMenu"
-            class="transition-all opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20"
+          <div id="whMenu" class="transition-all opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20"
             role="menu" aria-labelledby="whBtn">
             <a href="web-hosting.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Web Hosting</a>
             <a href="#" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">BDIX Hosting</a>
@@ -56,136 +54,126 @@
           </div>
         </div>
 
+        <a href="#" class="font-medium text-slate-300 hover:text-white transition">Features</a>
+        <a href="about-us.html" class="font-medium text-slate-300 hover:text-white transition">About</a>
+        <a href="contact-us.html" class="font-medium text-slate-300 hover:text-white transition">Contact</a>
 
-          <a href="#" class="font-medium text-slate-300 hover:text-white transition">Features</a>
-          <a href="about-us.html" class="font-medium text-slate-300 hover:text-white transition">About</a>
-          <a href="contact-us.html" class="font-medium text-slate-300 hover:text-white transition">Contact</a>
-        </nav>
+      </nav>
 
-        <!-- Right: language + cart + auth -->
-        <div class="flex items-center gap-1 lg:gap-6">
-          <!-- Language -->
-          <div class="relative">
-            <button id="langBtn"
-              class="inline-flex items-center gap-2 rounded-md px-1.5 py-1 lg:px-2.5 lg:py-1.5 text-sm font-medium text-slate-200 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
-              aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu">
-              <!-- Globe -->
-              <svg class="h-4 lg:h-5 w-4 lg:w-5 opacity-90" viewBox="0 0 24 24" fill="none">
-                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5" />
-                <path d="M3 12h18M12 3c3.5 3.3 3.5 14.7 0 18M12 3c-3.5 3.3-3.5 14.7 0 18" stroke="currentColor"
-                  stroke-width="1.5" />
-              </svg>
-              <span id="langLabel">English</span>
-              <!-- Chevron -->
-              <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
-              </svg>
-            </button>
+      <!-- Right: language + cart + my account -->
+      <div class="flex items-center gap-1 lg:gap-6">
+        <!-- Language -->
+        <div class="relative">
+          <button id="langBtn" class="inline-flex items-center gap-2 rounded-md px-1.5 py-1 lg:px-2.5 lg:py-1.5 text-sm font-medium text-slate-200 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+            aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu">
+            <!-- Globe -->
+            <svg class="h-4 lg:h-5 w-4 lg:w-5 opacity-90" viewBox="0 0 24 24" fill="none">
+              <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5" />
+              <path d="M3 12h18M12 3c3.5 3.3 3.5 14.7 0 18M12 3c-3.5 3.3-3.5 14.7 0 18" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+            <span id="langLabel">English</span>
+            <!-- Chevron -->
+            <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+            </svg>
+          </button>
 
-            <!-- Menu -->
-            <div id="langMenu"
-              class="absolute right-0 mt-2 w-44 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur hidden shadow-xl shadow-black/20"
-              role="menu" aria-labelledby="langBtn">
-              <button data-lang="en"
-                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
-                role="menuitem">English</button>
-              <button data-lang="bn"
-                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
-                role="menuitem">বাংলা</button>
-              <button data-lang="he"
-                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
-                role="menuitem">עברית</button>
-            </div>
+          <!-- Menu -->
+          <div id="langMenu" class="absolute right-0 mt-2 w-44 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur hidden shadow-xl shadow-black/20"
+            role="menu" aria-labelledby="langBtn">
+            <button data-lang="en" class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">English</button>
+            <button data-lang="bn" class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">বাংলা</button>
+            <button data-lang="he" class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">עברית</button>
           </div>
-
-          <!-- Cart -->
-          <a href="#cart" class="inline-flex items-center justify-center rounded-md text-slate-200 hover:bg-white/5"
-            aria-label="Cart">
-            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
-              <path d="M3 4h2l2.4 12a1 1 0 0 0 .98.8h9.64a1 1 0 0 0 .98-.8L21 7H6" stroke="currentColor"
-                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <circle cx="9" cy="20" r="1" fill="currentColor" />
-              <circle cx="18" cy="20" r="1" fill="currentColor" />
-            </svg>
-          </a>
-
-          <!-- Auth -->
-          <a href="#" class="hidden lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition">Log
-            in</a>
-          <a href="#"
-            class="hidden lg:inline-flex items-center gap-2 rounded-full bg-blue-500/100 px-5 py-2 text-sm font-semibold text-white hover:opacity-95 shadow-lg shadow-sky-500/20 transition">
-            Sign Up
-            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
-            </svg>
-          </a>
         </div>
 
-        <!-- Mobile menu button -->
-        <button id="navToggle"
-          class="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-slate-200 hover:bg-white/5"
-          aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <!-- Cart -->
+        <a href="#cart" class="inline-flex items-center justify-center rounded-md text-slate-200 hover:bg-white/5" aria-label="Cart">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
-            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path d="M3 4h2l2.4 12a1 1 0 0 0 .98.8h9.64a1 1 0 0 0 .98-.8L21 7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="9" cy="20" r="1" fill="currentColor" />
+            <circle cx="18" cy="20" r="1" fill="currentColor" />
           </svg>
-        </button>
-      </div>
-    </div>
-    <!-- Mobile nav -->
-    <!-- Backdrop -->
-    <div id="mobileOverlay"
-      class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity lg:hidden">
-    </div>
-
-    <!-- Mobile flyout nav -->
-    <div id="mobileNav" class="fixed left-0 top-0 z-50 h-screen w-[88%] max-w-sm overflow-y-auto
-         border-r border-white/10 bg-slate-950/95 px-4 py-6 sm:px-6
-         transform -translate-x-full transition-transform duration-300
-         lg:hidden" aria-hidden="true">
-
-      <!-- Header row: Brand + Close -->
-      <div class="flex items-center justify-between mb-6">
-        <!-- Brand -->
-        <a href="index.html" class="flex items-center gap-3">
-          <img src="./public/img/header_logo.png" alt="HostOmega" class="h-12 w-35 object-contain" />
         </a>
 
-        <!-- Close button -->
-        <button id="mobileNavClose"
-          class="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-300 hover:bg-white/5 focus:outline-none"
-          aria-label="Close menu">
-          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none">
-            <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        <!-- My Account dropdown -->
+        <div class="relative group">
+        <button id="myAccountBtn" class="inline-flex items-center justify-center font-medium text-slate-300 hover:text-white border-2 border-white rounded-full px-4 py-2 transition-all duration-300 ease-in-out hover:bg-white/10 hover:scale-105"
+          aria-haspopup="menu" aria-expanded="false" aria-controls="myAccountMenu">
+          <svg class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 12c2.486 0 4.5-2.014 4.5-4.5S14.486 3 12 3 7.5 5.014 7.5 7.5 9.514 12 12 12z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 21c0-3.314 4.5-4.5 6-4.5S18 17.686 18 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
+          <span class="text-white font-semibold">Hello Users!</span>
         </button>
+          <div id="myAccountMenu" class="transition-all opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20"
+            role="menu" aria-labelledby="myAccountBtn">
+            <a href="account-settings.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Account Settings</a>
+            <a href="order-history.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Order History</a>
+            <a href="logout.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Log out</a>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Nav links -->
-      <nav class="grid gap-3 text-sm">
-        <a href="index.hml" class="py-2 font-medium text-white">Home</a>
-        <a href="vps.html" class="py-2 text-slate-300 hover:text-white">VPS</a>
-        <a href="web-hosting.html" class="py-2 text-slate-300 hover:text-white">Solutions</a>
-        <a href="#" class="py-2 text-slate-300 hover:text-white">Features</a>
-        <a href="about-us.html" class="py-2 text-slate-300 hover:text-white">About</a>
-        <a href="contact-us.html" class="py-2 text-slate-300 hover:text-white">Contact</a>
+      <!-- Mobile menu button -->
+      <button id="navToggle" class="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-slate-200 hover:bg-white/5"
+        aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile nav -->
+  <!-- Backdrop -->
+  <div id="mobileOverlay" class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity lg:hidden">
+  </div>
 
-        <div class="mt-4 flex items-center gap-4">
-          <a href="#" class="text-slate-300 hover:text-white">Log in</a>
-          <a href="#"
-            class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 px-4 py-2 font-semibold text-slate-900">
-            Sign Up
-            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-              <path
-                d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
-            </svg>
-          </a>
-        </div>
-      </nav>
+  <!-- Mobile flyout nav -->
+  <div id="mobileNav" class="fixed left-0 top-0 z-50 h-screen w-[88%] max-w-sm overflow-y-auto
+    border-r border-white/10 bg-slate-950/95 px-4 py-6 sm:px-6
+    transform -translate-x-full transition-transform duration-300
+    lg:hidden" aria-hidden="true">
+    <!-- Header row: Brand + Close -->
+    <div class="flex items-center justify-between mb-6">
+      <!-- Brand -->
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="./public/img/header_logo.png" alt="HostOmega" class="h-12 w-35 object-contain" />
+      </a>
+
+      <!-- Close button -->
+      <button id="mobileNavClose" class="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-300 hover:bg-white/5 focus:outline-none"
+        aria-label="Close menu">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none">
+          <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </button>
     </div>
 
-  </header>
+    <!-- Nav links -->
+    <nav class="grid gap-3 text-sm">
+      <a href="index.html" class="py-2 font-medium text-white">Home</a>
+      <a href="vps.html" class="py-2 text-slate-300 hover:text-white">VPS</a>
+      <a href="web-hosting.html" class="py-2 text-slate-300 hover:text-white">Solutions</a>
+      <a href="#" class="py-2 text-slate-300 hover:text-white">Features</a>
+      <a href="about-us.html" class="py-2 text-slate-300 hover:text-white">About</a>
+      <a href="contact-us.html" class="py-2 text-slate-300 hover:text-white">Contact</a>
+
+      <div class="mt-4 flex items-center gap-4">
+        <a href="#" class="text-slate-300 hover:text-white">Log in</a>
+        <a href="#"
+          class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 px-4 py-2 font-semibold text-slate-900">
+          Sign Up
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
+          </svg>
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- ====== End Header / Navbar ====== -->
   <!-- ====== Hero / Banner ====== -->
   <section id="bannerStar" class="relative neon-hero pt-30 pb-120 sm:pt-30 sm:pb-68 z-0">
     <div class="meteors hidden lg:block">

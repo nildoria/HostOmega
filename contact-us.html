@@ -39,7 +39,8 @@
 
           <!-- Web Hosting dropdown -->
           <div class="relative group">
-            <button id="whBtn" class="inline-flex items-center font-medium text-slate-300 hover:text-white transition"
+            <button id="whBtn"
+              class="inline-flex items-center font-medium text-slate-300 hover:text-white cursor-pointer transition"
               aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
               Web Hosting
               <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor"
@@ -49,7 +50,7 @@
               </svg>
             </button>
             <div id="whMenu"
-              class="absolute right-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur hidden group-hover:block shadow-xl shadow-black/20"
+              class="transition-all opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20"
               role="menu" aria-labelledby="whBtn">
               <a href="web-hosting.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
                 role="menuitem">Web Hosting</a>

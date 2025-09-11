@@ -37,24 +37,23 @@
 
           <a href="vps.html" class="font-medium text-slate-300 hover:text-white transition">VPS</a>
 
-        <!-- Web Hosting dropdown -->
+       <!-- Web Hosting dropdown -->
         <div class="relative group">
-          <button
-            id="whBtn"
-            class="inline-flex items-center font-medium text-slate-300 hover:text-white transition"
+          <button id="whBtn" class="inline-flex items-center font-medium text-slate-300 hover:text-white cursor-pointer transition"
             aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
             Web Hosting
             <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
+              <path
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
             </svg>
           </button>
           <div id="whMenu"
-            class="absolute right-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur hidden group-hover:block shadow-xl shadow-black/20"
+            class="transition-all opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20"
             role="menu" aria-labelledby="whBtn">
             <a href="web-hosting.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Web Hosting</a>
             <a href="#" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">BDIX Hosting</a>
-            <a href="#"      class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Reseller</a>
-            <a href="#"     class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Dedicated</a>
+            <a href="#" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Reseller</a>
+            <a href="#" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Dedicated</a>
           </div>
         </div>
 
@@ -222,6 +221,18 @@
     <h2
       class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-6">
       BDIX KVM VPS Plans</h2>
+
+  <!-- Bottom CPU switcher (drop right after your grid) -->
+    <div class="flex items-center justify-center gap-2 mt-6 mb-3">
+      <button id="cpuAmd" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold
+           border-blue-500 text-blue-600 bg-blue-50 hover:bg-blue-100 transition h-[36px]">
+        <img src="./public/img/amd-logo.png" alt="">
+      </button>
+      <button id="cpuIntel" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold
+           border-gray-300 text-slate-700 bg-white hover:bg-gray-50 transition h-[36px]">
+        <img src="./public/img/intel.png" alt="">
+      </button>
+    </div>
 
     <!-- Pricing Toggle -->
     <div class="inline-flex items-center justify-center bg-white rounded-full shadow-md px-1 py-1 lg:mb-10 gap-1">
@@ -493,20 +504,6 @@
 
     </div>
     <!-- /Pricing Grid -->
-
-
-    <!-- Bottom CPU switcher (drop right after your grid) -->
-    <div class="flex items-center justify-center gap-2 mt-6">
-      <button id="cpuAmd" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold
-           border-blue-500 text-blue-600 bg-blue-50 hover:bg-blue-100 transition h-[36px]">
-        <img src="./public/img/amd-logo.png" alt="">
-      </button>
-      <button id="cpuIntel" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold
-           border-gray-300 text-slate-700 bg-white hover:bg-gray-50 transition h-[36px]">
-        <img src="./public/img/intel.png" alt="">
-      </button>
-    </div>
-
 
   </section>
   <!-- ======= End Pricing Block ======  -->
@@ -833,6 +830,151 @@
     </div>
   </section>
   <!-- ======= End Platform / Coverage Block ======  -->
+     <!-- ======= Partners Block ======  -->
+
+  <section class="relative bg-gradient-to-b from-[#02060A] to-[#0a1c3a] text-white py-10 sm:py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Side -->
+      <div class="text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+        <!-- Tag -->
+        <span
+          class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex font-['Outfit',_sans-serif]font-['Outfit',_sans-serif]"><img
+            class="mr-1 block" src="./public/img/flash-icon.png" alt=""> Partners
+        </span>
+
+        <!-- Heading -->
+        <h2 class="text-[34px] sm:text-[42px] lg:text-[50px] font-['Outfit',_sans-serif] font-bold leading-tight mb-6">
+          Connect & Create <br>
+          with <span class="text-[#328DE6]">Our Technology <br> Partners</span> a Click
+        </h2>
+
+        <!-- Description -->
+        <p class="text-lg text-gray-300 mb-8">
+          Experience lightning-fast hosting, optimized performance,
+          and reliable uptime across 150+ countries — from Asia to
+          Europe and beyond.
+        </p>
+
+        <!-- Button & Stats -->
+        <div class="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
+          <a href="#" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 transition rounded-full font-semibold">
+            Explore Location →
+          </a>
+          <div class="flex items-center gap-3">
+            <div class="p-3 rounded-lg bg-white/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                <g clip-path="url(#clip0_75_1427)">
+                  <path
+                    d="M27.0528 28.7285C27.8294 28.7285 28.459 28.0989 28.459 27.3223C28.459 26.5456 27.8294 25.916 27.0528 25.916C26.2761 25.916 25.6465 26.5456 25.6465 27.3223C25.6465 28.0989 26.2761 28.7285 27.0528 28.7285Z"
+                    fill="white" />
+                  <path
+                    d="M35.6149 29.0846L34.8077 28.4195C34.8591 28.0567 34.8844 27.6896 34.8844 27.3219C34.8844 26.9542 34.8591 26.5871 34.8077 26.2243L35.6149 25.5592C36.0129 25.2315 36.1163 24.6641 35.8582 24.2176L34.1433 21.2476C33.8859 20.8011 33.3431 20.6071 32.8601 20.7878L31.8792 21.1548C31.3006 20.702 30.6586 20.3308 29.9794 20.0558L29.8078 19.0251C29.7228 18.5167 29.2826 18.144 28.7672 18.144H25.3381C24.8227 18.144 24.3825 18.5167 24.2975 19.0251L24.1259 20.0558C23.4467 20.3308 22.804 20.702 22.2254 21.1548L21.2452 20.7878C20.7622 20.6071 20.2194 20.8011 19.9613 21.2476L18.2471 24.2176C17.9891 24.6641 18.0917 25.2315 18.4897 25.5592L19.2976 26.2243C19.2462 26.5871 19.2209 26.9542 19.2209 27.3219C19.2209 27.6896 19.2462 28.0567 19.2976 28.4195L18.4897 29.0846C18.0917 29.4123 17.9891 29.9797 18.2471 30.4262L19.9613 33.3955C20.2194 33.842 20.7622 34.0367 21.2452 33.856L22.2254 33.4883C22.804 33.9411 23.4467 34.313 24.1259 34.5873L24.2975 35.6187C24.3825 36.1271 24.8227 36.4998 25.3381 36.4998H28.7672C29.2826 36.4998 29.7228 36.1271 29.8078 35.6187L29.9794 34.5873C30.6586 34.313 31.3006 33.9411 31.8792 33.4883L32.8601 33.856C33.3431 34.0374 33.8859 33.842 34.1433 33.3955L35.8582 30.4262C36.1163 29.9797 36.0129 29.4123 35.6149 29.0846ZM27.0523 30.8375C25.1138 30.8375 23.5367 29.2604 23.5367 27.3219C23.5367 25.3834 25.1138 23.8063 27.0523 23.8063C28.9908 23.8063 30.5679 25.3834 30.5679 27.3219C30.5679 29.2604 28.9908 30.8375 27.0523 30.8375Z"
+                    fill="white" />
+                  <path
+                    d="M10.7647 14.6069C12.4539 14.6069 13.8233 13.2376 13.8233 11.5483C13.8233 9.85913 12.4539 8.48975 10.7647 8.48975C9.07546 8.48975 7.70609 9.85913 7.70609 11.5483C7.70609 13.2376 9.07546 14.6069 10.7647 14.6069Z"
+                    fill="white" />
+                  <path
+                    d="M19.2776 18.8993L21.387 15.2452C21.645 14.7987 21.5416 14.2313 21.1437 13.9036L20.0447 12.9987C20.1192 12.5206 20.1565 12.0347 20.1565 11.5482C20.1565 11.0616 20.1192 10.5764 20.0447 10.0976L21.1437 9.1927C21.5416 8.86505 21.645 8.29763 21.387 7.85114L19.2776 4.19702C19.0195 3.75053 18.4767 3.55647 17.9944 3.73717L16.6592 4.23709C15.9026 3.62749 15.0504 3.1346 14.1476 2.78515L13.9142 1.38101C13.8291 0.872655 13.3889 0.5 12.8736 0.5H8.65482C8.13943 0.5 7.69928 0.872655 7.6142 1.38101L7.38076 2.78515C6.47795 3.1346 5.62577 3.62749 4.86921 4.23709L3.53398 3.73717C3.05164 3.55647 2.50883 3.75053 2.25078 4.19702L0.141416 7.85114C-0.11663 8.29763 -0.0132708 8.86505 0.384696 9.1927L1.48368 10.0976C1.40915 10.5764 1.37188 11.0616 1.37188 11.5482C1.37188 12.0347 1.40915 12.5206 1.48368 12.9987L0.384696 13.9036C-0.0132708 14.2313 -0.11663 14.7987 0.141416 15.2452L2.25078 18.8993C2.50883 19.3458 3.05164 19.5405 3.53398 19.3598L4.86921 18.8592C5.62577 19.4688 6.47795 19.9617 7.38076 20.3112L7.6142 21.7153C7.69928 22.2237 8.13943 22.5963 8.65482 22.5963H12.8736C13.3889 22.5963 13.8291 22.2237 13.9142 21.7153L14.1476 20.3112C15.0504 19.9617 15.9026 19.4688 16.6592 18.8592L17.9944 19.3598C18.4774 19.5405 19.0195 19.3458 19.2776 18.8993ZM10.7642 16.7161C7.91443 16.7161 5.59624 14.3979 5.59624 11.5482C5.59624 8.6984 7.91443 6.38021 10.7642 6.38021C13.6139 6.38021 15.9321 8.6984 15.9321 11.5482C15.9321 14.3979 13.6139 16.7161 10.7642 16.7161Z"
+                    fill="white" />
+                  <path
+                    d="M25.0028 4.8602L25.9977 3.94965V14.2624C25.9977 14.8453 26.4702 15.3171 27.0524 15.3171C27.6353 15.3171 28.1071 14.8453 28.1071 14.2624V3.95035L29.102 4.8602C29.3045 5.04582 29.5597 5.13723 29.8136 5.13723C30.099 5.13723 30.3838 5.02191 30.5919 4.7948C30.985 4.3652 30.9554 3.69793 30.5258 3.30418L27.7646 0.777148C27.5706 0.594336 27.3111 0.50293 27.0524 0.50293C26.7929 0.50293 26.5342 0.594336 26.3401 0.777148L23.5789 3.30418C23.1493 3.69793 23.1198 4.3652 23.5128 4.7948C23.9059 5.22441 24.5732 5.25395 25.0028 4.8602Z"
+                    fill="white" />
+                  <path
+                    d="M11.4765 24.983C11.2824 24.8002 11.0237 24.7095 10.7642 24.7095C10.5048 24.7095 10.246 24.8002 10.052 24.983L7.2908 27.5107C6.86119 27.9038 6.83166 28.571 7.2247 29.0006C7.61775 29.431 8.28502 29.4598 8.71462 29.0667L9.70955 28.1562V35.4455C9.70955 36.0277 10.182 36.5002 10.7642 36.5002C11.3471 36.5002 11.8189 36.0277 11.8189 35.4455V28.1562L12.8138 29.0667C13.0163 29.2524 13.2716 29.3438 13.5254 29.3438C13.8109 29.3438 14.0956 29.2285 14.3038 29.0006C14.6968 28.571 14.6673 27.9038 14.2377 27.5107L11.4765 24.983Z"
+                    fill="white" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_75_1427">
+                    <rect width="36" height="36" fill="white" transform="translate(0 0.5)" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div>
+              <p class="text-2xl font-bold">36</p>
+              <p class="text-gray-400 text-sm">OS Supported</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Orbit Layout -->
+      <div class="relative flex items-center justify-center mx-auto lg:mx-0 w-full sm:w-[75%] lg:w-full">
+        <!-- Concentric Circles -->
+        <!-- <div class="absolute w-[544px] h-[544px] rounded-full border border-white/10"></div>
+      <div class="absolute w-[344px] h-[344px] rounded-full border border-white/10"></div>
+      <div class="absolute w-[144px] h-[144px] rounded-full border border-white/10"></div> -->
+
+        <!-- Center Icon -->
+        <div class="relative w-full h-full rounded-full bg-[#0d1c2b] flex items-center justify-center z-0">
+          <img src="./public/img/circle.svg" alt="Main Icon" class="w-full h-full">
+        </div>
+
+        <!-- Orbit Icons -->
+        <div
+          class="absolute top-10 left-1/6 -translate-x-1/2 flex flex-col items-center animate-pin-bounce [animation-duration:2.4s] [animation-delay:200ms]">
+          <img src="./public/img/arch-linux.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Alma Linux</span>
+        </div>
+
+        <div
+          class="absolute right-1/5 top-0 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
+          <img src="./public/img/rocky-linux.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
+        </div>
+
+        <div
+          class="absolute -right-6 top-1/3 flex flex-col items-center animate-pin-bounce  [animation-duration:2.0s] [animation-delay:400ms]">
+          <img src="./public/img/arch-linux.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Arch Linux</span>
+        </div>
+
+        <div
+          class="absolute bottom-1/4 right-1/4 flex flex-col items-center animate-pin-bounce [animation-duration:3.4s] [animation-delay:500ms]">
+          <img src="./public/img/ubuntu.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Ubuntu</span>
+        </div>
+
+        <div
+          class="absolute right-1/2 bottom-10 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
+          <img src="./public/img/centos.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
+        </div>
+        <div
+          class="absolute right-1/2 bottom-10 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
+          <img src="./public/img/centos.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
+        </div>
+
+        <div
+          class="absolute bottom-1/23 left-1/7 flex flex-col items-center animate-pin-bounce [animation-duration:3.5s] [animation-delay:300ms]">
+          <img src="./public/img/docker.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Docker</span>
+        </div>
+
+        <div class="absolute left-1/11 top-1/2 flex flex-col items-center animate-pin-bounce">
+          <img src="./public/img/rocky-linux.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
+        </div>
+
+        <div class="absolute left-1/2.3 top-1/5 flex flex-col items-center animate-pin-bounce">
+          <img src="./public/img/centos.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= End Partners Block ========= -->
   <!-- ======= FAQ Block ======  -->
   <section class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 lg:pt-32 lg:pb-32 bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
