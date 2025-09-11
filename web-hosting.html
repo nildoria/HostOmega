@@ -38,25 +38,27 @@
           <a href="vps.html" class="font-medium text-slate-300 hover:text-white transition">VPS</a>
 
           <!-- Web Hosting dropdown -->
-          <div class="relative nav-dd">
-            <button
-              id="whBtn"
-              class="inline-flex items-center font-medium text-slate-300 hover:text-white transition"
-              aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
-              Web Hosting
-              <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
-              </svg>
-            </button>
-            <div id="whMenu"
-              class="absolute right-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur hidden shadow-xl shadow-black/20"
-              role="menu" aria-labelledby="whBtn">
-              <a href="web-hosting.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Web Hosting</a>
-              <a href="#" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">BDIX Hosting</a>
-              <a href="#"      class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Reseller</a>
-              <a href="#"     class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Dedicated</a>
-            </div>
+        <div class="relative group">
+          <button
+            id="whBtn"
+            class="inline-flex items-center font-medium text-slate-300 hover:text-white transition"
+            aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
+            Web Hosting
+            <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
+            </svg>
+          </button>
+          <div id="whMenu"
+            class="absolute right-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur hidden group-hover:block shadow-xl shadow-black/20"
+            role="menu" aria-labelledby="whBtn">
+            <a href="web-hosting.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Web Hosting</a>
+            <a href="#" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">BDIX Hosting</a>
+            <a href="#"      class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Reseller</a>
+            <a href="#"     class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Dedicated</a>
           </div>
+        </div>
+
+
 
           <a href="#" class="font-medium text-slate-300 hover:text-white transition">Features</a>
           <a href="about-us.html" class="font-medium text-slate-300 hover:text-white transition">About</a>
