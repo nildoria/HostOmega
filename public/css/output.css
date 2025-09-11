@@ -2052,6 +2052,13 @@
   .\[scrollbar-width\:none\] {
     scrollbar-width: none;
   }
+  .group-hover\:block {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        display: block;
+      }
+    }
+  }
   .group-hover\:bg-green-300 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
