@@ -307,8 +307,14 @@
   .top-10 {
     top: calc(var(--spacing) * 10);
   }
+  .top-\[-10\%\] {
+    top: -10%;
+  }
   .top-\[-15\%\] {
     top: -15%;
+  }
+  .top-\[-18\%\] {
+    top: -18%;
   }
   .top-\[10\%\] {
     top: 10%;
@@ -417,6 +423,12 @@
   }
   .left-\[15\%\] {
     left: 15%;
+  }
+  .left-\[18\%\] {
+    left: 18%;
+  }
+  .left-\[20\%\] {
+    left: 20%;
   }
   .left-\[30\%\] {
     left: 30%;
@@ -625,6 +637,9 @@
   .h-80 {
     height: calc(var(--spacing) * 80);
   }
+  .h-\[15px\] {
+    height: 15px;
+  }
   .h-\[25px\] {
     height: 25px;
   }
@@ -708,6 +723,9 @@
   }
   .w-56 {
     width: calc(var(--spacing) * 56);
+  }
+  .w-\[15px\] {
+    width: 15px;
   }
   .w-\[25px\] {
     width: 25px;
@@ -1468,6 +1486,9 @@
   }
   .pt-3 {
     padding-top: calc(var(--spacing) * 3);
+  }
+  .pt-5 {
+    padding-top: calc(var(--spacing) * 5);
   }
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
@@ -2727,6 +2748,11 @@
       height: calc(var(--spacing) * 12);
     }
   }
+  .lg\:h-\[35px\] {
+    @media (width >= 64rem) {
+      height: 35px;
+    }
+  }
   .lg\:h-\[45px\] {
     @media (width >= 64rem) {
       height: 45px;
@@ -2745,6 +2771,11 @@
   .lg\:w-50 {
     @media (width >= 64rem) {
       width: calc(var(--spacing) * 50);
+    }
+  }
+  .lg\:w-\[35px\] {
+    @media (width >= 64rem) {
+      width: 35px;
     }
   }
   .lg\:w-\[45px\] {
@@ -2910,6 +2941,16 @@
   .lg\:py-20 {
     @media (width >= 64rem) {
       padding-block: calc(var(--spacing) * 20);
+    }
+  }
+  .lg\:pt-10 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 10);
+    }
+  }
+  .lg\:pt-14 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 14);
     }
   }
   .lg\:pt-20 {
