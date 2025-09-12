@@ -691,8 +691,14 @@
   .h-full {
     height: 100%;
   }
+  .h-lvh {
+    height: 100lvh;
+  }
   .h-screen {
     height: 100vh;
+  }
+  .min-h-\[550px\] {
+    min-height: 550px;
   }
   .min-h-\[560px\] {
     min-height: 560px;
