@@ -347,3 +347,328 @@ const raf = (fn) => requestAnimationFrame(fn);
   }
 })();
 
+/* ========= 9) pOPUP ========= */
+document.addEventListener('DOMContentLoaded', function() {
+    const signupBtn = document.getElementById('signupBtn');
+    const signupModal = document.getElementById('signupModal');
+    const modalContent = document.getElementById('modalContent');
+    const closeModal = document.getElementById('closeModal');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const passwordHelp = document.getElementById('passwordHelp');
+    const signupForm = document.getElementById('signupForm');
+
+    // Open modal with Tailwind animations
+    signupBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        signupModal.classList.remove('hidden');
+        signupModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        
+        // Trigger enter animation
+        setTimeout(() => {
+            signupModal.classList.remove('opacity-0');
+            signupModal.classList.add('opacity-100');
+            modalContent.classList.remove('scale-95', 'translate-y-4');
+            modalContent.classList.add('scale-100', 'translate-y-0');
+        }, 10);
+    });
+
+    // Close modal functions
+    function closeModalFunction() {
+        // Trigger exit animation
+        signupModal.classList.remove('opacity-100');
+        signupModal.classList.add('opacity-0');
+        modalContent.classList.remove('scale-100', 'translate-y-0');
+        modalContent.classList.add('scale-95', 'translate-y-4');
+        
+        // Hide modal after animation
+        setTimeout(() => {
+            signupModal.classList.add('hidden');
+            signupModal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    // Close modal events
+    closeModal.addEventListener('click', closeModalFunction);
+
+    // Close on backdrop click
+    signupModal.addEventListener('click', function(e) {
+        if (e.target === signupModal) {
+            closeModalFunction();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !signupModal.classList.contains('hidden')) {
+            closeModalFunction();
+        }
+    });
+
+    // Password toggle functionality
+    togglePassword.addEventListener('click', function() {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        
+        // Update icon with Tailwind transitions
+        if (type === 'text') {
+            this.innerHTML = `
+                <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.878 9.878L3 3m6.878 6.878L21 21"></path>
+                </svg>
+            `;
+        } else {
+            this.innerHTML = `
+                <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+            `;
+        }
+    });
+
+    // Form validation with Tailwind classes
+    const inputs = signupForm.querySelectorAll('input[required]');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            if (this.value.trim() === '') {
+                this.classList.remove('border-gray-300', 'focus:border-blue-500');
+                this.classList.add('border-red-500', 'focus:border-red-500', 'focus:ring-red-500');
+            } else {
+                this.classList.remove('border-red-500', 'focus:border-red-500', 'focus:ring-red-500');
+                this.classList.add('border-gray-300', 'focus:border-blue-500', 'focus:ring-blue-500');
+            }
+        });
+
+        input.addEventListener('input', function() {
+            if (this.classList.contains('border-red-500') && this.value.trim() !== '') {
+                this.classList.remove('border-red-500', 'focus:border-red-500', 'focus:ring-red-500');
+                this.classList.add('border-gray-300', 'focus:border-blue-500', 'focus:ring-blue-500');
+            }
+        });
+    });
+
+    // Password strength with Tailwind classes
+    passwordInput.addEventListener('input', function() {
+        const password = this.value;
+        
+        if (password.length === 0) {
+            passwordHelp.textContent = 'Must be at least 8 characters';
+            passwordHelp.className = 'text-xs text-gray-500 mt-1 transition-colors duration-200';
+        } else if (password.length < 8) {
+            passwordHelp.textContent = 'Password too short';
+            passwordHelp.className = 'text-xs text-red-500 mt-1 transition-colors duration-200';
+        } else {
+            passwordHelp.textContent = 'Strong password ✓';
+            passwordHelp.className = 'text-xs text-green-500 mt-1 transition-colors duration-200';
+        }
+    });
+
+    // Form submission
+    signupForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Add loading state with Tailwind
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalContent = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = `
+            <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Creating Account...
+        `;
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+            alert('Account created successfully!');
+            closeModalFunction();
+            signupForm.reset();
+            // Reset password help text
+            passwordHelp.textContent = 'Must be at least 8 characters';
+            passwordHelp.className = 'text-xs text-gray-500 mt-1 transition-colors duration-200';
+        }, 2000);
+    });
+});
+
+
+
+
+// Login
+
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded'); // Debug log
+    
+    // Get all required elements
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtnInModal = document.querySelector('#signupModal #signupBtn'); // Updated selector
+    const signupModal = document.getElementById('signupModal');
+    const loginModal = document.getElementById('loginModal');
+    const closeSignupModal = document.getElementById('closeModal');
+    const closeLoginModal = document.getElementById('closeLoginModal');
+    
+    // Debug: Check if elements exist
+    console.log('Elements found:', {
+        loginBtn: !!loginBtn,
+        signupBtnInModal: !!signupBtnInModal,
+        signupModal: !!signupModal,
+        loginModal: !!loginModal,
+        closeSignupModal: !!closeSignupModal,
+        closeLoginModal: !!closeLoginModal
+    });
+
+    // Modal animation functions
+    function openModal(modal) {
+        if (!modal) {
+            console.error('Modal element not found');
+            return;
+        }
+        
+        console.log('Opening modal:', modal.id);
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        
+        // Trigger animation
+        setTimeout(() => {
+            modal.classList.remove('opacity-0');
+            modal.classList.add('opacity-100');
+            
+            const content = modal.querySelector('[id$="Content"], #modalContent');
+            if (content) {
+                content.classList.remove('scale-95', 'translate-y-4');
+                content.classList.add('scale-100', 'translate-y-0');
+            }
+        }, 10);
+    }
+
+    function closeModal(modal) {
+        if (!modal) {
+            console.error('Modal element not found');
+            return;
+        }
+        
+        console.log('Closing modal:', modal.id);
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0');
+        
+        const content = modal.querySelector('[id$="Content"], #modalContent');
+        if (content) {
+            content.classList.remove('scale-100', 'translate-y-0');
+            content.classList.add('scale-95', 'translate-y-4');
+        }
+        
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    // Event listeners with error checking
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Login button clicked');
+            openModal(loginModal);
+        });
+    } else {
+        console.error('Login button not found');
+    }
+
+    if (signupBtnInModal) {
+        signupBtnInModal.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Signup button clicked');
+            openModal(signupModal);
+        });
+    }
+
+    if (closeSignupModal) {
+        closeSignupModal.addEventListener('click', function() {
+            console.log('Close signup modal clicked');
+            closeModal(signupModal);
+        });
+    }
+
+    if (closeLoginModal) {
+        closeLoginModal.addEventListener('click', function() {
+            console.log('Close login modal clicked');
+            closeModal(loginModal);
+        });
+    }
+
+    // Close on backdrop click
+    [signupModal, loginModal].forEach(modal => {
+        if (modal) {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    console.log('Backdrop clicked');
+                    closeModal(modal);
+                }
+            });
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            console.log('Escape key pressed');
+            if (signupModal && !signupModal.classList.contains('hidden')) {
+                closeModal(signupModal);
+            }
+            if (loginModal && !loginModal.classList.contains('hidden')) {
+                closeModal(loginModal);
+            }
+        }
+    });
+
+    // Password toggle functionality
+    function setupPasswordToggle(passwordId, toggleId) {
+        const passwordInput = document.getElementById(passwordId);
+        const toggleBtn = document.getElementById(toggleId);
+        
+        if (passwordInput && toggleBtn) {
+            toggleBtn.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                console.log('Password visibility toggled:', type);
+            });
+        }
+    }
+
+    // Setup password toggles
+    setupPasswordToggle('password', 'togglePassword');
+    setupPasswordToggle('loginPassword', 'toggleLoginPassword');
+
+    // Modal switching functionality
+    const switchToSignup = document.getElementById('switchToSignup');
+    const switchToLogin = document.querySelector('#signupModal .text-blue-500[href="#"]');
+    
+    if (switchToSignup) {
+        switchToSignup.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Switch to signup clicked');
+            closeModal(loginModal);
+            setTimeout(() => openModal(signupModal), 350);
+        });
+    }
+
+    if (switchToLogin) {
+        switchToLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Switch to login clicked');
+            closeModal(signupModal);
+            setTimeout(() => openModal(loginModal), 350);
+        });
+    }
+
+    console.log('All event listeners set up');
+});
