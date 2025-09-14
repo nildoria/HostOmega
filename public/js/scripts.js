@@ -672,3 +672,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('All event listeners set up');
 });
+
+// Dark Mode Toggle
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark');
+});
