@@ -359,12 +359,6 @@
   .right-\[3\%\] {
     right: 3%;
   }
-  .right-\[5\%\] {
-    right: 5%;
-  }
-  .right-\[10\%\] {
-    right: 10%;
-  }
   .right-\[15\%\] {
     right: 15%;
   }
@@ -397,9 +391,6 @@
   }
   .bottom-\[8\%\] {
     bottom: 8%;
-  }
-  .bottom-\[10\%\] {
-    bottom: 10%;
   }
   .bottom-\[17\%\] {
     bottom: 17%;
@@ -436,9 +427,6 @@
   }
   .left-\[2\%\] {
     left: 2%;
-  }
-  .left-\[10\%\] {
-    left: 10%;
   }
   .left-\[12\%\] {
     left: 12%;
@@ -1174,9 +1162,6 @@
   }
   .bg-\[\#0d1c2b\] {
     background-color: #0d1c2b;
-  }
-  .bg-\[\#000\] {
-    background-color: #000;
   }
   .bg-\[\#1a253a\] {
     background-color: #1a253a;
@@ -2166,6 +2151,13 @@
   }
   .\[scrollbar-width\:none\] {
     scrollbar-width: none;
+  }
+  .group-hover\:visible {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        visibility: visible;
+      }
+    }
   }
   .group-hover\:translate-x-1 {
     &:is(:where(.group):hover *) {
@@ -3198,11 +3190,6 @@
       padding-top: calc(var(--spacing) * 24);
     }
   }
-  .lg\:pt-25 {
-    @media (width >= 64rem) {
-      padding-top: calc(var(--spacing) * 25);
-    }
-  }
   .lg\:pt-32 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 32);
@@ -3211,11 +3198,6 @@
   .lg\:pt-40 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 40);
-    }
-  }
-  .lg\:pt-55 {
-    @media (width >= 64rem) {
-      padding-top: calc(var(--spacing) * 55);
     }
   }
   .lg\:pb-20 {
@@ -3307,39 +3289,9 @@
       display: inline;
     }
   }
-  .dark\:bg-\[\#0a1c3a\] {
-    &:where(.dark, .dark *) {
-      background-color: #0a1c3a;
-    }
-  }
-  .dark\:bg-\[\#0a1c3a\]\/20 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in oklab, #0a1c3a 20%, transparent);
-    }
-  }
   .dark\:bg-\[\#0a1c3a\]\/70 {
     &:where(.dark, .dark *) {
       background-color: color-mix(in oklab, #0a1c3a 70%, transparent);
-    }
-  }
-  .dark\:bg-\[\#0b1220\] {
-    &:where(.dark, .dark *) {
-      background-color: #0b1220;
-    }
-  }
-  .dark\:bg-\[\#000\] {
-    &:where(.dark, .dark *) {
-      background-color: #000;
-    }
-  }
-  .dark\:bg-\[\#000\]\/70 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in oklab, #000 70%, transparent);
-    }
-  }
-  .dark\:bg-\[\#4A6BE8\]\/95 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in oklab, #4A6BE8 95%, transparent);
     }
   }
   .dark\:bg-\[\#5C7CFA\]\/40 {
@@ -3347,59 +3299,9 @@
       background-color: color-mix(in oklab, #5C7CFA 40%, transparent);
     }
   }
-  .dark\:bg-\[\#5C7CFA\]\/95 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in oklab, #5C7CFA 95%, transparent);
-    }
-  }
-  .dark\:bg-\[\#2957E3\]\/20 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in oklab, #2957E3 20%, transparent);
-    }
-  }
-  .dark\:bg-\[\#2957E3\]\/50 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in oklab, #2957E3 50%, transparent);
-    }
-  }
-  .dark\:bg-\[\#2957E3\]\/90 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in oklab, #2957E3 90%, transparent);
-    }
-  }
-  .dark\:bg-\[\#2957E3\]\/95 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in oklab, #2957E3 95%, transparent);
-    }
-  }
-  .dark\:bg-\[\#FF0000\] {
-    &:where(.dark, .dark *) {
-      background-color: #FF0000;
-    }
-  }
   .dark\:bg-\[\#fff\] {
     &:where(.dark, .dark *) {
       background-color: #fff;
-    }
-  }
-  .dark\:bg-\[rgba\(249\,250\,252\,0\.08\)\] {
-    &:where(.dark, .dark *) {
-      background-color: rgba(249,250,252,0.08);
-    }
-  }
-  .dark\:bg-\[rgba\(249\,250\,252\,0\.28\)\] {
-    &:where(.dark, .dark *) {
-      background-color: rgba(249,250,252,0.28);
-    }
-  }
-  .dark\:bg-\[rgba\(249\,250\,252\,0\.58\)\] {
-    &:where(.dark, .dark *) {
-      background-color: rgba(249,250,252,0.58);
-    }
-  }
-  .dark\:bg-\[rgba\(249\,250\,252\,0\.58\)\]\/20 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in oklab, rgba(249,250,252,0.58) 20%, transparent);
     }
   }
   .dark\:bg-black {
@@ -3415,11 +3317,6 @@
   .dark\:text-\[\#fff\]\/70 {
     &:where(.dark, .dark *) {
       color: color-mix(in oklab, #fff 70%, transparent);
-    }
-  }
-  .dark\:text-amber-300 {
-    &:where(.dark, .dark *) {
-      color: var(--color-amber-300);
     }
   }
   .\[\&\:\:-webkit-scrollbar\]\:hidden {
