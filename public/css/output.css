@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-green-100: oklch(96.2% 0.044 156.743);
     --color-green-300: oklch(87.1% 0.15 154.449);
     --color-green-500: oklch(72.3% 0.219 149.579);
@@ -355,6 +356,15 @@
   .right-16 {
     right: calc(var(--spacing) * 16);
   }
+  .right-\[3\%\] {
+    right: 3%;
+  }
+  .right-\[5\%\] {
+    right: 5%;
+  }
+  .right-\[10\%\] {
+    right: 10%;
+  }
   .right-\[15\%\] {
     right: 15%;
   }
@@ -382,8 +392,14 @@
   .bottom-10 {
     bottom: calc(var(--spacing) * 10);
   }
+  .bottom-\[5\%\] {
+    bottom: 5%;
+  }
   .bottom-\[8\%\] {
     bottom: 8%;
+  }
+  .bottom-\[10\%\] {
+    bottom: 10%;
   }
   .bottom-\[17\%\] {
     bottom: 17%;
@@ -420,6 +436,9 @@
   }
   .left-\[2\%\] {
     left: 2%;
+  }
+  .left-\[10\%\] {
+    left: 10%;
   }
   .left-\[12\%\] {
     left: 12%;
@@ -489,9 +508,6 @@
   }
   .mx-2 {
     margin-inline: calc(var(--spacing) * 2);
-  }
-  .mx-4 {
-    margin-inline: calc(var(--spacing) * 4);
   }
   .mx-10 {
     margin-inline: calc(var(--spacing) * 10);
@@ -699,9 +715,6 @@
   }
   .min-h-\[550px\] {
     min-height: 550px;
-  }
-  .min-h-\[560px\] {
-    min-height: 560px;
   }
   .w-4 {
     width: calc(var(--spacing) * 4);
@@ -1162,6 +1175,9 @@
   .bg-\[\#0d1c2b\] {
     background-color: #0d1c2b;
   }
+  .bg-\[\#000\] {
+    background-color: #000;
+  }
   .bg-\[\#1a253a\] {
     background-color: #1a253a;
   }
@@ -1170,6 +1186,9 @@
   }
   .bg-\[\#02060A\]\/100 {
     background-color: #02060A;
+  }
+  .bg-\[\#2957E3\] {
+    background-color: #2957E3;
   }
   .bg-\[\#EBF5FF\] {
     background-color: #EBF5FF;
@@ -2148,13 +2167,6 @@
   .\[scrollbar-width\:none\] {
     scrollbar-width: none;
   }
-  .group-hover\:block {
-    &:is(:where(.group):hover *) {
-      @media (hover: hover) {
-        display: block;
-      }
-    }
-  }
   .group-hover\:translate-x-1 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -3091,11 +3103,6 @@
       align-items: flex-start;
     }
   }
-  .lg\:justify-between {
-    @media (width >= 64rem) {
-      justify-content: space-between;
-    }
-  }
   .lg\:justify-start {
     @media (width >= 64rem) {
       justify-content: flex-start;
@@ -3191,9 +3198,24 @@
       padding-top: calc(var(--spacing) * 24);
     }
   }
+  .lg\:pt-25 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 25);
+    }
+  }
   .lg\:pt-32 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 32);
+    }
+  }
+  .lg\:pt-40 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 40);
+    }
+  }
+  .lg\:pt-55 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 55);
     }
   }
   .lg\:pb-20 {
@@ -3273,6 +3295,131 @@
   .xl\:w-\[115\%\] {
     @media (width >= 80rem) {
       width: 115%;
+    }
+  }
+  .dark\:hidden {
+    &:where(.dark, .dark *) {
+      display: none;
+    }
+  }
+  .dark\:inline {
+    &:where(.dark, .dark *) {
+      display: inline;
+    }
+  }
+  .dark\:bg-\[\#0a1c3a\] {
+    &:where(.dark, .dark *) {
+      background-color: #0a1c3a;
+    }
+  }
+  .dark\:bg-\[\#0a1c3a\]\/20 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #0a1c3a 20%, transparent);
+    }
+  }
+  .dark\:bg-\[\#0a1c3a\]\/70 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #0a1c3a 70%, transparent);
+    }
+  }
+  .dark\:bg-\[\#0b1220\] {
+    &:where(.dark, .dark *) {
+      background-color: #0b1220;
+    }
+  }
+  .dark\:bg-\[\#000\] {
+    &:where(.dark, .dark *) {
+      background-color: #000;
+    }
+  }
+  .dark\:bg-\[\#000\]\/70 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #000 70%, transparent);
+    }
+  }
+  .dark\:bg-\[\#4A6BE8\]\/95 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #4A6BE8 95%, transparent);
+    }
+  }
+  .dark\:bg-\[\#5C7CFA\]\/40 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #5C7CFA 40%, transparent);
+    }
+  }
+  .dark\:bg-\[\#5C7CFA\]\/95 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #5C7CFA 95%, transparent);
+    }
+  }
+  .dark\:bg-\[\#2957E3\]\/20 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #2957E3 20%, transparent);
+    }
+  }
+  .dark\:bg-\[\#2957E3\]\/50 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #2957E3 50%, transparent);
+    }
+  }
+  .dark\:bg-\[\#2957E3\]\/90 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #2957E3 90%, transparent);
+    }
+  }
+  .dark\:bg-\[\#2957E3\]\/95 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, #2957E3 95%, transparent);
+    }
+  }
+  .dark\:bg-\[\#FF0000\] {
+    &:where(.dark, .dark *) {
+      background-color: #FF0000;
+    }
+  }
+  .dark\:bg-\[\#fff\] {
+    &:where(.dark, .dark *) {
+      background-color: #fff;
+    }
+  }
+  .dark\:bg-\[rgba\(249\,250\,252\,0\.08\)\] {
+    &:where(.dark, .dark *) {
+      background-color: rgba(249,250,252,0.08);
+    }
+  }
+  .dark\:bg-\[rgba\(249\,250\,252\,0\.28\)\] {
+    &:where(.dark, .dark *) {
+      background-color: rgba(249,250,252,0.28);
+    }
+  }
+  .dark\:bg-\[rgba\(249\,250\,252\,0\.58\)\] {
+    &:where(.dark, .dark *) {
+      background-color: rgba(249,250,252,0.58);
+    }
+  }
+  .dark\:bg-\[rgba\(249\,250\,252\,0\.58\)\]\/20 {
+    &:where(.dark, .dark *) {
+      background-color: color-mix(in oklab, rgba(249,250,252,0.58) 20%, transparent);
+    }
+  }
+  .dark\:bg-black {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-black);
+    }
+  }
+  .dark\:text-\[\#fff\] {
+    &:where(.dark, .dark *) {
+      color: #fff;
+    }
+  }
+  .dark\:text-\[\#fff\]\/70 {
+    &:where(.dark, .dark *) {
+      color: color-mix(in oklab, #fff 70%, transparent);
+    }
+  }
+  .dark\:text-amber-300 {
+    &:where(.dark, .dark *) {
+      color: var(--color-amber-300);
     }
   }
   .\[\&\:\:-webkit-scrollbar\]\:hidden {

@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="./public/css/styles.css">
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 dark:bg-black transition-colors duration-500">
   <!-- ====== Header / Navbar ====== -->
   <header id="site-header" class="fixed inset-x-0 top-0 z-50">
     <div class="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
@@ -237,7 +237,7 @@
 
 
       <!-- Right: Illustration -->
-      <div class="relative mx-auto w-full max-w-[460px] hidden">
+      <div class="relative mx-auto w-full max-w-[460px] hidden lg:block">
         <img src="./public/img/server_1.svg " alt="Server 1">
       </div>
     </div>
@@ -394,7 +394,7 @@
     <!-- === End Domain Search Bar === -->
   </section>
   <!-- ======= Services Block ======  -->
-  <section class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 lg:pt-32 lg:pb-32 bg-white">
+  <section class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 lg:pt-32 lg:pb-32 bg-white dark:bg-[#0a1c3a]/70 transition-colors duration-500">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Section Title Block -->
       <div class="lg:grid lg:grid-cols-1 md:gap-12 lg:grid-cols-2 lg:gap-8 mb-10 lg:mb-20 justify-center items-end">
@@ -403,13 +403,13 @@
             class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex font-['Outfit',_sans-serif]font-['Outfit',_sans-serif]"><img
               class="mr-1 block" src="./public/img/flash-icon.png" alt="">Plans</span>
           <h2
-            class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-0">
+            class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-0 dark:text-[#fff] transition-colors duration-500">
             Flexible Hosting Plans <span class="text-blue-500">for Every Need</span>
           </h2>
         </div>
         <div>
           <p
-            class="mt-4 max-w-2xl text-lg lg:text-xl text-center lg:text-left mx-auto lg:mx-0 content-end text-black/70">
+            class="mt-4 max-w-2xl text-lg lg:text-xl text-center lg:text-left mx-auto lg:mx-0 content-end text-black/70 dark:text-[#fff] transition-colors duration-500">
             Choose from lightning-fast, secure, and affordable hosting plans tailored for individuals, businesses, and
             developers.
           </p>
@@ -766,7 +766,7 @@
   <!-- ======= End Pricing Block ======  -->
 
   <!-- ======= Global Coverage Block ======  -->
-  <section class="relative overflow-x-hidden isolate bg-slate-50 pb-10 sm:pb-16 lg:pb-24 pt-5 sm:pt-10 lg:pt-14">
+  <section class="relative overflow-x-hidden isolate bg-slate-50 dark:bg-[#5C7CFA]/40 transition-colors duration-500 pb-10 sm:pb-16 lg:pb-24 pt-5 sm:pt-10 lg:pt-40">
 
     <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.3fr_1fr] lg:gap-16 lg:px-8">
       <!-- Left: Map + markers -->
@@ -777,7 +777,7 @@
             class="w-full xl:w-[115%] object-contain opacity-75" />
           <!-- Gradient Overlay -->
           <div
-            class="absolute inset-0 bg-[linear-gradient(80deg,#F9FAFC_0%,rgba(249,250,252,0)_50%,rgba(249,250,252,0.58)_100%)] w-full z-0">
+            class="absolute inset-0 bg-[linear-gradient(80deg,#F9FAFC_0%,rgba(249,250,252,0)_50%,rgba(249,250,252,0.58)_100%)] w-full z-0 dark:hidden">
           </div>
         </div>
 
@@ -949,11 +949,11 @@
         </span>
 
         <h2
-          class="font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight text-[34px] sm:text-[42px] lg:text-[50px]">
+          class="font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight text-[34px] sm:text-[42px] lg:text-[50px] dark:text-[#fff] transition-colors duration-500">
           <span class="text-[#328DE6]">Global Coverage</span> You<br />Can Rely On
         </h2>
 
-        <p class="text-lg mt-4 text-black/70">
+        <p class="text-lg mt-4 text-black/70 dark:text-[#fff]/70 transition-colors duration-500">
           Experience lightning-fast hosting, optimized performance, and reliable uptime across 150+ countries — from
           Asia to Europe and beyond.
         </p>
@@ -1162,7 +1162,7 @@
   <!-- ========= End Partners Block ========= -->
   <!-- ========= Testimonial Block ========= -->
 
-  <section class="relative py-20 bg-[#F9FAFC]">
+  <section class="relative py-20 bg-[#F9FAFC] bg-white dark:bg-[#0a1c3a]/70 transition-colors duration-500">
     <!-- soft dotted backdrop (very subtle) -->
     <div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]
               bg-[radial-gradient(circle_at_1px_1px,#0b1220_1px,transparent_1.2px)]
@@ -1182,7 +1182,7 @@
 
         <!-- Heading -->
         <h2
-          class="text-center text-[34px] sm:text-[42px] lg:text-[50px] font-['Outfit',_sans-serif] font-bold leading-[1.2] tracking-tight text-slate-900">
+          class="text-center text-[34px] sm:text-[42px] lg:text-[50px] font-['Outfit',_sans-serif] font-bold leading-[1.2] tracking-tight text-slate-900 dark:text-[#fff]/70 transition-colors duration-500">
           Trust the <span class="text-[#328DE6]">Experts</span>, Hear Their Stories
         </h2>
 
@@ -1610,6 +1610,11 @@
       </div>
     </div>
   </div>
+<button id="theme-toggle" class="fixed bottom-[5%] right-[3%] z-50 p-2 rounded-md bg-[#2957E3] dark:bg-[#fff]">
+  <span class="dark:hidden">🌙</span>
+  <span class="hidden dark:inline">☀️</span>
+</button>
+
 
   </main>
   <!-- Core Navbar JS-->
