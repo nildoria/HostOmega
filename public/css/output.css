@@ -8,7 +8,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
-    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-green-100: oklch(96.2% 0.044 156.743);
     --color-green-300: oklch(87.1% 0.15 154.449);
     --color-green-500: oklch(72.3% 0.219 149.579);
@@ -249,6 +248,9 @@
   }
 }
 @layer utilities {
+  .pointer-events-auto {
+    pointer-events: auto;
+  }
   .pointer-events-none {
     pointer-events: none;
   }
@@ -2211,6 +2213,28 @@
   .group-\[\.bg-green-500\]\:text-black {
     &:is(:where(.group):is(.bg-green-500) *) {
       color: var(--color-black);
+    }
+  }
+  .peer-hover\:visible {
+    &:is(:where(.peer):hover ~ *) {
+      @media (hover: hover) {
+        visibility: visible;
+      }
+    }
+  }
+  .peer-hover\:translate-y-0 {
+    &:is(:where(.peer):hover ~ *) {
+      @media (hover: hover) {
+        --tw-translate-y: calc(var(--spacing) * 0);
+        translate: var(--tw-translate-x) var(--tw-translate-y);
+      }
+    }
+  }
+  .peer-hover\:opacity-100 {
+    &:is(:where(.peer):hover ~ *) {
+      @media (hover: hover) {
+        opacity: 100%;
+      }
     }
   }
   .before\:absolute {

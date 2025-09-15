@@ -37,7 +37,7 @@
           <a href="vps.html" class="font-medium text-slate-300 hover:text-white transition">VPS</a>
 
           <!-- Web Hosting dropdown -->
-          <div class="relative group">
+          <div class="relative">
             <button id="whBtn"
               class="inline-flex items-center font-medium text-slate-300 hover:text-white cursor-pointer transition"
               aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
@@ -49,7 +49,7 @@
               </svg>
             </button>
             <div id="whMenu"
-              class="transition-all opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20"
+              class="absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20 opacity-0 translate-y-2 transition-all duration-200 pointer-events-none"
               role="menu" aria-labelledby="whBtn">
               <a href="web-hosting.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
                 role="menuitem">Web Hosting</a>
@@ -60,12 +60,11 @@
             </div>
           </div>
 
-
-               <!-- Pages dropdown -->
-          <div class="relative group">
-            <button id="whBtn"
+          <!-- Pages dropdown -->
+          <div class="relative">
+            <button id="pagesBtn"
               class="inline-flex items-center font-medium text-slate-300 hover:text-white cursor-pointer transition"
-              aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
+              aria-haspopup="menu" aria-expanded="false" aria-controls="pagesMenu">
               Pages
               <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor"
                 aria-hidden="true">
@@ -73,9 +72,9 @@
                   d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
               </svg>
             </button>
-            <div id="whMenu"
-              class="transition-all opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20"
-              role="menu" aria-labelledby="whBtn">
+            <div id="pagesMenu"
+              class="absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20 opacity-0 translate-y-2 transition-all duration-200 pointer-events-none"
+              role="menu" aria-labelledby="pagesBtn">
               <a href="contact-us.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
                 role="menuitem">Features</a>
               <a href="index-logged-in.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
@@ -86,66 +85,67 @@
           <a href="contact-us.html" class="font-medium text-slate-300 hover:text-white transition">Contact</a>
         </nav>
 
-    <!-- Right: language + cart + auth -->
-<div class="flex items-center gap-1 lg:gap-6">
-  <!-- Language -->
-  <div class="relative group">
-    <button id="langBtn"
-      class="inline-flex items-center gap-2 rounded-md px-1.5 py-1 lg:px-2.5 lg:py-1.5 text-sm font-medium text-slate-200 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
-      aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu">
-      <!-- Globe -->
-      <svg class="h-4 lg:h-5 w-4 lg:w-5 opacity-90" viewBox="0 0 24 24" fill="none">
-        <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5" />
-        <path d="M3 12h18M12 3c3.5 3.3 3.5 14.7 0 18M12 3c-3.5 3.3-3.5 14.7 0 18" stroke="currentColor"
-          stroke-width="1.5" />
-      </svg>
-      <span id="langLabel">English</span>
-      <!-- Chevron -->
-      <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path
-          d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
-      </svg>
-    </button>
+        <!-- Right: language + cart + auth -->
+        <div class="flex items-center gap-1 lg:gap-6">
+          <!-- Language -->
+          <div class="relative group">
+            <button id="langBtn"
+              class="inline-flex items-center gap-2 rounded-md px-1.5 py-1 lg:px-2.5 lg:py-1.5 text-sm font-medium text-slate-200 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+              aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu">
+              <!-- Globe -->
+              <svg class="h-4 lg:h-5 w-4 lg:w-5 opacity-90" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5" />
+                <path d="M3 12h18M12 3c3.5 3.3 3.5 14.7 0 18M12 3c-3.5 3.3-3.5 14.7 0 18" stroke="currentColor"
+                  stroke-width="1.5" />
+              </svg>
+              <span id="langLabel">English</span>
+              <!-- Chevron -->
+              <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+              </svg>
+            </button>
 
-    <!-- Menu -->
-    <div id="langMenu"
-      class="absolute right-0 mt-2 w-44 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-xl shadow-black/20 transition-all duration-200"
-      role="menu" aria-labelledby="langBtn">
-      <button data-lang="en"
-        class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
-        role="menuitem">English</button>
-      <button data-lang="bn"
-        class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
-        role="menuitem">বাংলা</button>
-      <button data-lang="he"
-        class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
-        role="menuitem">עברית</button>
-    </div>
-  </div>
+            <!-- Menu -->
+            <div id="langMenu"
+              class="absolute right-0 mt-2 w-44 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-xl shadow-black/20 transition-all duration-200"
+              role="menu" aria-labelledby="langBtn">
+              <button data-lang="en"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">English</button>
+              <button data-lang="bn"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">বাংলা</button>
+              <button data-lang="he"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">עברית</button>
+            </div>
+          </div>
 
-  <!-- Cart -->
-  <a href="#cart" class="inline-flex items-center justify-center rounded-md text-slate-200 hover:bg-white/5"
-    aria-label="Cart">
-    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
-      <path d="M3 4h2l2.4 12a1 1 0 0 0 .98.8h9.64a1 1 0 0 0 .98-.8L21 7H6" stroke="currentColor"
-        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <circle cx="9" cy="20" r="1" fill="currentColor" />
-      <circle cx="18" cy="20" r="1" fill="currentColor" />
-    </svg>
-  </a>
+          <!-- Cart -->
+          <a href="#cart" class="inline-flex items-center justify-center rounded-md text-slate-200 hover:bg-white/5"
+            aria-label="Cart">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+              <path d="M3 4h2l2.4 12a1 1 0 0 0 .98.8h9.64a1 1 0 0 0 .98-.8L21 7H6" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="9" cy="20" r="1" fill="currentColor" />
+              <circle cx="18" cy="20" r="1" fill="currentColor" />
+            </svg>
+          </a>
 
-  <!-- Auth -->
-  <a id="loginBtn" href="#" class="hidden lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition">Log
-    in</a>
-  <button id="signupBtn"
-    class="hidden lg:inline-flex items-center gap-2 rounded-full bg-blue-500/100 px-5 py-2 text-sm font-semibold text-white hover:opacity-95 shadow-lg shadow-sky-500/20 transition cursor-pointer">
-    Sign Up
-    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-      <path
-        d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
-    </svg>
-  </button>
-</div>
+          <!-- Auth -->
+          <a id="loginBtn" href="#"
+            class="hidden lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition">Log
+            in</a>
+          <button id="signupBtn"
+            class="hidden lg:inline-flex items-center gap-2 rounded-full bg-blue-500/100 px-5 py-2 text-sm font-semibold text-white hover:opacity-95 shadow-lg shadow-sky-500/20 transition cursor-pointer">
+            Sign Up
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
+            </svg>
+          </button>
+        </div>
 
 
         <!-- Mobile menu button -->
@@ -197,7 +197,9 @@
         <a href="contact-us.html" class="py-2 text-slate-300 hover:text-white">Contact</a>
 
         <div class="mt-4 flex items-center gap-4">
-          <a href="login.html" class="block lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition cursor-pointer">Log in</a>
+          <a href="login.html"
+            class="block lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition cursor-pointer">Log
+            in</a>
 
           <a href="sign-up.html"
             class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 px-4 py-2 font-semibold text-slate-900">
@@ -243,11 +245,12 @@
     <span
       class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex font-['Outfit',_sans-serif]"><img
         class="mr-1 block" src="./public/img/flash-icon.png" alt="">Pricing</span>
-    <h2 class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-6">
+    <h2
+      class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-6">
       Web Hosting Plans for <span class="text-blue-500">Your Site</span>
     </h2>
 
-  <!-- Pricing Toggle -->
+    <!-- Pricing Toggle -->
     <div class="inline-flex items-center justify-center bg-white rounded-full shadow-md px-1 py-1 lg:mb-10 gap-1">
       <button id="monthlyBtn"
         class="cursor-pointer px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-full transition-all">
@@ -273,7 +276,8 @@
       <div class="card-item bg-white rounded-2xl p-6 shadow flex flex-col justify-between">
         <div class="text-left z-1">
           <h3 class="text-xl font-['Outfit',_sans-serif] font-semibold mb-1 ">WordPress Starter Plan</h3>
-          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Perfect for blogs, personal sites, and content creators.</p>
+          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Perfect for blogs, personal sites, and
+            content creators.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$3.00" data-yearly="$2.55">$3.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
           <a href="#"
@@ -305,7 +309,8 @@
         <div class="bg-white rounded-2xl p-6 flex flex-col justify-between z-0">
           <div class="text-left">
             <h3 class="text-xl font-['Outfit',_sans-serif] font-semibold mb-1 ">VPS Starter Plan</h3>
-            <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Power and flexibility for growing websites and personal projects.</p>
+            <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Power and flexibility for growing
+              websites and personal projects.</p>
             <div class="text-3xl font-bold mb-1" data-monthly="$5.00" data-yearly="$4.25">$5.00</div>
             <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
             <a href="#"
@@ -328,7 +333,8 @@
       <div class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
         <div class="text-left z-1">
           <h3 class="text-xl font-['Outfit',_sans-serif] font-semibold mb-1 ">Reseller Starter Plan</h3>
-          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Start your own hosting business with scalable reseller plans.</p>
+          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Start your own hosting business with
+            scalable reseller plans.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$20.00" data-yearly="$17.00">$20.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
           <a href="#"
@@ -349,7 +355,8 @@
       <div class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
         <div class="text-left z-1">
           <h3 class="text-xl font-['Outfit',_sans-serif] font-semibold mb-1 ">Dedicated Starter Plan</h3>
-          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Ultimate control with enterprise-grade servers.</p>
+          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Ultimate control with enterprise-grade
+            servers.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$199.00" data-yearly="$169.15">$199.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
           <a href="#"
@@ -369,7 +376,8 @@
       <div class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
         <div class="text-left z-1">
           <h3 class="text-xl font-['Outfit',_sans-serif] font-semibold mb-1 ">Wordpress Starter Plan</h3>
-          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Ultimate control with enterprise-grade servers.</p>
+          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Ultimate control with enterprise-grade
+            servers.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$199.00" data-yearly="$169.15">$199.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
           <a href="#"
@@ -389,7 +397,8 @@
       <div class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
         <div class="text-left z-1">
           <h3 class="text-xl font-['Outfit',_sans-serif] font-semibold mb-1 ">Dedicated Starter Plan</h3>
-          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Ultimate control with enterprise-grade servers.</p>
+          <p class="text-gray-500 mb-4 pb-4 border-b border-[rgba(0,0,0,0.04)]">Ultimate control with enterprise-grade
+            servers.</p>
           <div class="text-3xl font-bold mb-1" data-monthly="$199.00" data-yearly="$169.15">$199.00</div>
           <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
           <a href="#"
@@ -421,22 +430,26 @@
       <div id='omegastars3'></div> -->
     </div>
     <div class="mx-auto max-w-7xl px-4 grid gap-3 lg:gap-4 lg:grid-cols-[1fr_1fr] relative z-2 items-center">
-    <div class="opacity-[70%] hidden lg:block">
-      <img src="./public/img/enterprise-img.png" alt="">
-    </div>
+      <div class="opacity-[70%] hidden lg:block">
+        <img src="./public/img/enterprise-img.png" alt="">
+      </div>
       <!-- Section Title Block -->
       <div
         class="mb-5 lg:mb-0 sm:max-w-lg md:max-w-md lg:max-w-xl justify-center lg:justify-start text-center lg:text-left mx-auto lg:mx-0">
         <span
           class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex font-['Outfit',_sans-serif]"><img
             class="mr-1 block" src="./public/img/flash-icon.png" alt="">Features</span>
-        <h2 class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-0">
+        <h2
+          class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-0">
           Enterprise Hardware <br><span class="text-blue-500">Web Hosting</span></h2>
         <p class="mt-4 text-lg ">
-          We have focused on providing our clients with a reliable, cost-effective service backed bg our robust, enterprise-grade hardware. We use E3-1240v6Processor. 32 aias of ram and NVMe drives in order to offer uou the hiahest level of possible service. You won't find outdated, old and dying hardware with us.
+          We have focused on providing our clients with a reliable, cost-effective service backed bg our robust,
+          enterprise-grade hardware. We use E3-1240v6Processor. 32 aias of ram and NVMe drives in order to offer uou the
+          hiahest level of possible service. You won't find outdated, old and dying hardware with us.
         </p>
         <a href="#"
-          class="inline-flex items-center gap-2 px-[28px] py-[14px] rounded-full font-semibold text-white/70 bg-blue-500 hover:opacity-95 mt-8">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+          class="inline-flex items-center gap-2 px-[28px] py-[14px] rounded-full font-semibold text-white/70 bg-blue-500 hover:opacity-95 mt-8">Get
+          Started <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <!-- End Section Title Block -->
 
@@ -444,335 +457,384 @@
   </section>
   <!-- ======= End Features Block ======  -->
 
-<!-- ======= Platform / Coverage Block ======  -->
-<section class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 lg:pt-32 lg:pb-32 bg-[#f6f7fb]">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <!-- Section Title Block -->
-    <div class="lg:grid lg:grid-cols-[1.5fr_1fr] lg:gap-8 mb-10 lg:mb-16 items-end">
-      <div class="flex flex-col items-start text-left max-w-[680px]">
-        <span class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex">
-          <img class="mr-1 block" src="./public/img/flash-icon.png" alt="">Platform
-        </span>
-        <h2 class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-0">
-          We've got you Covered
-        </h2>
-      </div>
-      <div class="mt-6 lg:mt-0">
-        <p class="max-w-2xl text-lg text-left lg:text-left">
-          Our cPanel hosting is affordable, reliable and trusted by thousands of websites.
-        </p>
-      </div>
-    </div>
-
-    <!-- Cards Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
-      <!-- Card 1 -->
-      <div class="relative flex flex-col bg-white rounded-2xl px-6 py-8 overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
-        <div class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-        <!-- Small badge icon -->
-        <div class="relative z-10 mb-4 inline-flex items-center justify-center rounded-xl bg-white shadow-xs shadow-gray-300/40 p-2 w-[74px] h-[74px]">
-          <img src="./public/img/kvmcloud.png" alt="KVM Linux" class="h-[50px] w-[50px] object-contain">
-        </div>
-
-        <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
-          KVM LINUX
-        </h3>
-        <p class="relative z-10 text-black transition group-hover:text-white mb-4">
-          Perfect for blogs, personal sites, and content creators.
-        </p>
-
-        <a href="#" class="mt-6 inline-flex items-center gap-2 py-2 font-semibold text-slate-900 underline relative transition z-10 group-hover:text-white hover:opacity-95">
-          Learn More <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="relative flex flex-col bg-white rounded-2xl px-6 py-8 overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
-        <div class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-        <div class="relative z-10 mb-4 inline-flex items-center justify-center rounded-xl bg-white shadow-xs shadow-gray-300/40 p-2 w-[74px] h-[74px]">
-          <img src="./public/img/root-access.png" alt="Root Access" class="h-[50px] w-[50px] object-contain">
-        </div>
-
-        <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
-          ROOT ACCESS
-        </h3>
-        <p class="relative z-10 text-black transition group-hover:text-white mb-4">
-          Perfect for blogs, personal sites, and content creators.
-        </p>
-
-        <a href="#" class="mt-6 inline-flex items-center gap-2 py-2 font-semibold text-slate-900 underline relative transition z-10 group-hover:text-white hover:opacity-95">
-          Learn More <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="relative flex flex-col bg-white rounded-2xl px-6 py-8 overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
-        <div class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-        <div class="relative z-10 mb-4 inline-flex items-center justify-center rounded-xl bg-white shadow-xs shadow-gray-300/40 p-2 w-[74px] h-[74px]">
-          <img src="./public/img/windows.png" alt="Windows" class="h-[50px] w-[50px] object-contain">
-        </div>
-
-        <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
-          WINDOWS
-        </h3>
-        <p class="relative z-10 text-black transition group-hover:text-white mb-4">
-          Perfect for blogs, personal sites, and content creators.
-        </p>
-
-        <a href="#" class="mt-6 inline-flex items-center gap-2 py-2 font-semibold text-slate-900 underline relative transition z-10 group-hover:text-white hover:opacity-95">
-          Learn More <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="relative flex flex-col bg-white rounded-2xl px-6 py-8 overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
-        <div class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-        <div class="relative z-10 mb-4 inline-flex items-center justify-center rounded-xl bg-white shadow-xs shadow-gray-300/40 p-2 w-[74px] h-[74px]">
-          <img src="./public/img/linux.png" alt="Linux" class="h-[50px] w-[50px] object-contain">
-        </div>
-
-        <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
-          LINUX
-        </h3>
-        <p class="relative z-10 text-black transition group-hover:text-white mb-4">
-          Perfect for blogs, personal sites, and content creators.
-        </p>
-
-        <a href="#" class="mt-6 inline-flex items-center gap-2 py-2 font-semibold text-slate-900 underline relative transition z-10 group-hover:text-white hover:opacity-95">
-          Learn More <i class="fa-solid fa-arrow-right"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ======= End Platform / Coverage Block ======  -->
-<!-- ======= FAQ Block ======  -->
-<section class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 lg:pt-32 lg:pb-32 bg-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-    <!-- Section Title Block -->
-    <div class="lg:grid lg:grid-cols-2 lg:gap-8 mb-10 lg:mb-16 items-start">
-      <!-- Left: Accordion -->
-      <div>
-
-        <!-- Item 1 (open by default) -->
-        <div class="mb-4">
-          <button
-            class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
-            <span class="font-semibold">What is Shared hosting?</span>
-            <span class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
-              <!-- chevron -->
-              <svg class="h-4 w-4 rotate-180 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
-              </svg>
-            </span>
-          </button>
-          <div class="faq-panel px-5 pb-5 pt-3 text-slate-700">
-            We care about safety big time — and so do your site's visitors. With a Shared Hosting account, you SL certificate for free to add to your site. 
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="mb-4">
-          <button
-            class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
-            <span class="font-semibold">Does Shared Hosting include email?</span>
-            <span class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
-              <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
-              </svg>
-            </span>
-          </button>
-          <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
-            KVM (Kernel-based Virtual Machine) provides full hardware virtualization. You get dedicated resources,
-            strong isolation, and the ability to run any kernel/OS—ideal for performance-critical workloads.
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="mb-4">
-          <button
-            class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
-            <span class="font-semibold">Can I uprade to a more owerful hosting pIan later?</span>
-            <span class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
-              <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
-              </svg>
-            </span>
-          </button>
-          <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
-            BDIX peering keeps local traffic within Bangladesh networks, reducing latency and improving speeds
-            for domestic visitors—great for local apps, e-commerce, and media.
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="mb-4">
-          <button
-            class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
-            <span class="font-semibold">What is WordPress Hosting</span>
-            <span class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
-              <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
-              </svg>
-            </span>
-          </button>
-          <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
-            Ryzen plans typically offer higher multi-core throughput and great price-to-performance. Intel plans are a
-            strong fit where single-thread performance and specific instruction sets are preferred. Both include NVMe storage.
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="mb-4">
-          <button
-            class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
-            <span class="font-semibold">How manv websites can I host?</span>
-            <span class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
-              <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
-              </svg>
-            </span>
-          </button>
-          <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
-            Yes. You get full root (administrator) access to install software, configure services, and manage the server.
-          </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div>
-          <button
-            class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
-            <span class="font-semibold">What is VPS Hosting</span>
-            <span class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
-              <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
-              </svg>
-            </span>
-          </button>
-          <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
-            Popular options include Ubuntu, Debian, CentOS/AlmaLinux, Rocky Linux, and Windows Server editions (on supported plans).
-          </div>
-        </div>
-        <!-- Item 6 -->
-        <div>
-          <button
-            class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
-            <span class="font-semibold">What is Cloud hosting?</span>
-            <span class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
-              <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z"/>
-              </svg>
-            </span>
-          </button>
-          <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
-            Popular options include Ubuntu, Debian, CentOS/AlmaLinux, Rocky Linux, and Windows Server editions (on supported plans).
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Right: Heading & CTA -->
-      <div class="mt-10 lg:mt-0 lg:pl-8">
-        <span
-          class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex">
-          FAQ
-        </span>
-        <h3 class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-4">
-          <span class="text-blue-500">Explore Our</span> FAQs & CPANEL HOSTING FAQS
-        </h3>
-        <p class="text-lg max-w-xl">
-          Explore answers to common questions about our KVM VPS plans. From hardware specifications to BDIX connectivity,
-          we cover everything you need to know.
-        </p>
-
-        <a href="#"
-           class="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2 text-white font-semibold shadow shadow-blue-500/20 hover:opacity-95">
-          Contact Us
-          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ======= End FAQ Block ======  -->
-<!-- ======= Feature CTA Block ====== -->
-<section class="relative pb-12 sm:pb-16 lg:pb-20 bg-white">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-
-      <!-- Card: BDIX Hosting -->
-      <div class="relative overflow-hidden rounded-3xl shadow-xl">
-        <!-- Gradient base -->
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-700"></div>
-        <!-- Starry bg image layer (as requested) -->
-        <div class="absolute inset-x-0 bottom-0 h-full w-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-cover bg-[left_-80px_bottom] opacity-80"></div>
-
-        <!-- Content -->
-        <div class="relative z-10 flex flex-col items-center text-center px-6 py-10 sm:px-10 sm:py-12">
-          <!-- Badge icon -->
-          <span class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/90 text-white">
-            <i class="fa-solid fa-cloud"></i>
+  <!-- ======= Platform / Coverage Block ======  -->
+  <section class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 lg:pt-32 lg:pb-32 bg-[#f6f7fb]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!-- Section Title Block -->
+      <div class="lg:grid lg:grid-cols-[1.5fr_1fr] lg:gap-8 mb-10 lg:mb-16 items-end">
+        <div class="flex flex-col items-start text-left max-w-[680px]">
+          <span
+            class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex">
+            <img class="mr-1 block" src="./public/img/flash-icon.png" alt="">Platform
           </span>
+          <h2
+            class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-0">
+            We've got you Covered
+          </h2>
+        </div>
+        <div class="mt-6 lg:mt-0">
+          <p class="max-w-2xl text-lg text-left lg:text-left">
+            Our cPanel hosting is affordable, reliable and trusted by thousands of websites.
+          </p>
+        </div>
+      </div>
 
-          <h3 class="text-white text-2xl sm:text-[22px] font-bold leading-snug">
-            Explore Our BDIX<br class="hidden sm:block" /> Hosting Packages
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+        <!-- Card 1 -->
+        <div
+          class="relative flex flex-col bg-white rounded-2xl px-6 py-8 overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
+          <div
+            class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          </div>
+
+          <!-- Small badge icon -->
+          <div
+            class="relative z-10 mb-4 inline-flex items-center justify-center rounded-xl bg-white shadow-xs shadow-gray-300/40 p-2 w-[74px] h-[74px]">
+            <img src="./public/img/kvmcloud.png" alt="KVM Linux" class="h-[50px] w-[50px] object-contain">
+          </div>
+
+          <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
+            KVM LINUX
           </h3>
-
-          <p class="mt-3 max-w-xl text-slate-200">
-            Leverage intelligent insights and real-time data to act decisively and keep your business ahead
-            of the curve.
+          <p class="relative z-10 text-black transition group-hover:text-white mb-4">
+            Perfect for blogs, personal sites, and content creators.
           </p>
 
           <a href="#"
-             class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 font-semibold text-slate-900 hover:opacity-95">
-            Explore More
-            <i class="fa-solid fa-arrow-right"></i>
+            class="mt-6 inline-flex items-center gap-2 py-2 font-semibold text-slate-900 underline relative transition z-10 group-hover:text-white hover:opacity-95">
+            Learn More <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
-      </div>
 
-      <!-- Card: WordPress Hosting -->
-      <div class="relative overflow-hidden rounded-3xl shadow-xl">
-        <!-- Gradient base -->
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-700"></div>
-        <!-- Starry bg image layer (as requested) -->
-        <div class="absolute inset-x-0 bottom-0 h-full w-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-cover bg-[left_-80px_bottom] opacity-80"></div>
+        <!-- Card 2 -->
+        <div
+          class="relative flex flex-col bg-white rounded-2xl px-6 py-8 overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
+          <div
+            class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          </div>
 
-        <!-- Content -->
-        <div class="relative z-10 flex flex-col items-center text-center px-6 py-10 sm:px-10 sm:py-12">
-          <!-- Badge icon -->
-          <span class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/90 text-white">
-            <i class="fa-brands fa-wordpress"></i>
-          </span>
+          <div
+            class="relative z-10 mb-4 inline-flex items-center justify-center rounded-xl bg-white shadow-xs shadow-gray-300/40 p-2 w-[74px] h-[74px]">
+            <img src="./public/img/root-access.png" alt="Root Access" class="h-[50px] w-[50px] object-contain">
+          </div>
 
-          <h3 class="text-white text-2xl sm:text-[22px] font-bold leading-snug">
-            Explore Our WordPress<br class="hidden sm:block" /> Hosting Packages
+          <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
+            ROOT ACCESS
           </h3>
-
-          <p class="mt-3 max-w-xl text-slate-200">
-            Leverage intelligent insights and real-time data to act decisively and keep your business ahead
-            of the curve.
+          <p class="relative z-10 text-black transition group-hover:text-white mb-4">
+            Perfect for blogs, personal sites, and content creators.
           </p>
 
           <a href="#"
-             class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 font-semibold text-slate-900 hover:opacity-95">
-            Explore More
-            <i class="fa-solid fa-arrow-right"></i>
+            class="mt-6 inline-flex items-center gap-2 py-2 font-semibold text-slate-900 underline relative transition z-10 group-hover:text-white hover:opacity-95">
+            Learn More <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="relative flex flex-col bg-white rounded-2xl px-6 py-8 overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
+          <div
+            class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          </div>
+
+          <div
+            class="relative z-10 mb-4 inline-flex items-center justify-center rounded-xl bg-white shadow-xs shadow-gray-300/40 p-2 w-[74px] h-[74px]">
+            <img src="./public/img/windows.png" alt="Windows" class="h-[50px] w-[50px] object-contain">
+          </div>
+
+          <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
+            WINDOWS
+          </h3>
+          <p class="relative z-10 text-black transition group-hover:text-white mb-4">
+            Perfect for blogs, personal sites, and content creators.
+          </p>
+
+          <a href="#"
+            class="mt-6 inline-flex items-center gap-2 py-2 font-semibold text-slate-900 underline relative transition z-10 group-hover:text-white hover:opacity-95">
+            Learn More <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="relative flex flex-col bg-white rounded-2xl px-6 py-8 overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40">
+          <div
+            class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          </div>
+
+          <div
+            class="relative z-10 mb-4 inline-flex items-center justify-center rounded-xl bg-white shadow-xs shadow-gray-300/40 p-2 w-[74px] h-[74px]">
+            <img src="./public/img/linux.png" alt="Linux" class="h-[50px] w-[50px] object-contain">
+          </div>
+
+          <h3 class="text-2xl transition font-bold mb-3 relative z-10 group-hover:text-white">
+            LINUX
+          </h3>
+          <p class="relative z-10 text-black transition group-hover:text-white mb-4">
+            Perfect for blogs, personal sites, and content creators.
+          </p>
+
+          <a href="#"
+            class="mt-6 inline-flex items-center gap-2 py-2 font-semibold text-slate-900 underline relative transition z-10 group-hover:text-white hover:opacity-95">
+            Learn More <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
-<!-- ======= End Feature CTA Block ====== -->
+  </section>
+  <!-- ======= End Platform / Coverage Block ======  -->
+  <!-- ======= FAQ Block ======  -->
+  <section class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 lg:pt-32 lg:pb-32 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+      <!-- Section Title Block -->
+      <div class="lg:grid lg:grid-cols-2 lg:gap-8 mb-10 lg:mb-16 items-start">
+        <!-- Left: Accordion -->
+        <div>
+
+          <!-- Item 1 (open by default) -->
+          <div class="mb-4">
+            <button
+              class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
+              <span class="font-semibold">What is Shared hosting?</span>
+              <span
+                class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
+                <!-- chevron -->
+                <svg class="h-4 w-4 rotate-180 transition-transform duration-200" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel px-5 pb-5 pt-3 text-slate-700">
+              We care about safety big time — and so do your site's visitors. With a Shared Hosting account, you SL
+              certificate for free to add to your site.
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="mb-4">
+            <button
+              class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
+              <span class="font-semibold">Does Shared Hosting include email?</span>
+              <span
+                class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
+                <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
+              KVM (Kernel-based Virtual Machine) provides full hardware virtualization. You get dedicated resources,
+              strong isolation, and the ability to run any kernel/OS—ideal for performance-critical workloads.
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="mb-4">
+            <button
+              class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
+              <span class="font-semibold">Can I uprade to a more owerful hosting pIan later?</span>
+              <span
+                class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
+                <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
+              BDIX peering keeps local traffic within Bangladesh networks, reducing latency and improving speeds
+              for domestic visitors—great for local apps, e-commerce, and media.
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="mb-4">
+            <button
+              class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
+              <span class="font-semibold">What is WordPress Hosting</span>
+              <span
+                class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
+                <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
+              Ryzen plans typically offer higher multi-core throughput and great price-to-performance. Intel plans are a
+              strong fit where single-thread performance and specific instruction sets are preferred. Both include NVMe
+              storage.
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="mb-4">
+            <button
+              class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
+              <span class="font-semibold">How manv websites can I host?</span>
+              <span
+                class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
+                <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
+              Yes. You get full root (administrator) access to install software, configure services, and manage the
+              server.
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div>
+            <button
+              class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
+              <span class="font-semibold">What is VPS Hosting</span>
+              <span
+                class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
+                <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
+              Popular options include Ubuntu, Debian, CentOS/AlmaLinux, Rocky Linux, and Windows Server editions (on
+              supported plans).
+            </div>
+          </div>
+          <!-- Item 6 -->
+          <div>
+            <button
+              class="faq-toggle w-full text-left bg-white rounded-2xl px-5 py-4 border border-gray-100 shadow-xs shadow-gray-300/40 flex items-center justify-between">
+              <span class="font-semibold">What is Cloud hosting?</span>
+              <span
+                class="shrink-0 inline-flex h-7 w-7 items-center justify-center rounded-full bg-white border border-gray-200">
+                <svg class="h-4 w-4 transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+                  <path
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-panel hidden px-5 pb-5 pt-3 text-slate-700">
+              Popular options include Ubuntu, Debian, CentOS/AlmaLinux, Rocky Linux, and Windows Server editions (on
+              supported plans).
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Heading & CTA -->
+        <div class="mt-10 lg:mt-0 lg:pl-8">
+          <span
+            class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex">
+            FAQ
+          </span>
+          <h3
+            class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-4">
+            <span class="text-blue-500">Explore Our</span> FAQs & CPANEL HOSTING FAQS
+          </h3>
+          <p class="text-lg max-w-xl">
+            Explore answers to common questions about our KVM VPS plans. From hardware specifications to BDIX
+            connectivity,
+            we cover everything you need to know.
+          </p>
+
+          <a href="#"
+            class="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-600 px-5 py-2 text-white font-semibold shadow shadow-blue-500/20 hover:opacity-95">
+            Contact Us
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ======= End FAQ Block ======  -->
+  <!-- ======= Feature CTA Block ====== -->
+  <section class="relative pb-12 sm:pb-16 lg:pb-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- Card: BDIX Hosting -->
+        <div class="relative overflow-hidden rounded-3xl shadow-xl">
+          <!-- Gradient base -->
+          <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-700"></div>
+          <!-- Starry bg image layer (as requested) -->
+          <div
+            class="absolute inset-x-0 bottom-0 h-full w-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-cover bg-[left_-80px_bottom] opacity-80">
+          </div>
+
+          <!-- Content -->
+          <div class="relative z-10 flex flex-col items-center text-center px-6 py-10 sm:px-10 sm:py-12">
+            <!-- Badge icon -->
+            <span class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/90 text-white">
+              <i class="fa-solid fa-cloud"></i>
+            </span>
+
+            <h3 class="text-white text-2xl sm:text-[22px] font-bold leading-snug">
+              Explore Our BDIX<br class="hidden sm:block" /> Hosting Packages
+            </h3>
+
+            <p class="mt-3 max-w-xl text-slate-200">
+              Leverage intelligent insights and real-time data to act decisively and keep your business ahead
+              of the curve.
+            </p>
+
+            <a href="#"
+              class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 font-semibold text-slate-900 hover:opacity-95">
+              Explore More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card: WordPress Hosting -->
+        <div class="relative overflow-hidden rounded-3xl shadow-xl">
+          <!-- Gradient base -->
+          <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-blue-700"></div>
+          <!-- Starry bg image layer (as requested) -->
+          <div
+            class="absolute inset-x-0 bottom-0 h-full w-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-cover bg-[left_-80px_bottom] opacity-80">
+          </div>
+
+          <!-- Content -->
+          <div class="relative z-10 flex flex-col items-center text-center px-6 py-10 sm:px-10 sm:py-12">
+            <!-- Badge icon -->
+            <span class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-sky-500/90 text-white">
+              <i class="fa-brands fa-wordpress"></i>
+            </span>
+
+            <h3 class="text-white text-2xl sm:text-[22px] font-bold leading-snug">
+              Explore Our WordPress<br class="hidden sm:block" /> Hosting Packages
+            </h3>
+
+            <p class="mt-3 max-w-xl text-slate-200">
+              Leverage intelligent insights and real-time data to act decisively and keep your business ahead
+              of the curve.
+            </p>
+
+            <a href="#"
+              class="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2 font-semibold text-slate-900 hover:opacity-95">
+              Explore More
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ======= End Feature CTA Block ====== -->
 
 
   <!-- Footer -->
@@ -870,7 +932,7 @@
     </div>
     </div>
   </footer>
-  
+
   <!-- ========= <Modals> ========= -->
   <!-- Login Modal Overlay -->
   <div id="loginModal"

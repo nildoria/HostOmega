@@ -37,7 +37,7 @@
           <a href="vps.html" class="font-medium text-slate-300 hover:text-white transition">VPS</a>
 
           <!-- Web Hosting dropdown -->
-          <div class="relative group">
+          <div class="relative">
             <button id="whBtn"
               class="inline-flex items-center font-medium text-slate-300 hover:text-white cursor-pointer transition"
               aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
@@ -49,7 +49,7 @@
               </svg>
             </button>
             <div id="whMenu"
-              class="transition-all opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20"
+              class="absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20 opacity-0 translate-y-2 transition-all duration-200 pointer-events-none"
               role="menu" aria-labelledby="whBtn">
               <a href="web-hosting.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
                 role="menuitem">Web Hosting</a>
@@ -60,12 +60,11 @@
             </div>
           </div>
 
-
-               <!-- Pages dropdown -->
-          <div class="relative group">
-            <button id="whBtn"
+          <!-- Pages dropdown -->
+          <div class="relative">
+            <button id="pagesBtn"
               class="inline-flex items-center font-medium text-slate-300 hover:text-white cursor-pointer transition"
-              aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
+              aria-haspopup="menu" aria-expanded="false" aria-controls="pagesMenu">
               Pages
               <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor"
                 aria-hidden="true">
@@ -73,9 +72,9 @@
                   d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
               </svg>
             </button>
-            <div id="whMenu"
-              class="transition-all opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20"
-              role="menu" aria-labelledby="whBtn">
+            <div id="pagesMenu"
+              class="absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20 opacity-0 translate-y-2 transition-all duration-200 pointer-events-none"
+              role="menu" aria-labelledby="pagesBtn">
               <a href="contact-us.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
                 role="menuitem">Features</a>
               <a href="index-logged-in.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
@@ -86,66 +85,67 @@
           <a href="contact-us.html" class="font-medium text-slate-300 hover:text-white transition">Contact</a>
         </nav>
 
-    <!-- Right: language + cart + auth -->
-<div class="flex items-center gap-1 lg:gap-6">
-  <!-- Language -->
-  <div class="relative group">
-    <button id="langBtn"
-      class="inline-flex items-center gap-2 rounded-md px-1.5 py-1 lg:px-2.5 lg:py-1.5 text-sm font-medium text-slate-200 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
-      aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu">
-      <!-- Globe -->
-      <svg class="h-4 lg:h-5 w-4 lg:w-5 opacity-90" viewBox="0 0 24 24" fill="none">
-        <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5" />
-        <path d="M3 12h18M12 3c3.5 3.3 3.5 14.7 0 18M12 3c-3.5 3.3-3.5 14.7 0 18" stroke="currentColor"
-          stroke-width="1.5" />
-      </svg>
-      <span id="langLabel">English</span>
-      <!-- Chevron -->
-      <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path
-          d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
-      </svg>
-    </button>
+        <!-- Right: language + cart + auth -->
+        <div class="flex items-center gap-1 lg:gap-6">
+          <!-- Language -->
+          <div class="relative group">
+            <button id="langBtn"
+              class="inline-flex items-center gap-2 rounded-md px-1.5 py-1 lg:px-2.5 lg:py-1.5 text-sm font-medium text-slate-200 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+              aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu">
+              <!-- Globe -->
+              <svg class="h-4 lg:h-5 w-4 lg:w-5 opacity-90" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5" />
+                <path d="M3 12h18M12 3c3.5 3.3 3.5 14.7 0 18M12 3c-3.5 3.3-3.5 14.7 0 18" stroke="currentColor"
+                  stroke-width="1.5" />
+              </svg>
+              <span id="langLabel">English</span>
+              <!-- Chevron -->
+              <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+              </svg>
+            </button>
 
-    <!-- Menu -->
-    <div id="langMenu"
-      class="absolute right-0 mt-2 w-44 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-xl shadow-black/20 transition-all duration-200"
-      role="menu" aria-labelledby="langBtn">
-      <button data-lang="en"
-        class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
-        role="menuitem">English</button>
-      <button data-lang="bn"
-        class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
-        role="menuitem">বাংলা</button>
-      <button data-lang="he"
-        class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
-        role="menuitem">עברית</button>
-    </div>
-  </div>
+            <!-- Menu -->
+            <div id="langMenu"
+              class="absolute right-0 mt-2 w-44 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-xl shadow-black/20 transition-all duration-200"
+              role="menu" aria-labelledby="langBtn">
+              <button data-lang="en"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">English</button>
+              <button data-lang="bn"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">বাংলা</button>
+              <button data-lang="he"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">עברית</button>
+            </div>
+          </div>
 
-  <!-- Cart -->
-  <a href="#cart" class="inline-flex items-center justify-center rounded-md text-slate-200 hover:bg-white/5"
-    aria-label="Cart">
-    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
-      <path d="M3 4h2l2.4 12a1 1 0 0 0 .98.8h9.64a1 1 0 0 0 .98-.8L21 7H6" stroke="currentColor"
-        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <circle cx="9" cy="20" r="1" fill="currentColor" />
-      <circle cx="18" cy="20" r="1" fill="currentColor" />
-    </svg>
-  </a>
+          <!-- Cart -->
+          <a href="#cart" class="inline-flex items-center justify-center rounded-md text-slate-200 hover:bg-white/5"
+            aria-label="Cart">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+              <path d="M3 4h2l2.4 12a1 1 0 0 0 .98.8h9.64a1 1 0 0 0 .98-.8L21 7H6" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="9" cy="20" r="1" fill="currentColor" />
+              <circle cx="18" cy="20" r="1" fill="currentColor" />
+            </svg>
+          </a>
 
-  <!-- Auth -->
-  <a id="loginBtn" href="#" class="hidden lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition">Log
-    in</a>
-  <button id="signupBtn"
-    class="hidden lg:inline-flex items-center gap-2 rounded-full bg-blue-500/100 px-5 py-2 text-sm font-semibold text-white hover:opacity-95 shadow-lg shadow-sky-500/20 transition cursor-pointer">
-    Sign Up
-    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-      <path
-        d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
-    </svg>
-  </button>
-</div>
+          <!-- Auth -->
+          <a id="loginBtn" href="#"
+            class="hidden lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition">Log
+            in</a>
+          <button id="signupBtn"
+            class="hidden lg:inline-flex items-center gap-2 rounded-full bg-blue-500/100 px-5 py-2 text-sm font-semibold text-white hover:opacity-95 shadow-lg shadow-sky-500/20 transition cursor-pointer">
+            Sign Up
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
+            </svg>
+          </button>
+        </div>
 
 
         <!-- Mobile menu button -->
@@ -197,9 +197,11 @@
         <a href="contact-us.html" class="py-2 text-slate-300 hover:text-white">Contact</a>
 
         <div class="mt-4 flex items-center gap-4">
-         <a href="login.html" class="block lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition cursor-pointer">Log in</a>
+          <a href="login.html"
+            class="block lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition cursor-pointer">Log
+            in</a>
 
-              <a href="sign-up.html"
+          <a href="sign-up.html"
             class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 px-4 py-2 font-semibold text-slate-900">
             Sign Up
             <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -247,7 +249,7 @@
       class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-6">
       BDIX KVM VPS Plans</h2>
 
-  <!-- Bottom CPU switcher (drop right after your grid) -->
+    <!-- Bottom CPU switcher (drop right after your grid) -->
     <div class="flex items-center justify-center gap-2 mt-6 mb-3">
       <button id="cpuAmd" class="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold
            border-blue-500 text-blue-600 bg-blue-50 hover:bg-blue-100 transition h-[36px]">
@@ -286,7 +288,8 @@
       <!-- BDIX KVM 2G (AMD) -->
       <div data-cpu="amd" class="card-item bg-white rounded-2xl p-6 shadow flex flex-col justify-between">
         <div class="text-left z-1">
-          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 2G</h3>
+          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+            KVM 2G</h3>
           <div class="flex align-bottom">
             <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$15.00" data-yearly="$12.75">
               $15.00</div>
@@ -308,7 +311,8 @@
       <!-- BDIX KVM 4G (AMD) -->
       <div data-cpu="amd" class="card-item bg-white rounded-2xl p-6 shadow flex flex-col justify-between">
         <div class="text-left z-1">
-          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 4G</h3>
+          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+            KVM 4G</h3>
           <div class="flex align-bottom">
             <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$25.00" data-yearly="$21.25">
               $25.00</div>
@@ -340,7 +344,8 @@
         </span>
         <div class="bg-white rounded-2xl p-4 flex flex-col justify-between z-0">
           <div class="text-left">
-            <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 8G</h3>
+            <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+              KVM 8G</h3>
             <div class="flex align-bottom">
               <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$50.00"
                 data-yearly="$42.50">$50.00</div>
@@ -363,7 +368,8 @@
       <!-- BDIX KVM 12G (AMD) -->
       <div data-cpu="amd" class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
         <div class="text-left z-1">
-          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 12G</h3>
+          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+            KVM 12G</h3>
           <div class="flex align-bottom">
             <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$75.00" data-yearly="$63.75">
               $75.00</div>
@@ -385,7 +391,8 @@
       <!-- BDIX KVM 24G (AMD) -->
       <div data-cpu="amd" class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
         <div class="text-left z-1">
-          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 24G</h3>
+          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+            KVM 24G</h3>
           <div class="flex align-bottom">
             <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$150.00"
               data-yearly="$127.50">$150.00</div>
@@ -409,7 +416,8 @@
       <!-- BDIX KVM 2G (intel) -->
       <div data-cpu="intel" class="card-item bg-white rounded-2xl p-6 shadow flex flex-col justify-between hidden">
         <div class="text-left z-1">
-          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 2G</h3>
+          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+            KVM 2G</h3>
           <div class="flex align-bottom">
             <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$14.00" data-yearly="$11.90">
               $14.00</div>
@@ -431,7 +439,8 @@
       <!-- BDIX KVM 4G (intel) -->
       <div data-cpu="intel" class="card-item bg-white rounded-2xl p-6 shadow flex flex-col justify-between hidden">
         <div class="text-left z-1">
-          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 4G</h3>
+          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+            KVM 4G</h3>
           <div class="flex align-bottom">
             <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$23.00" data-yearly="$19.55">
               $23.00</div>
@@ -463,13 +472,14 @@
         </span>
         <div class="bg-white rounded-2xl p-4 flex flex-col justify-between z-0">
           <div class="text-left">
-            <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 8G</h3>
+            <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+              KVM 8G</h3>
             <div class="flex align-bottom">
               <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$48.00"
                 data-yearly="$40.80">$48.00</div>
               <p class="text-gray-500 mb-0 text-sm ml-1 mb-2 content-end">/mo</p>
             </div>
-          <p class="text-gray-500 mb-4">Most budget-friendly plan</p>
+            <p class="text-gray-500 mb-4">Most budget-friendly plan</p>
             <a href="#"
               class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-blue-500 bg-blue-500 text-white hover:bg-white hover:border-black hover:text-black transition-colors duration-200 font-semibold">Get
               Started →</a>
@@ -486,7 +496,8 @@
       <!-- BDIX KVM 12G (intel) -->
       <div data-cpu="intel" class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between hidden">
         <div class="text-left z-1">
-          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 12G</h3>
+          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+            KVM 12G</h3>
           <div class="flex align-bottom">
             <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$72.00" data-yearly="$61.20">
               $72.00</div>
@@ -508,7 +519,8 @@
       <!-- BDIX KVM 24G (intel) -->
       <div data-cpu="intel" class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between hidden">
         <div class="text-left z-1">
-          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX KVM 24G</h3>
+          <h3 class="text-xl font-['Outfit',_sans-serif] font-bold mb-3 pb-3 border-b border-[rgba(0,0,0,0.04)]">BDIX
+            KVM 24G</h3>
           <div class="flex align-bottom">
             <div class="text-3xl font-['Outfit',_sans-serif] font-bold mb-1" data-monthly="$145.00"
               data-yearly="$123.25">$145.00</div>
@@ -855,7 +867,7 @@
     </div>
   </section>
   <!-- ======= End Platform / Coverage Block ======  -->
-     <!-- ======= Partners Block ======  -->
+  <!-- ======= Partners Block ======  -->
 
   <section class="relative bg-gradient-to-b from-[#02060A] to-[#0a1c3a] text-white py-10 sm:py-16 lg:py-20">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
@@ -1330,7 +1342,7 @@
     </div>
     </div>
   </footer>
-  
+
   <!-- ========= <Modals> ========= -->
   <!-- Login Modal Overlay -->
   <div id="loginModal"
