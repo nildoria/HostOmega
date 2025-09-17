@@ -288,3 +288,53 @@
     });
   });
 })();
+
+
+// Dropdown Hover Menu
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all dropdown buttons
+  const dropdownButtons = [
+    { button: document.getElementById('whBtn'), menu: document.getElementById('whMenu') },
+    { button: document.getElementById('pagesBtn'), menu: document.getElementById('pagesMenu') },
+    { button: document.getElementById('langBtn'), menu: document.getElementById('langMenu') }
+  ];
+
+  dropdownButtons.forEach(({ button, menu }) => {
+    if (button && menu) {
+      let timeoutId;
+
+      // Show dropdown on button hover
+      button.addEventListener('mouseenter', () => {
+        clearTimeout(timeoutId);
+        showDropdown(menu);
+      });
+
+      // Hide dropdown when leaving button
+      button.addEventListener('mouseleave', () => {
+        timeoutId = setTimeout(() => {
+          hideDropdown(menu);
+        }, 100); // Small delay to prevent flickering
+      });
+
+      // Keep dropdown open when hovering over menu
+      menu.addEventListener('mouseenter', () => {
+        clearTimeout(timeoutId);
+      });
+
+      // Hide dropdown when leaving menu
+      menu.addEventListener('mouseleave', () => {
+        hideDropdown(menu);
+      });
+    }
+  });
+
+  function showDropdown(menu) {
+    menu.classList.remove('opacity-0', 'translate-y-2', 'pointer-events-none');
+    menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+  }
+
+  function hideDropdown(menu) {
+    menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+    menu.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none');
+  }
+});
