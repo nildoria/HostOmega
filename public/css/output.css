@@ -1622,6 +1622,15 @@
   .pb-30 {
     padding-bottom: calc(var(--spacing) * 30);
   }
+  .pb-70 {
+    padding-bottom: calc(var(--spacing) * 70);
+  }
+  .pb-75 {
+    padding-bottom: calc(var(--spacing) * 75);
+  }
+  .pb-80 {
+    padding-bottom: calc(var(--spacing) * 80);
+  }
   .pb-120 {
     padding-bottom: calc(var(--spacing) * 120);
   }
@@ -2215,28 +2224,6 @@
       color: var(--color-black);
     }
   }
-  .peer-hover\:visible {
-    &:is(:where(.peer):hover ~ *) {
-      @media (hover: hover) {
-        visibility: visible;
-      }
-    }
-  }
-  .peer-hover\:translate-y-0 {
-    &:is(:where(.peer):hover ~ *) {
-      @media (hover: hover) {
-        --tw-translate-y: calc(var(--spacing) * 0);
-        translate: var(--tw-translate-x) var(--tw-translate-y);
-      }
-    }
-  }
-  .peer-hover\:opacity-100 {
-    &:is(:where(.peer):hover ~ *) {
-      @media (hover: hover) {
-        opacity: 100%;
-      }
-    }
-  }
   .before\:absolute {
     &::before {
       content: var(--tw-content);
@@ -2818,6 +2805,11 @@
   .sm\:pb-38 {
     @media (width >= 40rem) {
       padding-bottom: calc(var(--spacing) * 38);
+    }
+  }
+  .sm\:pb-48 {
+    @media (width >= 40rem) {
+      padding-bottom: calc(var(--spacing) * 48);
     }
   }
   .sm\:pb-68 {
