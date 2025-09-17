@@ -3211,6 +3211,11 @@
       padding-top: calc(var(--spacing) * 32);
     }
   }
+  .lg\:pt-34 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 34);
+    }
+  }
   .lg\:pt-40 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 40);
