@@ -1460,6 +1460,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .p-1 {
+    padding: calc(var(--spacing) * 1);
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -1622,8 +1625,8 @@
   .pb-30 {
     padding-bottom: calc(var(--spacing) * 30);
   }
-  .pb-120 {
-    padding-bottom: calc(var(--spacing) * 120);
+  .pb-75 {
+    padding-bottom: calc(var(--spacing) * 75);
   }
   .pl-3 {
     padding-left: calc(var(--spacing) * 3);
@@ -2213,28 +2216,6 @@
   .group-\[\.bg-green-500\]\:text-black {
     &:is(:where(.group):is(.bg-green-500) *) {
       color: var(--color-black);
-    }
-  }
-  .peer-hover\:visible {
-    &:is(:where(.peer):hover ~ *) {
-      @media (hover: hover) {
-        visibility: visible;
-      }
-    }
-  }
-  .peer-hover\:translate-y-0 {
-    &:is(:where(.peer):hover ~ *) {
-      @media (hover: hover) {
-        --tw-translate-y: calc(var(--spacing) * 0);
-        translate: var(--tw-translate-x) var(--tw-translate-y);
-      }
-    }
-  }
-  .peer-hover\:opacity-100 {
-    &:is(:where(.peer):hover ~ *) {
-      @media (hover: hover) {
-        opacity: 100%;
-      }
     }
   }
   .before\:absolute {
@@ -3199,11 +3180,6 @@
       padding-block: calc(var(--spacing) * 20);
     }
   }
-  .lg\:pt-14 {
-    @media (width >= 64rem) {
-      padding-top: calc(var(--spacing) * 14);
-    }
-  }
   .lg\:pt-20 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 20);
@@ -3217,6 +3193,11 @@
   .lg\:pt-32 {
     @media (width >= 64rem) {
       padding-top: calc(var(--spacing) * 32);
+    }
+  }
+  .lg\:pt-34 {
+    @media (width >= 64rem) {
+      padding-top: calc(var(--spacing) * 34);
     }
   }
   .lg\:pt-40 {
