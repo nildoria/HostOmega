@@ -271,158 +271,178 @@
   </section>
   <!-- ======= End Hero Block ======  -->
   <section class="relative mx-auto max-w-7xl px-4 sm:px-6 z-1">
-    <!-- === Domain Search Bar === -->
+<!-- === Domain Search Bar === -->
+<div
+  class="absolute -top-[250px] left-1/2 -translate-x-1/2 w-[90%] lg:w-full 
+         rounded-3xl bg-white dark:bg-[#1F1F1F] shadow-xl ring-1 ring-black/5 
+         px-4 sm:px-6 py-5 transition-colors duration-500"
+>
+  <!-- Top row: title -->
+  <p class="px-1 pb-3 text-xl font-medium text-slate-950 dark:text-white">
+    Register a Domain Name
+  </p>
+
+  <!-- Search row -->
+  <div class="relative">
+    <!-- Search wrapper (pill) -->
     <div
-      class="absolute -top-[250px] left-[50%] -translate-x-[50%] w-[90%] lg:w-full rounded-3xl bg-white shadow-xl ring-1 ring-black/5 px-4 sm:px-6 py-5">
-      <!-- Top row: title -->
-      <p class="px-1 pb-3 text-xl font-medium text-slate-950">Register a Domain Name</p>
+      class="relative flex items-center rounded-full border border-slate-200 dark:border-gray-600 
+             bg-slate-50 dark:bg-[#121212] pl-4 pr-20 sm:pr-28 transition-colors duration-500"
+    >
+      <!-- search icon -->
+      <svg
+        class="h-5 w-5 shrink-0 text-slate-400 dark:text-gray-400"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m21 21-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
+        />
+      </svg>
 
-      <!-- Search row -->
-      <div class="relative">
-        <!-- Search wrapper (pill) -->
-        <div class="relative flex items-center rounded-full border border-slate-200 bg-slate-50 pl-4 pr-20 sm:pr-28">
-          <!-- search icon -->
-          <svg class="h-5 w-5 shrink-0 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="m21 21-4.35-4.35M10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
-          </svg>
+      <!-- input -->
+      <label class="sr-only" for="domain">Search Domain Name</label>
+      <input
+        id="domain"
+        type="text"
+        placeholder="Search Domain Name"
+        class="w-full bg-transparent py-4 pl-3 pr-2 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-gray-500 focus:outline-none"
+      />
 
-          <!-- input -->
-          <label class="sr-only" for="domain">Search Domain Name</label>
-          <input id="domain" type="text" placeholder="Search Domain Name"
-            class="w-full bg-transparent py-4 pl-3 pr-2 text-slate-900 placeholder-slate-400 focus:outline-none" />
+      <!-- TLD button -->
+      <button
+        id="tldBtn"
+        type="button"
+        class="absolute right-16 sm:right-20 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center gap-1.5 
+               rounded-xl px-2.5 py-1.5 text-[15px] font-medium text-slate-800 dark:text-gray-200 
+               hover:bg-white dark:hover:bg-[#2A2A2A] transition-colors duration-300"
+      >
+        <span id="tldCurrent">.com</span>
+        <svg
+          class="h-4 w-4 text-slate-400 dark:text-gray-400"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
 
-          <!-- TLD button (inside the pill, right side) -->
-          <button id="tldBtn" type="button"
-            class="absolute right-16 sm:right-20 top-1/2 -translate-y-1/2 hidden sm:inline-flex items-center gap-1.5 rounded-xl px-2.5 py-1.5 text-[15px] font-medium text-slate-800 hover:bg-white">
-            <span id="tldCurrent">.com</span>
-            <svg class="h-4 w-4 text-slate-400" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z"
-                clip-rule="evenodd" />
-            </svg>
-          </button>
-
-          <!-- Submit (inside the pill, far right) -->
-          <button id="domainSubmit" type="button"
-            class="absolute cursor-pointer right-2 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 text-white shadow ring-4 ring-blue-100/60 hover:from-blue-600hover:to-indigo-600 transition">
-            <svg class="h-5 w-5 -rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Inline dropdown (over the input on the right) -->
-        <div id="tldMenu" class="invisible opacity-0 z-10 pointer-events-none absolute right-16 sm:right-20
-            w-40 rounded-xl border border-slate-200 bg-white shadow-lg transition
-            data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto">
-          <ul role="listbox" class="py-1.5">
-            <!-- add/remove as needed -->
-            <li data-ext=".com" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.com</li>
-            <li data-ext=".net" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.net</li>
-            <li data-ext=".org" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.org</li>
-            <li data-ext=".io" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.io</li>
-            <li data-ext=".dev" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.dev</li>
-            <li data-ext=".xyz" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.xyz</li>
-            <li data-ext=".shop" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.shop</li>
-            <li data-ext=".store" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.store</li>
-            <li data-ext=".site" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.site</li>
-            <li data-ext=".fun" class="tld-item px-3 py-2 text-sm hover:bg-slate-50 cursor-pointer">.fun</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- TLD chips row -->
-      <div class="mt-4 flex items-center gap-2">
-        <!-- left arrow (optional; remove if you only want next) -->
-        <button id="chipsPrev" type="button"
-          class="hidden cursor-pointer sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-gray-200 text-slate-950 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        <!-- viewport + track -->
-        <div class="relative flex-1">
-          <!-- scrollable track -->
-          <div id="tldChips"
-            class="flex gap-2 relative z-1 overflow-x-auto scroll-smooth select-none cursor-grab active:cursor-grabbing [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <!-- chips (same as before) -->
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-blue-500 font-semibold">.com</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-emerald-500 font-semibold">.xyz</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-blue-500 font-semibold">.shop</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-emerald-500 font-semibold">.store</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-blue-500 font-semibold">.site</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-emerald-500 font-semibold">.fun</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-            <!-- extras so we can slide -->
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-blue-500 font-semibold">.net</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-emerald-500 font-semibold">.org</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-blue-500 font-semibold">.io</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-            <span
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm">
-              <span class="text-emerald-500 font-semibold">.dev</span>
-              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
-            </span>
-          </div>
-
-          <!-- edge fades -->
-          <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-transparent">
-          </div>
-          <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent">
-          </div>
-        </div>
-
-        <!-- right arrow -->
-        <button id="chipsNext" type="button"
-          class="hidden cursor-pointer sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-gray-200 text-slate-950 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
-
+      <!-- Submit -->
+      <button
+        id="domainSubmit"
+        type="button"
+        class="absolute cursor-pointer right-2 top-1/2 -translate-y-1/2 inline-flex h-10 w-10 
+               items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-indigo-500 
+               text-white shadow ring-4 ring-blue-100/60 hover:from-blue-600 hover:to-indigo-600 transition"
+      >
+        <svg
+          class="h-5 w-5 -rotate-45"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 12h14M13 5l7 7-7 7"
+          />
+        </svg>
+      </button>
     </div>
-    <!-- === End Domain Search Bar === -->
+
+    <!-- Dropdown -->
+    <div
+      id="tldMenu"
+      class="invisible opacity-0 z-10 pointer-events-none absolute right-16 sm:right-20
+             w-40 rounded-xl border border-slate-200 dark:border-gray-600 
+             bg-white dark:bg-[#1F1F1F] shadow-lg transition 
+             data-[open=true]:visible data-[open=true]:opacity-100 data-[open=true]:pointer-events-auto"
+    >
+      <ul role="listbox" class="py-1.5">
+        <li data-ext=".com" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.com</li>
+        <li data-ext=".net" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.net</li>
+        <li data-ext=".org" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.org</li>
+        <li data-ext=".io" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.io</li>
+        <li data-ext=".dev" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.dev</li>
+        <li data-ext=".xyz" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.xyz</li>
+        <li data-ext=".shop" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.shop</li>
+        <li data-ext=".store" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.store</li>
+        <li data-ext=".site" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.site</li>
+        <li data-ext=".fun" class="tld-item px-3 py-2 text-sm text-slate-800 dark:text-gray-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A] cursor-pointer">.fun</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TLD chips row -->
+  <div class="mt-4 flex items-center gap-2">
+    <!-- left arrow -->
+    <button
+      id="chipsPrev"
+      type="button"
+      class="hidden cursor-pointer sm:inline-flex h-9 w-9 items-center justify-center 
+             rounded-full border border-slate-200 dark:border-gray-600 
+             bg-gray-200 dark:bg-[#121212] text-slate-950 dark:text-gray-200 
+             hover:bg-slate-50 dark:hover:bg-[#fff] disabled:opacity-40 disabled:cursor-not-allowed"
+    >
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+
+    <!-- viewport -->
+    <div class="relative flex-1">
+      <div
+        id="tldChips"
+        class="flex gap-2 relative z-1 overflow-x-auto scroll-smooth select-none cursor-grab active:cursor-grabbing 
+               [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      >
+        <!-- chip -->
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+          <span class="text-blue-500 font-semibold">.com</span>
+          <span class="text-slate-400 dark:text-gray-400 inline-flex">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+          <span class="text-emerald-500 font-semibold">.xyz</span>
+          <span class="text-slate-400 dark:text-gray-400 inline-flex">$9.56/ <span class="text-xs">year</span></span>
+        </span>
+        <!-- repeat others same pattern -->
+      </div>
+
+      <!-- edge fades -->
+      <!-- <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white dark:from-[#1F1F1F] to-transparent"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white dark:from-[#1F1F1F] to-transparent"></div> -->
+    </div>
+
+    <!-- right arrow -->
+    <button
+      id="chipsNext"
+      type="button"
+      class="hidden cursor-pointer sm:inline-flex h-9 w-9 items-center justify-center 
+             rounded-full border border-slate-200 dark:border-gray-600 
+             bg-gray-200 dark:bg-[#121212] text-slate-950 dark:text-gray-200 
+             hover:bg-slate-50 dark:hover:bg-[#fff] disabled:opacity-40 disabled:cursor-not-allowed"
+    >
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </div>
+</div>
+<!-- === End Domain Search Bar === -->
+
   </section>
   <!-- ======= Services Block ======  -->
   <section
-    class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 lg:pt-32 lg:pb-32 bg-white dark:bg-[#0a1c3a]/70 transition-colors duration-500">
+    class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 lg:pt-32 lg:pb-32 bg-white dark:bg-[#020508] transition-colors duration-500">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <!-- Section Title Block -->
       <div class="lg:grid lg:grid-cols-1 md:gap-12 lg:grid-cols-2 lg:gap-8 mb-10 lg:mb-20 justify-center items-end">
@@ -447,7 +467,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4 justify-center">
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40 justify-between">
+          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 dark:border-[#111111] justify-between">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -455,28 +475,28 @@
           <!-- Content -->
           <img src="./public/img/services-icon-1.svg" alt="Feature 1" class="h-[43px] w-[48px] mb-4 relative z-10">
           <h3
-            class="text-2xl transition font-semibold mb-3 relative z-10 group-hover:text-white font-['Outfit',_sans-serif]">
+            class="text-2xl transition font-semibold mb-3 relative z-10 dark:text-white group-hover:text-white font-['Outfit',_sans-serif]">
             WordPress Hosting
           </h3>
-          <p class="relative z-10 text-black transition group-hover:text-white">
+          <p class="relative z-10 text-black dark:text-white transition group-hover:text-white">
             Perfect for blogs, personal sites, and content creators.
           </p>
           <div class="mt-5 mb-8 relative z-10">
             <h4
-              class="text-2xl lg:text-3xl font-semibold transition group-hover:text-white font-['Outfit',_sans-serif]">
+              class="text-2xl lg:text-3xl font-semibold transition dark:text-white group-hover:text-white font-['Outfit',_sans-serif]">
               $3.99</h4>
-            <p class="transition group-hover:text-white ">Starting from: <span
+            <p class="transition dark:text-white group-hover:text-white ">Starting from: <span
                 class="font-semibold transition group-hover:text-white">$3.99/month</span></p>
           </div>
           <a href="#"
-            class="inline-flex items-center gap-2 py-2 font-semibold text-slate-900 relative transition z-10 group-hover:text-white hover:opacity-95 underline">
+            class="inline-flex items-center gap-2 py-2 font-semibold text-slate-900 relative transition z-10 dark:text-white group-hover:text-white hover:opacity-95 underline">
             Learn More <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
         <!-- End Single Services -->
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40 justify-between">
+          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 dark:border-[#111111] justify-between">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -484,28 +504,28 @@
           <!-- Content -->
           <img src="./public/img/vps-2.svg" alt="Feature 1" class="h-[43px] w-[48px] mb-4 relative z-10">
           <h3
-            class="text-2xl transition font-semibold mb-3 relative z-10 group-hover:text-white font-['Outfit',_sans-serif]">
+            class="text-2xl transition font-semibold mb-3 relative z-10 dark:text-white group-hover:text-white font-['Outfit',_sans-serif]">
             VPS Hosting
           </h3>
-          <p class="relative z-10 text-black transition group-hover:text-white">
+          <p class="relative z-10 text-black dark:text-white transition group-hover:text-white">
             Power and flexibility for growing websites and personal projects.
           </p>
           <div class="mt-5 mb-8 relative z-10">
             <h4
-              class="text-2xl lg:text-3xl font-semibold transition group-hover:text-white font-['Outfit',_sans-serif]">
+              class="text-2xl lg:text-3xl font-semibold transition dark:text-white group-hover:text-white font-['Outfit',_sans-serif]">
               $3.99</h4>
-            <p class="transition group-hover:text-white ">Starting from: <span
+            <p class="transition dark:text-white group-hover:text-white">Starting from: <span
                 class="font-semibold transition group-hover:text-white">$3.99/month</span></p>
           </div>
           <a href="#"
-            class="inline-flex items-center gap-2 py-2 font-semibold text-slate-900 relative transition z-10 group-hover:text-white hover:opacity-95 underline">
+            class="inline-flex items-center gap-2 py-2 font-semibold text-slate-900 relative transition z-10 dark:text-white group-hover:text-white hover:opacity-95 underline">
             Learn More <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
         <!-- End Single Services -->
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40 justify-between">
+          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 dark:border-[#111111] justify-between">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -513,28 +533,28 @@
           <!-- Content -->
           <img src="./public/img/services-icon-3.svg" alt="Feature 1" class="h-[43px] w-[48px] mb-4 relative z-10">
           <h3
-            class="text-2xl transition font-semibold mb-3 relative z-10 group-hover:text-white font-['Outfit',_sans-serif]">
+            class="text-2xl transition font-semibold mb-3 relative z-10 dark:text-white group-hover:text-white font-['Outfit',_sans-serif]">
             Reseller Hosting
           </h3>
-          <p class="relative z-10 text-black transition group-hover:text-white">
+          <p class="relative z-10 text-black dark:text-white transition group-hover:text-white">
             Start your own hosting business with scalable reseller plans.
           </p>
           <div class="mt-5 mb-8 relative z-10">
             <h4
-              class="text-2xl lg:text-3xl font-semibold transition group-hover:text-white font-['Outfit',_sans-serif]">
+              class="text-2xl lg:text-3xl font-semibold transition dark:text-white group-hover:text-white font-['Outfit',_sans-serif]">
               $3.99</h4>
-            <p class="transition group-hover:text-white ">Starting from: <span
+            <p class="transition dark:text-white group-hover:text-white">Starting from: <span
                 class="font-semibold transition group-hover:text-white">$3.99/month</span></p>
           </div>
           <a href="#"
-            class="inline-flex items-center gap-2 py-2 font-semibold text-slate-900 relative transition z-10 group-hover:text-white hover:opacity-95 underline">
+            class="inline-flex items-center gap-2 py-2 font-semibold text-slate-900 relative transition z-10 dark:text-white group-hover:text-white hover:opacity-95 underline">
             Learn More <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
         <!-- End Single Services -->
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 shadow-xs shadow-gray-300/40 justify-between">
+          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 dark:border-[#111111] justify-between">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -542,21 +562,21 @@
           <!-- Content -->
           <img src="./public/img/services-icon-4.svg" alt="Feature 1" class="h-[43px] w-[48px] mb-4 relative z-10">
           <h3
-            class="text-2xl transition font-semibold mb-3 relative z-10 group-hover:text-white font-['Outfit',_sans-serif]">
+            class="text-2xl transition font-semibold mb-3 relative z-10 dark:text-white group-hover:text-white font-['Outfit',_sans-serif]">
             Dedicated Hosting
           </h3>
-          <p class="relative z-10 text-black transition group-hover:text-white">
+          <p class="relative z-10 text-black dark:text-white transition group-hover:text-white">
             Ultimate performance and control with enterprise-grade servers.
           </p>
           <div class="mt-5 mb-8 relative z-10">
             <h4
-              class="text-2xl lg:text-3xl font-semibold transition group-hover:text-white font-['Outfit',_sans-serif]">
+              class="text-2xl lg:text-3xl font-semibold transition dark:text-white group-hover:text-white font-['Outfit',_sans-serif]">
               $3.99</h4>
-            <p class="transition group-hover:text-white ">Starting from: <span
+            <p class="transition dark:text-white group-hover:text-white">Starting from: <span
                 class="font-semibold transition group-hover:text-white">$3.99/month</span></p>
           </div>
           <a href="#"
-            class="inline-flex items-center gap-2 py-2 font-semibold text-slate-900 relative transition z-10 group-hover:text-white hover:opacity-95 underline">
+            class="inline-flex items-center gap-2 py-2 font-semibold text-slate-900 relative transition z-10 dark:text-white group-hover:text-white hover:opacity-95 underline">
             Learn More <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -570,7 +590,7 @@
   <section
     class="relative pt-10 pb-10 sm:pt-16 sm:pb-16 isolate overflow-hidden bg-[#02060A]/100 pt-20 pb-20 sm:pt-20 sm:pb-20 text-white z-1">
     <div
-      class="absolute inset-x-0 -bottom-0 overflow-hidden h-full bg-[url(../img/features-block-bg.svg)] bg-no-repeat bg-[left_center] bg-cover z-0 hidden lg:block">
+      class="absolute inset-x-0 -bottom-0 overflow-hidden h-full bg-[url(../img/features-block-bg.svg)] dark:bg-[url('')] bg-no-repeat bg-[left_center] bg-cover z-0 hidden lg:block">
       <!-- <div id='omegastars'></div>
       <div id='omegastars2'></div>
       <div id='omegastars3'></div> -->
@@ -664,150 +684,259 @@
   </section>
   <!-- ======= End Features Block ======  -->
 
-  <!-- ======= Pricing Block ======  -->
-  <section class="lg:px-4 py-10 lg:py-20 sm:pt-16 sm:pb-20 bg-gray-50 text-center hidden">
-    <span
-      class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex font-['Outfit',_sans-serif]font-['Outfit',_sans-serif]"><img
-        class="mr-1 block" src="./public/img/flash-icon.png" alt="">Pricing</span>
-    <h2
-      class="text-[30px] font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-6">
-      Web Hosting Plans for <span class="text-blue-500">Your Site</span>
-    </h2>
+<!-- ======= Pricing Block ======  -->
+<section
+  class="lg:px-4 py-10 lg:py-20 sm:pt-16 sm:pb-20 bg-gray-50 dark:bg-[#020508] transition-colors duration-500 text-center hidden"
+>
+  <span
+    class="bg-white dark:bg-[#1F1F1F] rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 dark:text-white mb-4 inline-flex font-['Outfit',_sans-serif]"
+  >
+    <img class="mr-1 block" src="./public/img/flash-icon.png" alt="" />Pricing
+  </span>
 
-    <!-- Pricing Toggle -->
-    <div class="inline-flex items-center justify-center bg-white rounded-full shadow-md px-1 py-1 lg:mb-10 gap-1">
-      <button id="monthlyBtn"
-        class="cursor-pointer px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-full transition-all">
-        Monthly
-      </button>
-      <button id="yearlyBtn"
-        class="cursor-pointer px-4 py-2 text-sm font-medium text-blue-500 hover:text-white hover:bg-green-500 rounded-full transition-all group">
-        Yearly
-        <span class="ml-1 text-xs rounded-full px-3 py-1 bg-blue-500/10 text-blue-500 transition-all
+  <h2
+    class="text-[30px] dark:text-white transition-colors duration-500 font-['Outfit',_sans-serif] font-bold leading-tight tracking-tight sm:text-[36px] lg:text-[48px] mb-6"
+  >
+    Web Hosting Plans for <span class="text-blue-500">Your Site</span>
+  </h2>
+
+  <!-- Pricing Toggle -->
+  <div
+    class="inline-flex items-center justify-center bg-white dark:bg-[#1F1F1F] transition-colors duration-500 rounded-full shadow-md px-1 py-1 lg:mb-10 gap-1"
+  >
+    <button
+      id="monthlyBtn"
+      class="cursor-pointer px-4 py-2 text-sm font-medium text-white bg-green-500 rounded-full transition-all"
+    >
+      Monthly
+    </button>
+    <button
+      id="yearlyBtn"
+      class="cursor-pointer px-4 py-2 text-sm font-medium text-blue-500 hover:text-white hover:bg-green-500 rounded-full transition-all group"
+    >
+      Yearly
+      <span
+        class="ml-1 text-xs rounded-full px-3 py-1 bg-blue-500/10 text-blue-500 transition-all
                 group-hover:bg-green-300 group-hover:text-black
-                group-[.bg-green-500]:bg-green-300 group-[.bg-green-500]:text-black">
-          -15% Off
-        </span>
-      </button>
-    </div>
-    <!-- Pricing Toggle End -->
+                group-[.bg-green-500]:bg-green-300 group-[.bg-green-500]:text-black"
+      >
+        -15% Off
+      </span>
+    </button>
+  </div>
+  <!-- Pricing Toggle End -->
 
-    <!-- Pricing Grid -->
+  <!-- Pricing Grid -->
+  <div
+    class="hostomega-pricing-table grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-8 lg:mt-15 px-2 lg:px-0"
+  >
+    <!-- Plan 1 -->
     <div
-      class="hostomega-pricing-table grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mt-8 lg:mt-15 px-2 lg:px-0">
-
-      <!-- Plan 1 -->
-      <div class="card-item bg-white rounded-2xl p-6 shadow flex flex-col justify-between">
-        <div class="text-left z-1">
-          <h3 class="text-xl font-bold mb-1 font-['Outfit',_sans-serif]">WordPress Starter Plan</h3>
-          <p class="text-gray-500 mb-4">Perfect for blogs, personal sites, and content creators.</p>
-          <div class="text-3xl font-bold mb-1" data-monthly="$3.00" data-yearly="$2.55">$3.00</div>
-          <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
-          <a href="#"
-            class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200">Get
-            Started →</a>
+      class="card-item bg-white dark:bg-[#1F1F1F] transition-colors duration-500 rounded-2xl p-6 shadow flex flex-col justify-between"
+    >
+      <div class="text-left z-1">
+        <h3
+          class="text-xl font-bold mb-1 font-['Outfit',_sans-serif] dark:text-white"
+        >
+          WordPress Starter Plan
+        </h3>
+        <p class="text-gray-500 dark:text-gray-400 mb-4">
+          Perfect for blogs, personal sites, and content creators.
+        </p>
+        <div
+          class="text-3xl font-bold mb-1 dark:text-white"
+          data-monthly="$3.00"
+          data-yearly="$2.55"
+        >
+          $3.00
         </div>
-        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600 z-1">
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 5GB SSD storage</li>
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 2 hosted domains</li>
+        <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">
+          Most budget-friendly plan
+        </p>
+        <a
+          href="#"
+          class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black dark:border-white text-black dark:text-white font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200"
+          >Get Started →</a
+        >
+      </div>
+      <ul
+        class="mt-6 text-left text-sm space-y-4 text-gray-600 dark:text-gray-300 z-1"
+      >
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 5GB SSD storage</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 2 hosted domains</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 250 GB bandwidth</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> Unlimited subdomains</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> Free SSL certificate</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 24/7 Monitoring & support</li>
+      </ul>
+    </div>
+
+    <!-- Plan 2 (highlight) -->
+    <div
+      class="relative flex flex-col justify-between rounded-2xl bg-white dark:bg-[#1F1F1F] transition-colors duration-500 p-2.5 lg:-mt-10 shadow-xl
+         before:content-[''] before:absolute before:inset-0 before:rounded-2xl before:p-2
+         before:bg-[url('../img/pricing-bg.png')] before:bg-no-repeat before:bg-left-bottom before:bg-[length:100%_auto]
+         before:[-webkit-mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]
+         before:[-webkit-mask-composite:xor]
+         before:[mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]
+         before:[mask-composite:exclude]"
+    >
+      <span class="text-white inline-flex justify-center gap-2 pb-2 z-0">
+        <img src="./public/img/badge-check.svg" alt="" /> Recommended For Your Business
+      </span>
+      <div class="bg-white dark:bg-[#1F1F1F] rounded-2xl p-6 flex flex-col justify-between z-0">
+        <div class="text-left">
+          <h3
+            class="text-xl font-bold mb-1 font-['Outfit',_sans-serif] dark:text-white"
+          >
+            VPS Starter Plan
+          </h3>
+          <p class="text-gray-500 dark:text-gray-400 mb-4">
+            Power and flexibility for growing websites and personal projects.
+          </p>
+          <div
+            class="text-3xl font-bold mb-1 dark:text-white"
+            data-monthly="$5.00"
+            data-yearly="$4.25"
+          >
+            $5.00
+          </div>
+          <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">
+            Most budget-friendly plan
+          </p>
+          <a
+            href="#"
+            class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-blue-500 bg-blue-500 text-white hover:bg-white hover:border-black hover:text-black transition-colors duration-200 font-semibold"
+            >Get Started →</a
+          >
+        </div>
+        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600 dark:text-gray-300">
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 20 GB SSD storage</li>
+          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 25 Cpanel accounts</li>
           <li><i class="fa-solid fa-circle-check text-blue-500"></i> 250 GB bandwidth</li>
           <li><i class="fa-solid fa-circle-check text-blue-500"></i> Unlimited subdomains</li>
           <li><i class="fa-solid fa-circle-check text-blue-500"></i> Free SSL certificate</li>
           <li><i class="fa-solid fa-circle-check text-blue-500"></i> 24/7 Monitoring & support</li>
         </ul>
       </div>
-
-      <!-- Plan 2 -->
-      <div class="relative flex flex-col justify-between rounded-2xl bg-white p-2.5 lg:-mt-10 shadow-xl
-         before:content-[''] before:absolute before:inset-0 before:rounded-2xl before:p-2
-         before:bg-[url('../img/pricing-bg.png')] before:bg-no-repeat before:bg-left-bottom before:bg-[length:100%_auto]
-         before:[-webkit-mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]
-         before:[-webkit-mask-composite:xor]
-         before:[mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]
-         before:[mask-composite:exclude]">
-        <span class="text-white inline-flex justify-center gap-2 pb-2 z-0">
-          <img src="./public/img/badge-check.svg" alt=""> Recommended For Your Business
-        </span>
-        <div class="bg-white rounded-2xl p-6 flex flex-col justify-between z-0">
-          <div class="text-left">
-            <h3 class="text-xl font-bold mb-1 font-['Outfit',_sans-serif]">VPS Starter Plan</h3>
-            <p class="text-gray-500 mb-4">Power and flexibility for growing websites and personal projects.</p>
-            <div class="text-3xl font-bold mb-1" data-monthly="$5.00" data-yearly="$4.25">$5.00</div>
-            <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
-            <a href="#"
-              class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-blue-500 bg-blue-500 text-white hover:bg-white hover:border-black hover:text-black transition-colors duration-200 font-semibold">Get
-              Started →</a>
-          </div>
-          <ul class="mt-6 text-left text-sm space-y-4 text-gray-600">
-            <li><i class="fa-solid fa-circle-check text-blue-500"></i> 20 GB SSD storage</li>
-            <li><i class="fa-solid fa-circle-check text-blue-500"></i> 25 Cpanel accounts</li>
-            <li><i class="fa-solid fa-circle-check text-blue-500"></i> 250 GB bandwidth</li>
-            <li><i class="fa-solid fa-circle-check text-blue-500"></i> Unlimited subdomains</li>
-            <li><i class="fa-solid fa-circle-check text-blue-500"></i> Free SSL certificate</li>
-            <li><i class="fa-solid fa-circle-check text-blue-500"></i> 24/7 Monitoring & support</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Plan 3 -->
-      <div class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
-        <div class="text-left z-1">
-          <h3 class="text-xl font-bold mb-1 font-['Outfit',_sans-serif]">Reseller Starter Plan</h3>
-          <p class="text-gray-500 mb-4">Start your own hosting business with scalable reseller plans.</p>
-          <div class="text-3xl font-bold mb-1" data-monthly="$20.00" data-yearly="$17.00">$20.00</div>
-          <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
-          <a href="#"
-            class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200">Get
-            Started →</a>
-        </div>
-        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600 z-1">
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 20 GB SSD storage</li>
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 25 Cpanel accounts</li>
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 500 GB bandwidth</li>
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> cPanel/WHM/Softaculous</li>
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> Private name server</li>
-        </ul>
-      </div>
-
-      <!-- Plan 4 -->
-      <div class="bg-white card-item rounded-2xl p-6 shadow flex flex-col justify-between">
-        <div class="text-left z-1">
-          <h3 class="text-xl font-bold mb-1 font-['Outfit',_sans-serif]">Dedicated Starter Plan</h3>
-          <p class="text-gray-500 mb-4">Ultimate control with enterprise-grade servers.</p>
-          <div class="text-3xl font-bold mb-1" data-monthly="$199.00" data-yearly="$169.15">$199.00</div>
-          <p class="text-gray-500 mb-4 text-sm">Most budget-friendly plan</p>
-          <a href="#"
-            class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black text-black font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200">Get
-            Started →</a>
-        </div>
-        <ul class="mt-6 text-left text-sm space-y-4 text-gray-600 z-1">
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 1 processor</li>
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 4x3.4 GHz cores</li>
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 16GB DDR3 RAM</li>
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 1GB SATA storage</li>
-          <li><i class="fa-solid fa-circle-check text-blue-500"></i> 10TB Transfer</li>
-        </ul>
-      </div>
-
     </div>
-  </section>
-  <!-- ======= End Pricing Block ======  -->
+
+    <!-- Plan 3 -->
+    <div
+      class="bg-white dark:bg-[#1F1F1F] card-item rounded-2xl p-6 shadow flex flex-col justify-between transition-colors duration-500"
+    >
+      <div class="text-left z-1">
+        <h3
+          class="text-xl font-bold mb-1 font-['Outfit',_sans-serif] dark:text-white"
+        >
+          Reseller Starter Plan
+        </h3>
+        <p class="text-gray-500 dark:text-gray-400 mb-4">
+          Start your own hosting business with scalable reseller plans.
+        </p>
+        <div
+          class="text-3xl font-bold mb-1 dark:text-white"
+          data-monthly="$20.00"
+          data-yearly="$17.00"
+        >
+          $20.00
+        </div>
+        <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">
+          Most budget-friendly plan
+        </p>
+        <a
+          href="#"
+          class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black dark:border-white text-black dark:text-white font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200"
+          >Get Started →</a
+        >
+      </div>
+      <ul
+        class="mt-6 text-left text-sm space-y-4 text-gray-600 dark:text-gray-300 z-1"
+      >
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 20 GB SSD storage</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 25 Cpanel accounts</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 500 GB bandwidth</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> cPanel/WHM/Softaculous</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> Private name server</li>
+      </ul>
+    </div>
+
+    <!-- Plan 4 -->
+    <div
+      class="bg-white dark:bg-[#1F1F1F] card-item rounded-2xl p-6 shadow flex flex-col justify-between transition-colors duration-500"
+    >
+      <div class="text-left z-1">
+        <h3
+          class="text-xl font-bold mb-1 font-['Outfit',_sans-serif] dark:text-white"
+        >
+          Dedicated Starter Plan
+        </h3>
+        <p class="text-gray-500 dark:text-gray-400 mb-4">
+          Ultimate control with enterprise-grade servers.
+        </p>
+        <div
+          class="text-3xl font-bold mb-1 dark:text-white"
+          data-monthly="$199.00"
+          data-yearly="$169.15"
+        >
+          $199.00
+        </div>
+        <p class="text-gray-500 dark:text-gray-400 mb-4 text-sm">
+          Most budget-friendly plan
+        </p>
+        <a
+          href="#"
+          class="w-full inline-flex text-center justify-center py-2 mt-2 rounded-full border border-black dark:border-white text-black dark:text-white font-semibold hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors duration-200"
+          >Get Started →</a
+        >
+      </div>
+      <ul
+        class="mt-6 text-left text-sm space-y-4 text-gray-600 dark:text-gray-300 z-1"
+      >
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 1 processor</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 4x3.4 GHz cores</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 16GB DDR3 RAM</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 1GB SATA storage</li>
+        <li><i class="fa-solid fa-circle-check text-blue-500"></i> 10TB Transfer</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- ======= End Pricing Block ======  -->
+
 
   <!-- ======= Global Coverage Block ======  -->
   <section
-    class="relative overflow-x-hidden isolate bg-slate-50 dark:bg-[#5C7CFA]/40 transition-colors duration-500 pb-10 sm:pb-16 lg:pb-24 pt-5 sm:pt-10 lg:pt-40">
+    class="relative overflow-x-hidden isolate bg-slate-50 dark:bg-[#020508] pb-10 sm:pb-16 lg:pb-24 pt-5 sm:pt-10 lg:pt-40">
 
     <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.3fr_1fr] lg:gap-16 lg:px-8">
       <!-- Left: Map + markers -->
-      <img class="w-full lg:hidden" src="./public/img/global-coverage.svg" alt="">
+      <img class="w-full lg:hidden dark:hidden" src="./public/img/global-coverage.svg" alt="">
+      
       <div class="relative lg:-mr-[20%] xl:-ml-[40%] h-fit hidden lg:block">
         <div class="relative w-full rounded-2xl xl:-ml-[8%]">
           <img src="./public/img/Country.png" alt="Global coverage map"
-            class="w-full xl:w-[115%] object-contain opacity-75" />
+            class="w-full xl:w-[115%] object-contain opacity-75 dark:hidden" />
+          <img src="./public/img/global-coverage-dark.svg" alt="Global coverage map"
+            class="w-full xl:w-[115%] object-contain opacity-75 hidden dark:block" />
           <!-- Gradient Overlay -->
-          <div
-            class="absolute inset-0 bg-[linear-gradient(80deg,#F9FAFC_0%,rgba(249,250,252,0)_50%,rgba(249,250,252,0.58)_100%)] w-full z-0 dark:hidden">
-          </div>
+      <!-- Light mode gradient -->
+<div
+  class="absolute inset-0 w-full z-0 dark:hidden
+         bg-[linear-gradient(80deg,#F9FAFC_0%,rgba(249,250,252,0)_50%,rgba(249,250,252,0.58)_100%)]
+         transition-all duration-700 ease-in-out
+         opacity-100 animate-fadeIn"
+></div>
+
+<!-- Dark mode gradient -->
+<div
+  class="absolute inset-0 w-full z-0 hidden dark:block
+         bg-[linear-gradient(247deg,#02060A_0.85%,rgba(2,6,10,0.25)_40.07%,rgba(2,6,10,0.17)_59.68%,#02060A_98.9%)]
+         transition-all duration-700 ease-in-out
+         opacity-100 animate-fadeIn"
+></div>
+
+
         </div>
 
 
@@ -1189,138 +1318,193 @@
   </section>
 
   <!-- ========= End Partners Block ========= -->
-  <!-- ========= Testimonial Block ========= -->
+<!-- ========= Testimonial Block ========= -->
+<section
+  class="relative py-20 bg-[#F9FAFC] dark:bg-[#02060A] transition-colors duration-500"
+>
+  <!-- soft dotted backdrop (very subtle) -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]
+           bg-[radial-gradient(circle_at_1px_1px,#0b1220_1px,transparent_1.2px)]
+           bg-[length:22px_22px]
+           dark:bg-[radial-gradient(circle_at_1px_1px,#fff_1px,transparent_1.2px)]"
+  ></div>
 
-  <section class="relative py-20 bg-[#F9FAFC] bg-white dark:bg-[#0a1c3a]/70 transition-colors duration-500">
-    <!-- soft dotted backdrop (very subtle) -->
-    <div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]
-              bg-[radial-gradient(circle_at_1px_1px,#0b1220_1px,transparent_1.2px)]
-              bg-[length:22px_22px]"></div>
-
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="max-w-md lg:max-w-xl mx-auto">
-
-
-        <!-- Tag -->
-        <div class="flex justify-center">
-          <span
-            class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex font-['Outfit',_sans-serif]font-['Outfit',_sans-serif]"><img
-              class="mr-1 block" src="./public/img/flash-icon.png" alt=""> Testimonial
-          </span>
-        </div>
-
-        <!-- Heading -->
-        <h2
-          class="text-center text-[34px] sm:text-[42px] lg:text-[50px] font-['Outfit',_sans-serif] font-bold leading-[1.2] tracking-tight text-slate-900 dark:text-[#fff]/70 transition-colors duration-500">
-          Trust the <span class="text-[#328DE6]">Experts</span>, Hear Their Stories
-        </h2>
-
-        <!-- Subcopy -->
-        <p class="mx-auto mt-4 max-w-3xl text-center text-slate-500">
-          Experience unmatched reliability for websites, apps, or servers. Our skilled team ensures 24/7 support for
-          your thriving business, earning a 4.8 out of 5 star rating!
-        </p>
+  <div class="mx-auto max-w-7xl px-6">
+    <div class="max-w-md lg:max-w-xl mx-auto">
+      <!-- Tag -->
+      <div class="flex justify-center">
+        <span
+          class="bg-white dark:bg-[#1F1F1F] rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 dark:text-white mb-4 inline-flex font-['Outfit',_sans-serif]"
+        >
+          <img class="mr-1 block" src="./public/img/flash-icon.png" alt="" />Testimonial
+        </span>
       </div>
-      <!-- Grid -->
-      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Card 1 -->
-        <article class="rounded-3xl bg-white/80 shadow-xs p-6">
-          <header class="flex items-center gap-4">
-            <img src="./public/img/testimonial-img-1.png" alt="Jona Steinecke"
-              class="h-12 w-12 rounded-full object-cover" />
-            <div>
-              <h3 class="font-semibold text-slate-900">Jona Steinecke</h3>
-              <p class="text-sm text-slate-500">Developer</p>
-            </div>
-          </header>
-          <p class="mt-4 text-slate-600">
-            Tellus massa aliquam tempus elementum mi nunc massa posuere porta. Erat sodales fames faucibus.
-          </p>
-        </article>
 
-        <!-- Card 2 -->
-        <article class="rounded-3xl bg-white/80 shadow-xs p-6">
-          <header class="flex items-center gap-4">
-            <img src="./public/img/testimonial-img-2.png" alt="Sinja Noack"
-              class="h-12 w-12 rounded-full object-cover" />
-            <div>
-              <h3 class="font-semibold text-slate-900">Sinja Noack</h3>
-              <p class="text-sm text-slate-500">Designer</p>
-            </div>
-          </header>
-          <p class="mt-4 text-slate-600">
-            Pulsefy is a game-changer for our team—easy for beginners and powerful for digging beyond average data.
-            It's our daily ally in unearthing those pivotal marketing insights that really drive strategy!
-          </p>
-        </article>
+      <!-- Heading -->
+      <h2
+        class="text-center text-[34px] sm:text-[42px] lg:text-[50px] font-['Outfit',_sans-serif] font-bold leading-[1.2] tracking-tight text-slate-900 dark:text-white transition-colors duration-500"
+      >
+        Trust the <span class="text-[#328DE6]">Experts</span>, Hear Their Stories
+      </h2>
 
-        <!-- Card 3 -->
-        <article class="rounded-3xl bg-white/80 shadow-xs p-6">
-          <header class="flex items-center gap-4">
-            <img src="./public/img/testimonial-img-3.png" alt="Jay Zender DDS"
-              class="h-12 w-12 rounded-full object-cover" />
-            <div>
-              <h3 class="font-semibold text-slate-900">Jay Zender DDS</h3>
-              <p class="text-sm text-slate-500">Designer</p>
-            </div>
-          </header>
-          <p class="mt-4 text-slate-600">
-            Pulsefy is a game-changer for our team—easy for beginners and powerful for digging beyond average data.
-            It's our daily ally in.
-          </p>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="rounded-3xl bg-white/80 shadow-xs p-6">
-          <header class="flex items-center gap-4">
-            <img src="./public/img/testimonial-img-4.png" alt="Guy Hawkins"
-              class="h-12 w-12 rounded-full object-cover" />
-            <div>
-              <h3 class="font-semibold text-slate-900">Guy Hawkins</h3>
-              <p class="text-sm text-slate-500">Designer</p>
-            </div>
-          </header>
-          <p class="mt-4 text-slate-600">
-            Pulsefy is a game-changer for our team—easy for beginners and powerful for digging beyond average data.
-            It's our daily ally in unearthing insights that really drive strategy!
-          </p>
-        </article>
-
-        <!-- Card 5 (accent left border like screenshot) -->
-        <article class="rounded-3xl bg-white/80 shadow-xs p-6">
-          <header class="flex items-center gap-4">
-            <img src="./public/img/testimonial-img-5.png" alt="Oskar Liebach"
-              class="h-12 w-12 rounded-full object-cover ring-4 ring-emerald-100" />
-            <div>
-              <h3 class="font-semibold text-slate-900">Oskar Liebach</h3>
-              <p class="text-sm text-slate-500">Developer</p>
-            </div>
-          </header>
-          <p class="mt-4 text-slate-600">
-            Lorem ipsum dolor sit amet consectetur. Tellus massa aliquam tempus elementum mi nunc massa posuere porta.
-            Erat sodales fames faucibus ipsum aenean. Amet nibh condimentum.
-          </p>
-        </article>
-
-        <!-- Card 6 -->
-        <article class="rounded-3xl bg-white/80 shadow-xs p-6">
-          <header class="flex items-center gap-4">
-            <img src="./public/img/testimonial-img-6.png" alt="Viola Heist"
-              class="h-12 w-12 rounded-full object-cover" />
-            <div>
-              <h3 class="font-semibold text-slate-900">Viola Heist</h3>
-              <p class="text-sm text-slate-500">Developer</p>
-            </div>
-          </header>
-          <p class="mt-4 text-slate-600">
-            Pulsefy is a game-changer for our team—easy for beginners and powerful for digging beyond average data.
-            It's our daily ally in unearthing those pivotal insights every day!
-          </p>
-        </article>
-      </div>
+      <!-- Subcopy -->
+      <p
+        class="mx-auto mt-4 max-w-3xl text-center text-slate-500 dark:text-gray-400 transition-colors duration-500"
+      >
+        Experience unmatched reliability for websites, apps, or servers. Our
+        skilled team ensures 24/7 support for your thriving business, earning a
+        4.8 out of 5 star rating!
+      </p>
     </div>
-  </section>
-  <!-- ========= End Testimonial Block ========= -->
+
+    <!-- Grid -->
+    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Card -->
+      <article
+        class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500"
+      >
+        <header class="flex items-center gap-4">
+          <img
+            src="./public/img/testimonial-img-1.png"
+            alt="Jona Steinecke"
+            class="h-12 w-12 rounded-full object-cover"
+          />
+          <div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">
+              Jona Steinecke
+            </h3>
+            <p class="text-sm text-slate-500 dark:text-gray-400">Developer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600 dark:text-gray-300">
+          Tellus massa aliquam tempus elementum mi nunc massa posuere porta.
+          Erat sodales fames faucibus.
+        </p>
+      </article>
+
+      <!-- Card -->
+      <article
+        class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500"
+      >
+        <header class="flex items-center gap-4">
+          <img
+            src="./public/img/testimonial-img-2.png"
+            alt="Sinja Noack"
+            class="h-12 w-12 rounded-full object-cover"
+          />
+          <div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">
+              Sinja Noack
+            </h3>
+            <p class="text-sm text-slate-500 dark:text-gray-400">Designer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600 dark:text-gray-300">
+          Pulsefy is a game-changer for our team—easy for beginners and powerful
+          for digging beyond average data. It's our daily ally in unearthing
+          those pivotal marketing insights that really drive strategy!
+        </p>
+      </article>
+
+      <!-- Card -->
+      <article
+        class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500"
+      >
+        <header class="flex items-center gap-4">
+          <img
+            src="./public/img/testimonial-img-3.png"
+            alt="Jay Zender DDS"
+            class="h-12 w-12 rounded-full object-cover"
+          />
+          <div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">
+              Jay Zender DDS
+            </h3>
+            <p class="text-sm text-slate-500 dark:text-gray-400">Designer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600 dark:text-gray-300">
+          Pulsefy is a game-changer for our team—easy for beginners and powerful
+          for digging beyond average data. It's our daily ally in.
+        </p>
+      </article>
+
+      <!-- Card -->
+      <article
+        class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500"
+      >
+        <header class="flex items-center gap-4">
+          <img
+            src="./public/img/testimonial-img-4.png"
+            alt="Guy Hawkins"
+            class="h-12 w-12 rounded-full object-cover"
+          />
+          <div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">
+              Guy Hawkins
+            </h3>
+            <p class="text-sm text-slate-500 dark:text-gray-400">Designer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600 dark:text-gray-300">
+          Pulsefy is a game-changer for our team—easy for beginners and powerful
+          for digging beyond average data. It's our daily ally in unearthing
+          insights that really drive strategy!
+        </p>
+      </article>
+
+      <!-- Card (accent ring) -->
+      <article
+        class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500"
+      >
+        <header class="flex items-center gap-4">
+          <img
+            src="./public/img/testimonial-img-5.png"
+            alt="Oskar Liebach"
+            class="h-12 w-12 rounded-full object-cover ring-4 ring-emerald-100 dark:ring-emerald-900/60"
+          />
+          <div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">
+              Oskar Liebach
+            </h3>
+            <p class="text-sm text-slate-500 dark:text-gray-400">Developer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600 dark:text-gray-300">
+          Lorem ipsum dolor sit amet consectetur. Tellus massa aliquam tempus
+          elementum mi nunc massa posuere porta. Erat sodales fames faucibus
+          ipsum aenean. Amet nibh condimentum.
+        </p>
+      </article>
+
+      <!-- Card -->
+      <article
+        class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500"
+      >
+        <header class="flex items-center gap-4">
+          <img
+            src="./public/img/testimonial-img-6.png"
+            alt="Viola Heist"
+            class="h-12 w-12 rounded-full object-cover"
+          />
+          <div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">
+              Viola Heist
+            </h3>
+            <p class="text-sm text-slate-500 dark:text-gray-400">Developer</p>
+          </div>
+        </header>
+        <p class="mt-4 text-slate-600 dark:text-gray-300">
+          Pulsefy is a game-changer for our team—easy for beginners and powerful
+          for digging beyond average data. It's our daily ally in unearthing
+          those pivotal insights every day!
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ========= End Testimonial Block ========= -->
 
 
   <!-- Footer -->

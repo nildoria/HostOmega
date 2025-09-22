@@ -270,7 +270,7 @@ const raf = (fn) => requestAnimationFrame(fn);
       yearlyBtn.classList.add("bg-green-500", "text-white");
       yearlyBtn.classList.remove("text-blue-600");
       monthlyBtn.classList.remove("bg-green-500", "text-white");
-      monthlyBtn.classList.add("text-black");
+      monthlyBtn.classList.add("text-black dark:text-white");
       prices.forEach((p) => (p.textContent = p.dataset.yearly));
       yearlyBtn.setAttribute("aria-pressed", "true");
       monthlyBtn.setAttribute("aria-pressed", "false");
