@@ -1253,7 +1253,7 @@
 
   <!-- ========= End Partners Block ========= -->
   <!-- ========= Testimonial Block ========= -->
-  <section class="relative py-20 bg-[#F9FAFC] dark:bg-[#02060A] transition-colors duration-500">
+  <section class="relative z-1 py-20 bg-[#F9FAFC] dark:bg-[#02060A] transition-colors duration-500">
     <!-- soft dotted backdrop (very subtle) -->
     <div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]
            bg-[radial-gradient(circle_at_1px_1px,#0b1220_1px,transparent_1.2px)]
@@ -1399,14 +1399,19 @@
         </article>
       </div>
     </div>
+    
+    <!-- Shape Glow -->
+    <img class="absolute top-70 left-0 -z-10 w-full object-fill hidden dark:block duration-500" src="./public/img/footer-top.svg" alt="">
   </section>
   <!-- ========= End Testimonial Block ========= -->
 
 
   <!-- Footer -->
-  <footer class="relative pt-28 pb-0 text-white z-20">
+  <footer class="relative z-1 pt-28 pb-0 text-white z-20">
     <div
-      class="pointer-events-none absolute bg-[#02060A] inset-0 z-0 overflow-hidden bg-gradient-to-b  from-[#0a1c3a] to-[#02060A] bg-no-repeat bg-cover">
+      class="pointer-events-none absolute inset-0 z-0  
+bg-[#02060A] bg-gradient-to-b from-[#0a1c3a] to-[#02060A] bg-no-repeat bg-cover 
+dark:bg-[#02060A] dark:from-transparent dark:to-transparent">
       <!-- top glow -->
       <div class="absolute inset-x-0 -top-30 h-full  -z-10">
       </div>

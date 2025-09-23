@@ -293,8 +293,14 @@
   .inset-y-0 {
     inset-block: calc(var(--spacing) * 0);
   }
+  .-top-0 {
+    top: calc(var(--spacing) * -0);
+  }
   .-top-30 {
     top: calc(var(--spacing) * -30);
+  }
+  .-top-\[26\%\] {
+    top: calc(26% * -1);
   }
   .-top-\[250px\] {
     top: calc(250px * -1);
@@ -320,8 +326,26 @@
   .top-10 {
     top: calc(var(--spacing) * 10);
   }
+  .top-20 {
+    top: calc(var(--spacing) * 20);
+  }
+  .top-50 {
+    top: calc(var(--spacing) * 50);
+  }
+  .top-70 {
+    top: calc(var(--spacing) * 70);
+  }
+  .top-\[-2\%\] {
+    top: -2%;
+  }
   .top-\[-10\%\] {
     top: -10%;
+  }
+  .top-\[-20\%\] {
+    top: -20%;
+  }
+  .top-\[0\] {
+    top: 0;
   }
   .top-\[10\%\] {
     top: 10%;
@@ -329,8 +353,17 @@
   .top-\[18\%\] {
     top: 18%;
   }
+  .top-\[22\%\] {
+    top: 22%;
+  }
+  .top-\[25\%\] {
+    top: 25%;
+  }
   .top-\[26\%\] {
     top: 26%;
+  }
+  .top-\[28\%\] {
+    top: 28%;
   }
   .top-\[30\%\] {
     top: 30%;
@@ -338,11 +371,17 @@
   .top-\[32\%\] {
     top: 32%;
   }
+  .top-\[35\%\] {
+    top: 35%;
+  }
   .top-\[36\%\] {
     top: 36%;
   }
   .top-\[50\%\] {
     top: 50%;
+  }
+  .top-\[55\%\] {
+    top: 55%;
   }
   .top-\[95\%\] {
     top: 95%;
@@ -403,6 +442,9 @@
   }
   .bottom-10 {
     bottom: calc(var(--spacing) * 10);
+  }
+  .bottom-20 {
+    bottom: calc(var(--spacing) * 20);
   }
   .bottom-\[-5\%\] {
     bottom: -5%;
@@ -1508,6 +1550,9 @@
   }
   .object-cover {
     object-fit: cover;
+  }
+  .object-fill {
+    object-fit: fill;
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
@@ -3463,6 +3508,16 @@
     &:where(.dark, .dark *) {
       --tw-gradient-to: transparent;
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+    }
+  }
+  .dark\:pb-30 {
+    &:where(.dark, .dark *) {
+      padding-bottom: calc(var(--spacing) * 30);
+    }
+  }
+  .dark\:pb-40 {
+    &:where(.dark, .dark *) {
+      padding-bottom: calc(var(--spacing) * 40);
     }
   }
   .dark\:text-\[\#fff\] {
