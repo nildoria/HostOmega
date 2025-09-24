@@ -517,6 +517,9 @@
   .z-50 {
     z-index: 50;
   }
+  .z-100 {
+    z-index: 100;
+  }
   .z-\[-1\] {
     z-index: -1;
   }
@@ -3571,6 +3574,11 @@
       background-color: var(--color-white);
     }
   }
+  .dark\:bg-\[linear-gradient\(247deg\,\#02060A_0\.85\%\,rgba\(2\,6\,10\,0\.25\)_40\.07\%\,rgba\(2\,6\,10\,0\.17\)_59\.68\%\,\#02060A_98\.9\%\)\] {
+    &:where(.dark, .dark *) {
+      background-image: linear-gradient(247deg,#02060A 0.85%,rgba(2,6,10,0.25) 40.07%,rgba(2,6,10,0.17) 59.68%,#02060A 98.9%);
+    }
+  }
   .dark\:bg-\[radial-gradient\(circle_at_1px_1px\,\#fff_1px\,transparent_1\.2px\)\] {
     &:where(.dark, .dark *) {
       background-image: radial-gradient(circle at 1px 1px,#fff 1px,transparent 1.2px);
@@ -3740,6 +3748,11 @@
       opacity: 40%;
     }
   }
+  .dark\:opacity-100 {
+    &:where(.dark, .dark *) {
+      opacity: 100%;
+    }
+  }
   .dark\:shadow-black\/20 {
     &:where(.dark, .dark *) {
       --tw-shadow-color: color-mix(in srgb, #000 20%, transparent);
@@ -3798,6 +3811,15 @@
       &:hover {
         @media (hover: hover) {
           background-color: #fff;
+        }
+      }
+    }
+  }
+  .dark\:hover\:bg-blue-600 {
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          background-color: var(--color-blue-600);
         }
       }
     }
