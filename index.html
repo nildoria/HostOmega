@@ -146,7 +146,8 @@
                 d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
             </svg>
           </button>
-          <button id="theme-toggle" class="p-1 rounded-md ">
+          <!-- Dark Mode Button -->
+          <button id="theme-toggle" class="p-1 rounded-md hover:cursor-pointer">
             <span class="dark:hidden">🌙</span>
             <span class="hidden dark:inline">☀️</span>
           </button>
@@ -220,6 +221,9 @@
     </div>
 
   </header>
+
+
+
   <!-- ====== Hero / Banner ====== -->
   <section id="bannerStar" class="relative neon-hero pt-30 pb-75 sm:pt-30 sm:pb-68 z-0 ">
     <div class="meteors hidden">
@@ -371,35 +375,76 @@
           </svg>
         </button>
 
-        <!-- viewport -->
-        <div class="relative flex-1">
-          <div id="tldChips" class="flex gap-2 relative z-1 overflow-x-auto scroll-smooth select-none cursor-grab active:cursor-grabbing 
-               [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            <!-- chip -->
+        <!-- viewport + track -->
+        <div class="relative flex-1 rounded-full">
+          <!-- scrollable track -->
+          <div id="tldChips"
+            class="flex gap-2 w-full relative z-1 overflow-x-auto scroll-smooth select-none cursor-grab active:cursor-grabbing [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <!-- chips (same as before) -->
             <span
               class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
               <span class="text-blue-500 font-semibold">.com</span>
-              <span class="text-slate-400 dark:text-gray-400 inline-flex">$9.56/ <span
-                  class="text-xs">year</span></span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
             </span>
             <span
               class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
               <span class="text-emerald-500 font-semibold">.xyz</span>
-              <span class="text-slate-400 dark:text-gray-400 inline-flex">$9.56/ <span
-                  class="text-xs">year</span></span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
             </span>
-            <!-- repeat others same pattern -->
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+              <span class="text-blue-500 font-semibold">.shop</span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+              <span class="text-emerald-500 font-semibold">.store</span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+              <span class="text-blue-500 font-semibold">.site</span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+              <span class="text-emerald-500 font-semibold">.fun</span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
+            </span>
+            <!-- extras so we can slide -->
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+              <span class="text-blue-500 font-semibold">.net</span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+              <span class="text-emerald-500 font-semibold">.org</span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+              <span class="text-blue-500 font-semibold">.io</span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
+            </span>
+            <span
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-gray-600 bg-white dark:bg-[#1F1F1F] px-4 py-2.5 text-sm">
+              <span class="text-emerald-500 font-semibold">.dev</span>
+              <span class="text-slate-400 inline-flex">$9.56/ <span class="text-xs leading-4.5">year</span></span>
+            </span>
           </div>
 
           <!-- edge fades -->
-          <!-- <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white dark:from-[#1F1F1F] to-transparent"></div>
-      <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white dark:from-[#1F1F1F] to-transparent"></div> -->
+          <div class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-white to-transparent">
+          </div>
+          <div class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent">
+          </div>
         </div>
 
         <!-- right arrow -->
         <button id="chipsNext" type="button" class="hidden cursor-pointer sm:inline-flex h-9 w-9 items-center justify-center 
              rounded-full border border-slate-200 dark:border-gray-600 
-             bg-gray-200 dark:bg-[#121212] text-slate-950 dark:text-gray-200 
+             bg-gray-200 dark:bg-[#121212] text-slate-950 dark:text-[#fff] 
              hover:bg-slate-50 dark:hover:bg-[#fff] disabled:opacity-40 disabled:cursor-not-allowed">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -437,7 +482,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4 justify-center">
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 dark:border-[#111111] justify-between">
+          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border-[1.5px] border-gray-100 dark:border-white/8 justify-between">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -466,7 +511,7 @@
         <!-- End Single Services -->
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 dark:border-[#111111] justify-between">
+          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border-[1.5px] border-gray-100 dark:border-white/8 justify-between">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -495,7 +540,7 @@
         <!-- End Single Services -->
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 dark:border-[#111111] justify-between">
+          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border-[1.5px] border-gray-100 dark:border-white/8 justify-between">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -524,7 +569,7 @@
         <!-- End Single Services -->
         <!-- Single Services -->
         <div
-          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border border-gray-100 dark:border-[#111111] justify-between">
+          class="relative flex flex-col bg-white dark:bg-[#111111] rounded-2xl px-6 py-8  overflow-hidden group transition border-[1.5px] border-gray-100 dark:border-white/8 justify-between">
           <!-- Hover background -->
           <div
             class="absolute inset-0 bg-[url('../img/service-hover-bg.svg')] bg-cover bg-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -669,14 +714,14 @@
       <!-- End Features List -->
     </div>
     <!-- Shape Glow -->
- <img class="absolute top-[36%] left-0 w-full z-0 hidden dark:block duration-500" src="./public/img/pricing-top.svg" alt="">
+ <img class="absolute z-[-1] top-[36%] left-0 w-full z-0 hidden dark:block duration-500" src="./public/img/pricing-top.svg" alt="">
   </section>
   <!-- ======= End Features Block ======  -->
 
 
   <!-- ======= Pricing Block ======  -->
   <section
-    class="overflow-x-clip lg:px-4 py-10 lg:py-20 sm:pt-16 sm:pb-20 bg-gray-50 dark:bg-[#020508] transition-colors duration-500 text-center hidden">
+    class="relative z-1 overflow-x-clip lg:px-4 py-10 lg:py-20 sm:pt-16 sm:pb-20 bg-gray-50 dark:bg-[#020508] transition-colors duration-500 text-center hidden">
     <span
       class="bg-white dark:bg-[#1F1F1F] rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 dark:text-white mb-4 inline-flex font-['Outfit',_sans-serif]">
       <img class="mr-1 block" src="./public/img/flash-icon.png" alt="" />Pricing
@@ -1104,7 +1149,7 @@
     </div>
   </section>
   <!-- ======= End Global Coverage Block ======  -->
-
+ 
   <!-- ======= Partners Block ======  -->
 
   <section class="relative z-1 bg-gradient-to-b from-[#02060A] to-[#0a1c3a] text-white py-10 sm:py-16 lg:py-20 dark:bg-[#02060A] dark:from-transparent dark:to-transparent">
@@ -1247,13 +1292,13 @@
         </div>
       </div>
     </div>
-        <!-- Shape Glow -->
-    <img class="absolute bottom-[0%] left-0 w-full z-[-1] hidden dark:block duration-500" src="./public/img/testimonial-top.svg" alt="">
   </section>
 
   <!-- ========= End Partners Block ========= -->
   <!-- ========= Testimonial Block ========= -->
-  <section class="relative z-1 py-20 bg-[#F9FAFC] dark:bg-[#02060A] transition-colors duration-500">
+  <section class="relative z-1 py-20 dark:pb-0 bg-[#F9FAFC] dark:bg-[#02060A] transition-colors duration-500">
+    <!-- Shape Glow -->
+    <img class="absolute top-[-50%] left-0 w-full h-full object-cover z-[-1] hidden dark:block duration-500" src="./public/img/testimonial-top.svg" alt="">
     <!-- soft dotted backdrop (very subtle) -->
     <div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]
            bg-[radial-gradient(circle_at_1px_1px,#0b1220_1px,transparent_1.2px)]
@@ -1400,18 +1445,13 @@
       </div>
     </div>
     
-    <!-- Shape Glow -->
-    <img class="absolute top-70 left-0 -z-10 w-full object-fill hidden dark:block duration-500" src="./public/img/footer-top.svg" alt="">
   </section>
   <!-- ========= End Testimonial Block ========= -->
 
 
   <!-- Footer -->
-  <footer class="relative z-1 pt-28 pb-0 text-white z-20">
-    <div
-      class="pointer-events-none absolute inset-0 z-0  
-bg-[#02060A] bg-gradient-to-b from-[#0a1c3a] to-[#02060A] bg-no-repeat bg-cover 
-dark:bg-[#02060A] dark:from-transparent dark:to-transparent">
+  <footer class="relative z-20 pt-68 pb-0 text-white  dark:bg-[url('../img/footer-top.svg')] dark:bg-left-top dark:bg-no-repeat dark:bg-cover transition-colors duration-500">
+    <div class="pointer-events-none absolute inset-0 z-0 bg-[#02060A] bg-gradient-to-b from-[#0a1c3a] to-[#02060A] bg-no-repeat bg-cover dark:bg-transparent dark:from-transparent dark:to-transparent ">
       <!-- top glow -->
       <div class="absolute inset-x-0 -top-30 h-full  -z-10">
       </div>

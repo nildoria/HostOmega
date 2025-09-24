@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HostOmega - HostOmega</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./public/img/favicon.ico" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="./public/css/all.min.css">
+  <!-- Core theme TailwindCSS-->
+  <link rel="stylesheet" href="./public/css/output.css">
+  <!-- Core theme CSS-->
+  <link rel="stylesheet" href="./public/css/styles.css">
+</head>
+
+<body class="bg-gray-100 dark:bg-black transition-colors duration-500">
+  <!-- ====== Header / Navbar ====== -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 sm:px-4 lg:px-6">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Brand -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="./public/img/header_logo.png" alt="HostOmega" class="h-16 w-25 sm:w-35 lg:w-50 object-contain" />
+        </a>
+        <!-- Desktop nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-[15px]">
+          <a href="index.html" class="font-medium text-white">Home</a>
+
+          <a href="vps.html" class="font-medium text-slate-300 hover:text-white transition">VPS</a>
+
+          <!-- Web Hosting dropdown -->
+          <div class="relative">
+            <button id="whBtn"
+              class="inline-flex items-center font-medium text-slate-300 hover:text-white cursor-pointer transition"
+              aria-haspopup="menu" aria-expanded="false" aria-controls="whMenu">
+              Web Hosting
+              <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+              </svg>
+            </button>
+            <div id="whMenu"
+              class="absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20 opacity-0 translate-y-2 transition-all duration-200 pointer-events-none"
+              role="menu" aria-labelledby="whBtn">
+              <a href="web-hosting.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">Web Hosting</a>
+              <a href="#" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">BDIX
+                Hosting</a>
+              <a href="#" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Reseller</a>
+              <a href="#" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5" role="menuitem">Dedicated</a>
+            </div>
+          </div>
+
+          <!-- Pages dropdown -->
+          <div class="relative">
+            <button id="pagesBtn"
+              class="inline-flex items-center font-medium text-slate-300 hover:text-white cursor-pointer transition"
+              aria-haspopup="menu" aria-expanded="false" aria-controls="pagesMenu">
+              Pages
+              <svg class="ml-1 inline-block h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor"
+                aria-hidden="true">
+                <path
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+              </svg>
+            </button>
+            <div id="pagesMenu"
+              class="absolute left-0 mt-2 w-56 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur shadow-xl shadow-black/20 opacity-0 translate-y-2 transition-all duration-200 pointer-events-none"
+              role="menu" aria-labelledby="pagesBtn">
+              <a href="contact-us.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">Features</a>
+              <a href="index-logged-in.html" class="block px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">Logged In Page</a>
+            </div>
+          </div>
+
+          <a href="about-us.html" class="font-medium text-slate-300 hover:text-white transition">About</a>
+          <a href="contact-us.html" class="font-medium text-slate-300 hover:text-white transition">Contact</a>
+        </nav>
+
+        <!-- Right: language + cart + auth -->
+        <div class="flex items-center justify-end gap-1 lg:gap-4">
+          <!-- Language -->
+          <div class="relative group">
+            <button id="langBtn"
+              class="inline-flex items-center gap-2 rounded-md px-1.5 py-1 lg:px-2.5 lg:py-1.5 text-sm font-medium text-slate-200 hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400"
+              aria-haspopup="menu" aria-expanded="false" aria-controls="langMenu">
+              <!-- Globe -->
+              <svg class="h-4 lg:h-5 w-4 lg:w-5 opacity-90" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="1.5" />
+                <path d="M3 12h18M12 3c3.5 3.3 3.5 14.7 0 18M12 3c-3.5 3.3-3.5 14.7 0 18" stroke="currentColor"
+                  stroke-width="1.5" />
+              </svg>
+              <span id="langLabel">English</span>
+              <!-- Chevron -->
+              <svg class="h-4 w-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" />
+              </svg>
+            </button>
+
+            <!-- Menu -->
+            <div id="langMenu"
+              class="absolute right-0 mt-2 w-44 rounded-lg border border-white/10 bg-slate-900/95 backdrop-blur opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-xl shadow-black/20 transition-all duration-200"
+              role="menu" aria-labelledby="langBtn">
+              <button data-lang="en"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">English</button>
+              <button data-lang="bn"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">বাংলা</button>
+              <button data-lang="he"
+                class="lang-item block w-full text-left px-3 py-2 text-sm text-slate-200 hover:bg-white/5"
+                role="menuitem">עברית</button>
+            </div>
+          </div>
+
+          <!-- Cart -->
+          <a href="#cart" class="inline-flex items-center justify-center rounded-md text-slate-200 hover:bg-white/5"
+            aria-label="Cart">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+              <path d="M3 4h2l2.4 12a1 1 0 0 0 .98.8h9.64a1 1 0 0 0 .98-.8L21 7H6" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="9" cy="20" r="1" fill="currentColor" />
+              <circle cx="18" cy="20" r="1" fill="currentColor" />
+            </svg>
+          </a>
+
+          <!-- Auth -->
+          <a id="loginBtn" href="#"
+            class="hidden lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition">Log
+            in</a>
+          <button id="signupBtn"
+            class="hidden lg:inline-flex items-center gap-2 rounded-full bg-blue-500/100 px-5 py-2 text-sm font-semibold text-white hover:opacity-95 shadow-lg shadow-sky-500/20 transition cursor-pointer">
+            Sign Up
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
+            </svg>
+          </button>
+          <button id="theme-toggle" class="p-1 rounded-md hover:cursor-pointer">
+            <span class="dark:hidden">🌙</span>
+            <span class="hidden dark:inline">☀️</span>
+          </button>
+        </div>
+
+
+
+        <!-- Mobile menu button -->
+        <button id="navToggle"
+          class="lg:hidden inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-slate-200 hover:bg-white/5"
+          aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile nav -->
+    <!-- Backdrop -->
+    <div id="mobileOverlay"
+      class="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity lg:hidden">
+    </div>
+
+    <!-- Mobile flyout nav -->
+    <div id="mobileNav" class="fixed left-0 top-0 z-50 h-screen w-[88%] max-w-sm overflow-y-auto
+         border-r border-white/10 bg-slate-950/95 px-4 py-6 sm:px-6
+         transform -translate-x-full transition-transform duration-300
+         lg:hidden" aria-hidden="true">
+
+      <!-- Header row: Brand + Close -->
+      <div class="flex items-center justify-between mb-6">
+        <!-- Brand -->
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="./public/img/header_logo.png" alt="HostOmega" class="h-12 w-35 object-contain" />
+        </a>
+
+        <!-- Close button -->
+        <button id="mobileNavClose"
+          class="inline-flex h-9 w-9 items-center justify-center rounded-md text-slate-300 hover:bg-white/5 focus:outline-none"
+          aria-label="Close menu">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none">
+            <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Nav links -->
+      <nav class="grid gap-3 text-sm">
+        <a href="index.html" class="py-2 font-medium text-white">Home</a>
+        <a href="vps.html" class="py-2 text-slate-300 hover:text-white">VPS</a>
+        <a href="web-hosting.html" class="py-2 text-slate-300 hover:text-white">Solutions</a>
+        <a href="#" class="py-2 text-slate-300 hover:text-white">Features</a>
+        <a href="about-us.html" class="py-2 text-slate-300 hover:text-white">About</a>
+        <a href="contact-us.html" class="py-2 text-slate-300 hover:text-white">Contact</a>
+
+        <div class="mt-4 flex items-center gap-4">
+          <a href="login.html"
+            class="block lg:inline-flex text-sm font-medium text-white hover:text-slate-300 transition cursor-pointer">Log
+            in</a>
+
+          <a href="sign-up.html"
+            class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 px-4 py-2 font-semibold text-slate-900">
+            Sign Up
+            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                d="M3 10a1 1 0 011-1h9.586l-3.293-3.293A1 1 0 1111 4.293l5 5a1 1 0 010 1.414l-5 5A1 1 0 119.293 14.3L12.586 11H4a1 1 0 01-1-1z" />
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+
+  </header>
+  
+  <!-- ======= Partners Block ======  -->
+
+  <section class="relative z-1 bg-gradient-to-b from-[#02060A] to-[#0a1c3a] text-white py-10 sm:py-16 lg:py-20 dark:bg-[#02060A] dark:from-transparent dark:to-transparent">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Side -->
+      <div class="text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+        <!-- Tag -->
+        <span
+          class="bg-white rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 mb-4 inline-flex font-['Outfit',_sans-serif]font-['Outfit',_sans-serif]"><img
+            class="mr-1 block" src="./public/img/flash-icon.png" alt=""> Partners
+        </span>
+
+        <!-- Heading -->
+        <h2 class="text-[34px] sm:text-[42px] lg:text-[50px] font-['Outfit',_sans-serif] font-bold leading-tight mb-6">
+          Connect & Create <br>
+          with <span class="text-[#328DE6]">Our Technology <br> Partners</span> a Click
+        </h2>
+
+        <!-- Description -->
+        <p class="text-lg text-gray-300 mb-8">
+          Experience lightning-fast hosting, optimized performance,
+          and reliable uptime across 150+ countries — from Asia to
+          Europe and beyond.
+        </p>
+
+        <!-- Button & Stats -->
+        <div class="flex flex-wrap items-center gap-6 justify-center lg:justify-start">
+          <a href="#" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 transition rounded-full font-semibold">
+            Explore Location →
+          </a>
+          <div class="flex items-center gap-3">
+            <div class="p-3 rounded-lg bg-white/10">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="37" viewBox="0 0 36 37" fill="none">
+                <g clip-path="url(#clip0_75_1427)">
+                  <path
+                    d="M27.0528 28.7285C27.8294 28.7285 28.459 28.0989 28.459 27.3223C28.459 26.5456 27.8294 25.916 27.0528 25.916C26.2761 25.916 25.6465 26.5456 25.6465 27.3223C25.6465 28.0989 26.2761 28.7285 27.0528 28.7285Z"
+                    fill="white" />
+                  <path
+                    d="M35.6149 29.0846L34.8077 28.4195C34.8591 28.0567 34.8844 27.6896 34.8844 27.3219C34.8844 26.9542 34.8591 26.5871 34.8077 26.2243L35.6149 25.5592C36.0129 25.2315 36.1163 24.6641 35.8582 24.2176L34.1433 21.2476C33.8859 20.8011 33.3431 20.6071 32.8601 20.7878L31.8792 21.1548C31.3006 20.702 30.6586 20.3308 29.9794 20.0558L29.8078 19.0251C29.7228 18.5167 29.2826 18.144 28.7672 18.144H25.3381C24.8227 18.144 24.3825 18.5167 24.2975 19.0251L24.1259 20.0558C23.4467 20.3308 22.804 20.702 22.2254 21.1548L21.2452 20.7878C20.7622 20.6071 20.2194 20.8011 19.9613 21.2476L18.2471 24.2176C17.9891 24.6641 18.0917 25.2315 18.4897 25.5592L19.2976 26.2243C19.2462 26.5871 19.2209 26.9542 19.2209 27.3219C19.2209 27.6896 19.2462 28.0567 19.2976 28.4195L18.4897 29.0846C18.0917 29.4123 17.9891 29.9797 18.2471 30.4262L19.9613 33.3955C20.2194 33.842 20.7622 34.0367 21.2452 33.856L22.2254 33.4883C22.804 33.9411 23.4467 34.313 24.1259 34.5873L24.2975 35.6187C24.3825 36.1271 24.8227 36.4998 25.3381 36.4998H28.7672C29.2826 36.4998 29.7228 36.1271 29.8078 35.6187L29.9794 34.5873C30.6586 34.313 31.3006 33.9411 31.8792 33.4883L32.8601 33.856C33.3431 34.0374 33.8859 33.842 34.1433 33.3955L35.8582 30.4262C36.1163 29.9797 36.0129 29.4123 35.6149 29.0846ZM27.0523 30.8375C25.1138 30.8375 23.5367 29.2604 23.5367 27.3219C23.5367 25.3834 25.1138 23.8063 27.0523 23.8063C28.9908 23.8063 30.5679 25.3834 30.5679 27.3219C30.5679 29.2604 28.9908 30.8375 27.0523 30.8375Z"
+                    fill="white" />
+                  <path
+                    d="M10.7647 14.6069C12.4539 14.6069 13.8233 13.2376 13.8233 11.5483C13.8233 9.85913 12.4539 8.48975 10.7647 8.48975C9.07546 8.48975 7.70609 9.85913 7.70609 11.5483C7.70609 13.2376 9.07546 14.6069 10.7647 14.6069Z"
+                    fill="white" />
+                  <path
+                    d="M19.2776 18.8993L21.387 15.2452C21.645 14.7987 21.5416 14.2313 21.1437 13.9036L20.0447 12.9987C20.1192 12.5206 20.1565 12.0347 20.1565 11.5482C20.1565 11.0616 20.1192 10.5764 20.0447 10.0976L21.1437 9.1927C21.5416 8.86505 21.645 8.29763 21.387 7.85114L19.2776 4.19702C19.0195 3.75053 18.4767 3.55647 17.9944 3.73717L16.6592 4.23709C15.9026 3.62749 15.0504 3.1346 14.1476 2.78515L13.9142 1.38101C13.8291 0.872655 13.3889 0.5 12.8736 0.5H8.65482C8.13943 0.5 7.69928 0.872655 7.6142 1.38101L7.38076 2.78515C6.47795 3.1346 5.62577 3.62749 4.86921 4.23709L3.53398 3.73717C3.05164 3.55647 2.50883 3.75053 2.25078 4.19702L0.141416 7.85114C-0.11663 8.29763 -0.0132708 8.86505 0.384696 9.1927L1.48368 10.0976C1.40915 10.5764 1.37188 11.0616 1.37188 11.5482C1.37188 12.0347 1.40915 12.5206 1.48368 12.9987L0.384696 13.9036C-0.0132708 14.2313 -0.11663 14.7987 0.141416 15.2452L2.25078 18.8993C2.50883 19.3458 3.05164 19.5405 3.53398 19.3598L4.86921 18.8592C5.62577 19.4688 6.47795 19.9617 7.38076 20.3112L7.6142 21.7153C7.69928 22.2237 8.13943 22.5963 8.65482 22.5963H12.8736C13.3889 22.5963 13.8291 22.2237 13.9142 21.7153L14.1476 20.3112C15.0504 19.9617 15.9026 19.4688 16.6592 18.8592L17.9944 19.3598C18.4774 19.5405 19.0195 19.3458 19.2776 18.8993ZM10.7642 16.7161C7.91443 16.7161 5.59624 14.3979 5.59624 11.5482C5.59624 8.6984 7.91443 6.38021 10.7642 6.38021C13.6139 6.38021 15.9321 8.6984 15.9321 11.5482C15.9321 14.3979 13.6139 16.7161 10.7642 16.7161Z"
+                    fill="white" />
+                  <path
+                    d="M25.0028 4.8602L25.9977 3.94965V14.2624C25.9977 14.8453 26.4702 15.3171 27.0524 15.3171C27.6353 15.3171 28.1071 14.8453 28.1071 14.2624V3.95035L29.102 4.8602C29.3045 5.04582 29.5597 5.13723 29.8136 5.13723C30.099 5.13723 30.3838 5.02191 30.5919 4.7948C30.985 4.3652 30.9554 3.69793 30.5258 3.30418L27.7646 0.777148C27.5706 0.594336 27.3111 0.50293 27.0524 0.50293C26.7929 0.50293 26.5342 0.594336 26.3401 0.777148L23.5789 3.30418C23.1493 3.69793 23.1198 4.3652 23.5128 4.7948C23.9059 5.22441 24.5732 5.25395 25.0028 4.8602Z"
+                    fill="white" />
+                  <path
+                    d="M11.4765 24.983C11.2824 24.8002 11.0237 24.7095 10.7642 24.7095C10.5048 24.7095 10.246 24.8002 10.052 24.983L7.2908 27.5107C6.86119 27.9038 6.83166 28.571 7.2247 29.0006C7.61775 29.431 8.28502 29.4598 8.71462 29.0667L9.70955 28.1562V35.4455C9.70955 36.0277 10.182 36.5002 10.7642 36.5002C11.3471 36.5002 11.8189 36.0277 11.8189 35.4455V28.1562L12.8138 29.0667C13.0163 29.2524 13.2716 29.3438 13.5254 29.3438C13.8109 29.3438 14.0956 29.2285 14.3038 29.0006C14.6968 28.571 14.6673 27.9038 14.2377 27.5107L11.4765 24.983Z"
+                    fill="white" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_75_1427">
+                    <rect width="36" height="36" fill="white" transform="translate(0 0.5)" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div>
+              <p class="text-2xl font-bold">36</p>
+              <p class="text-gray-400 text-sm">OS Supported</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Orbit Layout -->
+      <div class="relative flex items-center justify-center mx-auto lg:mx-0 w-full sm:w-[75%] lg:w-full">
+        <!-- Concentric Circles -->
+        <!-- <div class="absolute w-[544px] h-[544px] rounded-full border border-white/10"></div>
+      <div class="absolute w-[344px] h-[344px] rounded-full border border-white/10"></div>
+      <div class="absolute w-[144px] h-[144px] rounded-full border border-white/10"></div> -->
+
+        <!-- Center Icon -->
+        <div class="relative w-full h-full rounded-full bg-[#0d1c2b] flex items-center justify-center z-0">
+          <img src="./public/img/circle.svg" alt="Main Icon" class="w-full h-full">
+        </div>
+
+        <!-- Orbit Icons -->
+        <div
+          class="absolute top-10 left-1/6 -translate-x-1/2 flex flex-col items-center animate-pin-bounce [animation-duration:2.4s] [animation-delay:200ms]">
+          <img src="./public/img/arch-linux.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Alma Linux</span>
+        </div>
+
+        <div
+          class="absolute right-1/5 top-0 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
+          <img src="./public/img/rocky-linux.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
+        </div>
+
+        <div
+          class="absolute -right-6 top-1/3 flex flex-col items-center animate-pin-bounce  [animation-duration:2.0s] [animation-delay:400ms]">
+          <img src="./public/img/arch-linux.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Arch Linux</span>
+        </div>
+
+        <div
+          class="absolute bottom-1/4 right-1/4 flex flex-col items-center animate-pin-bounce [animation-duration:3.4s] [animation-delay:500ms]">
+          <img src="./public/img/ubuntu.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Ubuntu</span>
+        </div>
+
+        <div
+          class="absolute right-1/2 bottom-10 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
+          <img src="./public/img/centos.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
+        </div>
+        <div
+          class="absolute right-1/2 bottom-10 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
+          <img src="./public/img/centos.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
+        </div>
+
+        <div
+          class="absolute bottom-1/23 left-1/7 flex flex-col items-center animate-pin-bounce [animation-duration:3.5s] [animation-delay:300ms]">
+          <img src="./public/img/docker.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Docker</span>
+        </div>
+
+        <div class="absolute left-1/11 top-1/2 flex flex-col items-center animate-pin-bounce">
+          <img src="./public/img/rocky-linux.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
+        </div>
+
+        <div class="absolute left-1/2.3 top-1/5 flex flex-col items-center animate-pin-bounce">
+          <img src="./public/img/centos.png"
+            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
+          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= End Partners Block ========= -->
+  <!-- ========= Testimonial Block ========= -->
+  <section class="relative z-1 py-20 bg-[#F9FAFC] dark:bg-[#02060A] transition-colors duration-500">
+    <!-- Shape Glow -->
+    <img class="absolute bottom-[0%] left-0 w-full h-full object-cover z-[-1] hidden dark:block duration-500" src="./public/img/testimonial-top.svg" alt="">
+    <!-- soft dotted backdrop (very subtle) -->
+    <div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]
+           bg-[radial-gradient(circle_at_1px_1px,#0b1220_1px,transparent_1.2px)]
+           bg-[length:22px_22px]
+           dark:bg-[radial-gradient(circle_at_1px_1px,#fff_1px,transparent_1.2px)]"></div>
+
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="max-w-md lg:max-w-xl mx-auto">
+        <!-- Tag -->
+        <div class="flex justify-center">
+          <span
+            class="bg-white dark:bg-[#1F1F1F] rounded-full shadow-xs shadow-gray-300/40 px-4 py-2 text-sm font-semibold text-slate-900 dark:text-white mb-4 inline-flex font-['Outfit',_sans-serif]">
+            <img class="mr-1 block" src="./public/img/flash-icon.png" alt="" />Testimonial
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h2
+          class="text-center text-[34px] sm:text-[42px] lg:text-[50px] font-['Outfit',_sans-serif] font-bold leading-[1.2] tracking-tight text-slate-900 dark:text-white transition-colors duration-500">
+          Trust the <span class="text-[#328DE6]">Experts</span>, Hear Their Stories
+        </h2>
+
+        <!-- Subcopy -->
+        <p class="mx-auto mt-4 max-w-3xl text-center text-slate-500 dark:text-gray-400 transition-colors duration-500">
+          Experience unmatched reliability for websites, apps, or servers. Our
+          skilled team ensures 24/7 support for your thriving business, earning a
+          4.8 out of 5 star rating!
+        </p>
+      </div>
+
+      <!-- Grid -->
+      <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Card -->
+        <article class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500">
+          <header class="flex items-center gap-4">
+            <img src="./public/img/testimonial-img-1.png" alt="Jona Steinecke"
+              class="h-12 w-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white">
+                Jona Steinecke
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-gray-400">Developer</p>
+            </div>
+          </header>
+          <p class="mt-4 text-slate-600 dark:text-gray-300">
+            Tellus massa aliquam tempus elementum mi nunc massa posuere porta.
+            Erat sodales fames faucibus.
+          </p>
+        </article>
+
+        <!-- Card -->
+        <article class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500">
+          <header class="flex items-center gap-4">
+            <img src="./public/img/testimonial-img-2.png" alt="Sinja Noack"
+              class="h-12 w-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white">
+                Sinja Noack
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-gray-400">Designer</p>
+            </div>
+          </header>
+          <p class="mt-4 text-slate-600 dark:text-gray-300">
+            Pulsefy is a game-changer for our team—easy for beginners and powerful
+            for digging beyond average data. It's our daily ally in unearthing
+            those pivotal marketing insights that really drive strategy!
+          </p>
+        </article>
+
+        <!-- Card -->
+        <article class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500">
+          <header class="flex items-center gap-4">
+            <img src="./public/img/testimonial-img-3.png" alt="Jay Zender DDS"
+              class="h-12 w-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white">
+                Jay Zender DDS
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-gray-400">Designer</p>
+            </div>
+          </header>
+          <p class="mt-4 text-slate-600 dark:text-gray-300">
+            Pulsefy is a game-changer for our team—easy for beginners and powerful
+            for digging beyond average data. It's our daily ally in.
+          </p>
+        </article>
+
+        <!-- Card -->
+        <article class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500">
+          <header class="flex items-center gap-4">
+            <img src="./public/img/testimonial-img-4.png" alt="Guy Hawkins"
+              class="h-12 w-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white">
+                Guy Hawkins
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-gray-400">Designer</p>
+            </div>
+          </header>
+          <p class="mt-4 text-slate-600 dark:text-gray-300">
+            Pulsefy is a game-changer for our team—easy for beginners and powerful
+            for digging beyond average data. It's our daily ally in unearthing
+            insights that really drive strategy!
+          </p>
+        </article>
+
+        <!-- Card (accent ring) -->
+        <article class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500">
+          <header class="flex items-center gap-4">
+            <img src="./public/img/testimonial-img-5.png" alt="Oskar Liebach"
+              class="h-12 w-12 rounded-full object-cover ring-4 ring-emerald-100 dark:ring-emerald-900/60" />
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white">
+                Oskar Liebach
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-gray-400">Developer</p>
+            </div>
+          </header>
+          <p class="mt-4 text-slate-600 dark:text-gray-300">
+            Lorem ipsum dolor sit amet consectetur. Tellus massa aliquam tempus
+            elementum mi nunc massa posuere porta. Erat sodales fames faucibus
+            ipsum aenean. Amet nibh condimentum.
+          </p>
+        </article>
+
+        <!-- Card -->
+        <article class="rounded-3xl bg-white/80 dark:bg-[#1F1F1F]/80 shadow-xs p-6 transition-colors duration-500">
+          <header class="flex items-center gap-4">
+            <img src="./public/img/testimonial-img-6.png" alt="Viola Heist"
+              class="h-12 w-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-slate-900 dark:text-white">
+                Viola Heist
+              </h3>
+              <p class="text-sm text-slate-500 dark:text-gray-400">Developer</p>
+            </div>
+          </header>
+          <p class="mt-4 text-slate-600 dark:text-gray-300">
+            Pulsefy is a game-changer for our team—easy for beginners and powerful
+            for digging beyond average data. It's our daily ally in unearthing
+            those pivotal insights every day!
+          </p>
+        </article>
+      </div>
+    </div>
+    
+  </section>
+  <!-- ========= End Testimonial Block ========= -->
+
+
+  <!-- Footer -->
+  <footer class="relative z-1 pt-28 pb-0 text-white z-20 dark:footer-glow">
+    <div
+      class="pointer-events-none absolute inset-0 z-0  
+bg-[#02060A] bg-gradient-to-b from-[#0a1c3a] to-[#02060A] bg-no-repeat bg-cover 
+dark:bg-[#02060A] dark:from-transparent dark:to-transparent">
+      <!-- top glow -->
+      <div class="absolute inset-x-0 -top-30 h-full  -z-10">
+      </div>
+    </div>
+    <div class="mx-auto mb-10 max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div>
+          <a href="#" class="inline-flex items-center">
+            <img src="./public/img/header_logo.png" alt="HostOmega" class="h-10 w-auto" />
+          </a>
+          <p class="mt-6 max-w-md text-lg text-slate-300">
+            We provide top-tier technology and support for online success.
+          </p>
+          <!-- Socials -->
+          <div class="mt-6 flex gap-3">
+            <!-- GitHub -->
+            <a href="#"
+              class="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 .5a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.79.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.98 0-1.32.47-2.4 1.24-3.25-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.24a11.5 11.5 0 016 0c2.29-1.56 3.3-1.24 3.3-1.24.66 1.64.24 2.85.12 3.15.78.85 1.24 1.93 1.24 3.25 0 4.66-2.8 5.67-5.48 5.97.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0012 .5z" />
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="#"
+              class="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M22 12.06C22 6.48 17.52 2 12 2S2 6.48 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.22.2 2.22.2v2.44h-1.25c-1.23 0-1.61.76-1.61 1.55v1.86h2.74l-.44 2.91h-2.3V22c4.78-.79 8.44-4.94 8.44-9.94z" />
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#"
+              class="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.75-.88a1.12 1.12 0 110 2.24 1.12 1.12 0 010-2.24z" />
+              </svg>
+            </a>
+            <!-- X -->
+            <a href="#"
+              class="grid h-10 w-10 place-items-center rounded-full bg-white/5 ring-1 ring-white/10 hover:bg-white/10 transition">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M18.9 2H22l-7.01 8.01L23.5 22h-6.77l-4.9-6.37L5.2 22H2l7.49-8.56L.5 2h6.86l4.43 5.82L18.9 2zm-1.19 18h2.03L8.33 4H6.3l11.41 16z" />
+              </svg>
+            </a>
+          </div>
+          <p class="mt-8 text-sm text-slate-400">
+            © Copyright <span id="year"></span> Host Omega. All rights reserved.
+          </p>
+        </div>
+        <!-- Company -->
+        <div>
+          <h3 class="text-xl font-semibold">Company</h3>
+          <ul class="mt-5 space-y-3 text-slate-300">
+            <li><a href="#" class="hover:text-white">About Us</a></li>
+            <li><a href="#" class="hover:text-white">Data Center</a></li>
+            <li><a href="#" class="hover:text-white">Information</a></li>
+            <li><a href="#" class="hover:text-white">Career</a></li>
+            <li><a href="#" class="hover:text-white">Blogs</a></li>
+          </ul>
+        </div>
+        <!-- Product -->
+        <div>
+          <h3 class="text-xl font-semibold">Product</h3>
+          <ul class="mt-5 space-y-3 text-slate-300">
+            <li><a href="#" class="hover:text-white">Domain</a></li>
+            <li><a href="#" class="hover:text-white">Hosting</a></li>
+            <li><a href="#" class="hover:text-white">Cloud</a></li>
+            <li><a href="#" class="hover:text-white">Server</a></li>
+            <li><a href="#" class="hover:text-white">Pricing</a></li>
+          </ul>
+        </div>
+        <!-- Legal Links -->
+        <div>
+          <h3 class="text-xl font-semibold">Legal Links</h3>
+          <ul class="mt-5 space-y-3 text-slate-300">
+            <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+            <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Huge watermark text -->
+    <div
+      class="pointer-events-none relative z-10 inset-x-0 bottom-0 h-80 bg-[url(../img/HostOmegaFooter.svg)] bg-no-repeat bg-bottom bg-[size:100%_100%]">
+    </div>
+    </div>
+  </footer>
+
+  </main>
+  <!-- Core Navbar JS-->
+  <script src="./public/js/navbar.js"></script>
+  <!-- FontAwesome JS-->
+  <script src="./public/js/all.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="./public/js/scripts.js"></script>
+</body>
+
+</html>
