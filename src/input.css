@@ -53,3 +53,9 @@
     width: 8px;
   }
 }
+
+@layer utilities {
+  .dark .footer-glow {
+    @apply filter drop-shadow-[0_0_20px_rgba(255,255,255,0.6)];
+  }
+}

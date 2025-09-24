@@ -248,44 +248,99 @@ const raf = (fn) => requestAnimationFrame(fn);
 })();
 
 /* ========= 5) Pricing toggle (monthly/yearly) ========= */
+// (() => {
+//   try {
+//     const monthlyBtn = document.getElementById("monthlyBtn");
+//     const yearlyBtn  = document.getElementById("yearlyBtn");
+//     const prices     = $$("[data-monthly]");
+
+//     if (!(monthlyBtn && yearlyBtn && prices.length)) return;
+
+//     const showMonthly = () => {
+//       monthlyBtn.classList.add("bg-green-500", "text-white");
+//       monthlyBtn.classList.remove("text-black");
+//       yearlyBtn.classList.remove("bg-green-500", "text-white");
+//       yearlyBtn.classList.add("text-blue-600");
+//       prices.forEach((p) => (p.textContent = p.dataset.monthly));
+//       monthlyBtn.setAttribute("aria-pressed", "true");
+//       yearlyBtn.setAttribute("aria-pressed", "false");
+//     };
+
+//     const showYearly = () => {
+//       yearlyBtn.classList.add("bg-green-500", "text-white");
+//       yearlyBtn.classList.remove("text-blue-600");
+//       monthlyBtn.classList.remove("bg-green-500", "text-white");
+//       monthlyBtn.classList.add("text-black dark:text-white");
+//       prices.forEach((p) => (p.textContent = p.dataset.yearly));
+//       yearlyBtn.setAttribute("aria-pressed", "true");
+//       monthlyBtn.setAttribute("aria-pressed", "false");
+//     };
+
+//     on(monthlyBtn, "click", showMonthly);
+//     on(yearlyBtn, "click", showYearly);
+
+//     // default state
+//     showMonthly();
+//   } catch (err) {
+//     console.warn("[pricing toggle] skipped:", err);
+//   }
+// })();
+
+/* ========= 5) Pricing toggle (monthly/yearly) ========= */
 (() => {
   try {
     const monthlyBtn = document.getElementById("monthlyBtn");
     const yearlyBtn  = document.getElementById("yearlyBtn");
-    const prices     = $$("[data-monthly]");
+    const prices     = document.querySelectorAll("[data-monthly]");
 
     if (!(monthlyBtn && yearlyBtn && prices.length)) return;
 
     const showMonthly = () => {
+      // Active styles
       monthlyBtn.classList.add("bg-green-500", "text-white");
-      monthlyBtn.classList.remove("text-black");
+      monthlyBtn.classList.remove("text-black", "dark:text-white");
+
+      // Reset yearly styles
       yearlyBtn.classList.remove("bg-green-500", "text-white");
-      yearlyBtn.classList.add("text-blue-600");
-      prices.forEach((p) => (p.textContent = p.dataset.monthly));
+      yearlyBtn.classList.add("text-blue-600"); // blue in light mode
+      yearlyBtn.classList.add("dark:text-blue-400"); // blue in dark mode (inactive)
+
+      // Update prices
+      prices.forEach((p) => {
+        p.textContent = p.dataset.monthly;
+      });
+
       monthlyBtn.setAttribute("aria-pressed", "true");
       yearlyBtn.setAttribute("aria-pressed", "false");
     };
 
     const showYearly = () => {
+      // Active styles (always white text)
       yearlyBtn.classList.add("bg-green-500", "text-white");
-      yearlyBtn.classList.remove("text-blue-600");
+      yearlyBtn.classList.remove("text-blue-600", "dark:text-blue-400");
+
+      // Reset monthly styles
       monthlyBtn.classList.remove("bg-green-500", "text-white");
-      monthlyBtn.classList.add("text-black dark:text-white");
-      prices.forEach((p) => (p.textContent = p.dataset.yearly));
+      monthlyBtn.classList.add("text-black", "dark:text-white");
+
+      // Update prices
+      prices.forEach((p) => {
+        p.textContent = p.dataset.yearly;
+      });
+
       yearlyBtn.setAttribute("aria-pressed", "true");
       monthlyBtn.setAttribute("aria-pressed", "false");
     };
 
-    on(monthlyBtn, "click", showMonthly);
-    on(yearlyBtn, "click", showYearly);
+    monthlyBtn.addEventListener("click", showMonthly);
+    yearlyBtn.addEventListener("click", showYearly);
 
-    // default state
+    // Default state
     showMonthly();
   } catch (err) {
     console.warn("[pricing toggle] skipped:", err);
   }
 })();
-
 /* ========= 6) Intersection reveal (data-reveal) ========= */
 (() => {
   try {
