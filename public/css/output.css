@@ -337,6 +337,9 @@
   .top-\[0\%\] {
     top: 0%;
   }
+  .top-\[00\%\] {
+    top: 00%;
+  }
   .top-\[6\%\] {
     top: 6%;
   }
@@ -349,6 +352,9 @@
   .top-\[20\%\] {
     top: 20%;
   }
+  .top-\[30\%\] {
+    top: 30%;
+  }
   .top-\[32\%\] {
     top: 32%;
   }
@@ -357,6 +363,9 @@
   }
   .top-\[40\%\] {
     top: 40%;
+  }
+  .top-\[50\%\] {
+    top: 50%;
   }
   .-right-6 {
     right: calc(var(--spacing) * -6);
@@ -688,6 +697,9 @@
   .h-16 {
     height: calc(var(--spacing) * 16);
   }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
   .h-80 {
     height: calc(var(--spacing) * 80);
   }
@@ -766,8 +778,14 @@
   .w-12 {
     width: calc(var(--spacing) * 12);
   }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
   .w-25 {
     width: calc(var(--spacing) * 25);
+  }
+  .w-30 {
+    width: calc(var(--spacing) * 30);
   }
   .w-35 {
     width: calc(var(--spacing) * 35);
@@ -3509,6 +3527,11 @@
       background-color: var(--color-black);
     }
   }
+  .dark\:bg-blue-600 {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-blue-600);
+    }
+  }
   .dark\:bg-blue-700 {
     &:where(.dark, .dark *) {
       background-color: var(--color-blue-700);
@@ -3541,6 +3564,11 @@
   .dark\:bg-transparent {
     &:where(.dark, .dark *) {
       background-color: transparent;
+    }
+  }
+  .dark\:bg-white {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-white);
     }
   }
   .dark\:bg-\[radial-gradient\(circle_at_1px_1px\,\#fff_1px\,transparent_1\.2px\)\] {
@@ -3682,6 +3710,31 @@
       }
     }
   }
+  .dark\:opacity-0 {
+    &:where(.dark, .dark *) {
+      opacity: 0%;
+    }
+  }
+  .dark\:opacity-1 {
+    &:where(.dark, .dark *) {
+      opacity: 1%;
+    }
+  }
+  .dark\:opacity-5 {
+    &:where(.dark, .dark *) {
+      opacity: 5%;
+    }
+  }
+  .dark\:opacity-7 {
+    &:where(.dark, .dark *) {
+      opacity: 7%;
+    }
+  }
+  .dark\:opacity-9 {
+    &:where(.dark, .dark *) {
+      opacity: 9%;
+    }
+  }
   .dark\:opacity-40 {
     &:where(.dark, .dark *) {
       opacity: 40%;
@@ -3708,6 +3761,14 @@
       --tw-ring-color: color-mix(in srgb, oklch(37.8% 0.077 168.94) 60%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         --tw-ring-color: color-mix(in oklab, var(--color-emerald-900) 60%, transparent);
+      }
+    }
+  }
+  .dark\:ring-white\/10 {
+    &:where(.dark, .dark *) {
+      --tw-ring-color: color-mix(in srgb, #fff 10%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        --tw-ring-color: color-mix(in oklab, var(--color-white) 10%, transparent);
       }
     }
   }
