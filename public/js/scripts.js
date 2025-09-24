@@ -120,7 +120,7 @@ const raf = (fn) => requestAnimationFrame(fn);
     };
 
     const sizeViewportToSix = () => {
-      const sixWidth = widthOfFirst(6);
+      const sixWidth = widthOfFirst(9);
       const max = wrap ? wrap.clientWidth : sixWidth;
       chips.style.width = Math.min(sixWidth, max) + "px";
     };
