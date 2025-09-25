@@ -1149,8 +1149,8 @@
     </div>
   </section>
   <!-- ======= End Global Coverage Block ======  -->
- 
-  <!-- ======= Partners Block ======  -->
+
+  <!-- ======= Partners Block New ======  -->
 
   <section class="relative z-1 bg-gradient-to-b from-[#02060A] to-[#0a1c3a] text-white py-10 sm:py-16 lg:py-20 dark:bg-[#02060A] dark:from-transparent dark:to-transparent">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
@@ -1220,79 +1220,125 @@
 
       <!-- Right Side: Orbit Layout -->
       <div class="relative flex items-center justify-center mx-auto lg:mx-0 w-full sm:w-[75%] lg:w-full">
-        <!-- Concentric Circles -->
-        <!-- <div class="absolute w-[544px] h-[544px] rounded-full border border-white/10"></div>
-      <div class="absolute w-[344px] h-[344px] rounded-full border border-white/10"></div>
-      <div class="absolute w-[144px] h-[144px] rounded-full border border-white/10"></div> -->
-
-        <!-- Center Icon -->
-        <div class="relative w-full h-full rounded-full bg-[#0d1c2b] flex items-center justify-center z-0">
-          <img src="./public/img/circle.svg" alt="Main Icon" class="w-full h-full">
-        </div>
-
-        <!-- Orbit Icons -->
         <div
-          class="absolute top-10 left-1/6 -translate-x-1/2 flex flex-col items-center animate-pin-bounce [animation-duration:2.4s] [animation-delay:200ms]">
-          <img src="./public/img/arch-linux.png"
-            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
-          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Alma Linux</span>
-        </div>
+          class="relative bg-[#0d1c2b] rounded-full aspect-square w-[min(88vmin,680px)] bg-center bg-no-repeat bg-contain"
+          style="background-image:url('./public/img/circle.svg')"
+        >
+          <!-- RING 1 — 18s -->
+          <div class="orbit absolute inset-0 animate-[orbit_18s_linear_infinite]">
+            <div class="orbiter" style="--r:105px; --start:12deg; animation-delay:-1.2s;">
+              <div class="upright">
+                <div class="spinfix animate-[unorbit_18s_linear_infinite]">
+                  <figure class="orbit-figure">
+                    <img src="./public/img/centos.svg" class="orbit-icon" alt="CentOS" />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div
-          class="absolute right-1/5 top-0 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
-          <img src="./public/img/rocky-linux.png"
-            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
-          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
-        </div>
+          <!-- RING 2 — 27s -->
+          <div class="orbit absolute inset-0 animate-[orbit_27s_linear_infinite]">
+            <div class="orbiter" style="--r:170px; --start:240deg; animation-delay:-6s;">
+              <div class="upright">
+                <div class="spinfix animate-[unorbit_27s_linear_infinite]">
+                  <figure class="orbit-figure">
+                    <img src="./public/img/ubuntu.svg" class="orbit-icon" alt="Ubuntu" />
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="orbiter" style="--r:170px; --start:60deg; animation-delay:-1s;">
+              <div class="upright">
+                <div class="spinfix animate-[unorbit_27s_linear_infinite]">
+                  <figure class="orbit-figure">
+                    <img src="./public/img/rocky-linux.svg" class="orbit-icon" alt="Rocky Linux" />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div
-          class="absolute -right-6 top-1/3 flex flex-col items-center animate-pin-bounce  [animation-duration:2.0s] [animation-delay:400ms]">
-          <img src="./public/img/arch-linux.png"
-            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
-          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Arch Linux</span>
-        </div>
+          <!-- RING 3 — 39s -->
+          <div class="orbit absolute inset-0 animate-[orbit_39s_linear_infinite]">
+            <div class="orbiter" style="--r:230px; --start:118deg; animation-delay:-8s;">
+              <div class="upright">
+                <div class="spinfix animate-[unorbit_39s_linear_infinite]">
+                  <figure class="orbit-figure">
+                    <img src="./public/img/arch-linux.svg" class="orbit-icon" alt="Arch Linux" />
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="orbiter" style="--r:230px; --start:320deg; animation-delay:-3.2s;">
+              <div class="upright">
+                <div class="spinfix animate-[unorbit_39s_linear_infinite]">
+                  <figure class="orbit-figure">
+                    <img src="./public/img/alma-linux.svg" class="orbit-icon" alt="Alma Linux" />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div
-          class="absolute bottom-1/4 right-1/4 flex flex-col items-center animate-pin-bounce [animation-duration:3.4s] [animation-delay:500ms]">
-          <img src="./public/img/ubuntu.png"
-            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
-          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Ubuntu</span>
-        </div>
+          <!-- RING 4 — 54s -->
+          <div class="orbit absolute inset-0 animate-[orbit_54s_linear_infinite]">
+            <div class="orbiter" style="--r:285px; --start:206deg; animation-delay:-14s;">
+              <div class="upright">
+                <div class="spinfix animate-[unorbit_54s_linear_infinite]">
+                  <figure class="orbit-figure">
+                    <img src="./public/img/docker.svg" class="orbit-icon" alt="Docker" />
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="orbiter" style="--r:285px; --start:350deg; animation-delay:-7s;">
+              <div class="upright">
+                <div class="spinfix animate-[unorbit_54s_linear_infinite]">
+                  <figure class="orbit-figure">
+                    <img src="./public/img/centos.svg" class="orbit-icon" alt="CentOS" />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <div
-          class="absolute right-1/2 bottom-10 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
-          <img src="./public/img/centos.png"
-            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
-          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
-        </div>
-        <div
-          class="absolute right-1/2 bottom-10 flex flex-col items-center animate-pin-bounce [animation-duration:3.8s] [animation-delay:600ms]">
-          <img src="./public/img/centos.png"
-            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
-          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
-        </div>
-
-        <div
-          class="absolute bottom-1/23 left-1/7 flex flex-col items-center animate-pin-bounce [animation-duration:3.5s] [animation-delay:300ms]">
-          <img src="./public/img/docker.png"
-            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
-          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Docker</span>
-        </div>
-
-        <div class="absolute left-1/11 top-1/2 flex flex-col items-center animate-pin-bounce">
-          <img src="./public/img/rocky-linux.png"
-            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
-          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Rocky Linux</span>
-        </div>
-
-        <div class="absolute left-1/2.3 top-1/5 flex flex-col items-center animate-pin-bounce">
-          <img src="./public/img/centos.png"
-            class="w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a]" />
-          <span class="mt-1 text-xs bg-white/50 px-2 py-0.5 rounded">Cent Os</span>
         </div>
       </div>
     </div>
   </section>
+
+<style>
+  @layer utilities {
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes unorbit { to { transform: rotate(-360deg); } }
+
+    .orbit { transform-origin: center; will-change: transform; }
+    .spinfix { will-change: transform; }
+
+    .orbiter{
+      position:absolute; left:50%; top:50%;
+      transform:
+        translate(-50%, -50%)
+        rotate(var(--start, 0deg))
+        translateX(var(--r, 160px));
+    }
+    .upright{
+      transform: rotate(calc(-1 * var(--start, 0deg)));
+      transform-origin: center;
+    }
+
+    .orbit-icon { @apply w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a] shadow-md; }
+    .orbit-figure { @apply flex flex-col items-center; }
+    .orbit-tag { @apply mt-1 text-[10px] sm:text-xs bg-white/60 text-slate-900 px-2 py-0.5 rounded; }
+
+    .orbit:hover, .orbit:hover .spinfix { animation-play-state: paused; }
+    @media (prefers-reduced-motion: reduce){
+      .orbit, .spinfix { animation: none !important; }
+    }
+  }
+</style>
+
 
   <!-- ========= End Partners Block ========= -->
   <!-- ========= Testimonial Block ========= -->
