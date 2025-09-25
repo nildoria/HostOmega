@@ -982,8 +982,17 @@
   .animate-\[orbit_39s_linear_infinite\] {
     animation: orbit 39s linear infinite;
   }
+  .animate-\[orbit_40\.5s_linear_infinite\] {
+    animation: orbit 40.5s linear infinite;
+  }
   .animate-\[orbit_54s_linear_infinite\] {
     animation: orbit 54s linear infinite;
+  }
+  .animate-\[orbit_58\.5s_linear_infinite\] {
+    animation: orbit 58.5s linear infinite;
+  }
+  .animate-\[orbit_81s_linear_infinite\] {
+    animation: orbit 81s linear infinite;
   }
   .animate-\[unorbitReverse_26s_linear_infinite\] {
     animation: unorbitReverse 26s linear infinite;
@@ -1006,8 +1015,17 @@
   .animate-\[unorbit_39s_linear_infinite\] {
     animation: unorbit 39s linear infinite;
   }
+  .animate-\[unorbit_40\.5s_linear_infinite\] {
+    animation: unorbit 40.5s linear infinite;
+  }
   .animate-\[unorbit_54s_linear_infinite\] {
     animation: unorbit 54s linear infinite;
+  }
+  .animate-\[unorbit_58\.5s_linear_infinite\] {
+    animation: unorbit 58.5s linear infinite;
+  }
+  .animate-\[unorbit_81s_linear_infinite\] {
+    animation: unorbit 81s linear infinite;
   }
   .animate-fade-up {
     animation: fade-up .65s cubic-bezier(.2,.6,.2,1) both;

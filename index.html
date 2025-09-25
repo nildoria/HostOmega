@@ -1224,11 +1224,11 @@
           class="relative bg-[#0d1c2b] rounded-full aspect-square w-[min(88vmin,680px)] bg-center bg-no-repeat bg-contain"
           style="background-image:url('./public/img/circle.svg')"
         >
-          <!-- RING 1 — 18s -->
-          <div class="orbit absolute inset-0 animate-[orbit_18s_linear_infinite]">
+          <!-- RING 1 — 27s -->
+          <div class="orbit absolute inset-0 animate-[orbit_27s_linear_infinite]">
             <div class="orbiter" style="--r:105px; --start:12deg; animation-delay:-1.2s;">
               <div class="upright">
-                <div class="spinfix animate-[unorbit_18s_linear_infinite]">
+                <div class="spinfix animate-[unorbit_27s_linear_infinite]">
                   <figure class="orbit-figure">
                     <img src="./public/img/centos.svg" class="orbit-icon" alt="CentOS" />
                   </figure>
@@ -1237,11 +1237,11 @@
             </div>
           </div>
 
-          <!-- RING 2 — 27s -->
-          <div class="orbit absolute inset-0 animate-[orbit_27s_linear_infinite]">
+          <!-- RING 2 — 40.5s -->
+          <div class="orbit absolute inset-0 animate-[orbit_40.5s_linear_infinite]">
             <div class="orbiter" style="--r:170px; --start:240deg; animation-delay:-6s;">
               <div class="upright">
-                <div class="spinfix animate-[unorbit_27s_linear_infinite]">
+                <div class="spinfix animate-[unorbit_40.5s_linear_infinite]">
                   <figure class="orbit-figure">
                     <img src="./public/img/ubuntu.svg" class="orbit-icon" alt="Ubuntu" />
                   </figure>
@@ -1250,7 +1250,7 @@
             </div>
             <div class="orbiter" style="--r:170px; --start:60deg; animation-delay:-1s;">
               <div class="upright">
-                <div class="spinfix animate-[unorbit_27s_linear_infinite]">
+                <div class="spinfix animate-[unorbit_40.5s_linear_infinite]">
                   <figure class="orbit-figure">
                     <img src="./public/img/rocky-linux.svg" class="orbit-icon" alt="Rocky Linux" />
                   </figure>
@@ -1259,11 +1259,11 @@
             </div>
           </div>
 
-          <!-- RING 3 — 39s -->
-          <div class="orbit absolute inset-0 animate-[orbit_39s_linear_infinite]">
+          <!-- RING 3 — 58.5s -->
+          <div class="orbit absolute inset-0 animate-[orbit_58.5s_linear_infinite]">
             <div class="orbiter" style="--r:230px; --start:118deg; animation-delay:-8s;">
               <div class="upright">
-                <div class="spinfix animate-[unorbit_39s_linear_infinite]">
+                <div class="spinfix animate-[unorbit_58.5s_linear_infinite]">
                   <figure class="orbit-figure">
                     <img src="./public/img/arch-linux.svg" class="orbit-icon" alt="Arch Linux" />
                   </figure>
@@ -1272,7 +1272,7 @@
             </div>
             <div class="orbiter" style="--r:230px; --start:320deg; animation-delay:-3.2s;">
               <div class="upright">
-                <div class="spinfix animate-[unorbit_39s_linear_infinite]">
+                <div class="spinfix animate-[unorbit_58.5s_linear_infinite]">
                   <figure class="orbit-figure">
                     <img src="./public/img/alma-linux.svg" class="orbit-icon" alt="Alma Linux" />
                   </figure>
@@ -1281,11 +1281,11 @@
             </div>
           </div>
 
-          <!-- RING 4 — 54s -->
-          <div class="orbit absolute inset-0 animate-[orbit_54s_linear_infinite]">
+          <!-- RING 4 — 81s -->
+          <div class="orbit absolute inset-0 animate-[orbit_81s_linear_infinite]">
             <div class="orbiter" style="--r:285px; --start:206deg; animation-delay:-14s;">
               <div class="upright">
-                <div class="spinfix animate-[unorbit_54s_linear_infinite]">
+                <div class="spinfix animate-[unorbit_81s_linear_infinite]">
                   <figure class="orbit-figure">
                     <img src="./public/img/docker.svg" class="orbit-icon" alt="Docker" />
                   </figure>
@@ -1294,7 +1294,7 @@
             </div>
             <div class="orbiter" style="--r:285px; --start:350deg; animation-delay:-7s;">
               <div class="upright">
-                <div class="spinfix animate-[unorbit_54s_linear_infinite]">
+                <div class="spinfix animate-[unorbit_81s_linear_infinite]">
                   <figure class="orbit-figure">
                     <img src="./public/img/centos.svg" class="orbit-icon" alt="CentOS" />
                   </figure>
@@ -1305,40 +1305,9 @@
 
         </div>
       </div>
+
     </div>
   </section>
-
-<style>
-  @layer utilities {
-    @keyframes orbit { to { transform: rotate(360deg); } }
-    @keyframes unorbit { to { transform: rotate(-360deg); } }
-
-    .orbit { transform-origin: center; will-change: transform; }
-    .spinfix { will-change: transform; }
-
-    .orbiter{
-      position:absolute; left:50%; top:50%;
-      transform:
-        translate(-50%, -50%)
-        rotate(var(--start, 0deg))
-        translateX(var(--r, 160px));
-    }
-    .upright{
-      transform: rotate(calc(-1 * var(--start, 0deg)));
-      transform-origin: center;
-    }
-
-    .orbit-icon { @apply w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a] shadow-md; }
-    .orbit-figure { @apply flex flex-col items-center; }
-    .orbit-tag { @apply mt-1 text-[10px] sm:text-xs bg-white/60 text-slate-900 px-2 py-0.5 rounded; }
-
-    .orbit:hover, .orbit:hover .spinfix { animation-play-state: paused; }
-    @media (prefers-reduced-motion: reduce){
-      .orbit, .spinfix { animation: none !important; }
-    }
-  }
-</style>
-
 
   <!-- ========= End Partners Block ========= -->
   <!-- ========= Testimonial Block ========= -->
