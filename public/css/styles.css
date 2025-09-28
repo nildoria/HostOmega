@@ -1,3 +1,34 @@
+@tailwind utilities;
+
+/* your custom utilities & keyframes */
+@layer utilities {
+  @keyframes orbit { to { transform: rotate(360deg); } }
+  @keyframes unorbit { to { transform: rotate(-360deg); } }
+
+  .orbit { transform-origin: center; will-change: transform; }
+  .spinfix { will-change: transform; }
+
+  .orbiter{
+    position:absolute; left:50%; top:50%;
+    transform: translate(-50%, -50%) rotate(var(--start, 0deg)) translateX(var(--r, 160px));
+  }
+  .upright{
+    transform: rotate(calc(-1 * var(--start, 0deg)));
+    transform-origin: center;
+  }
+
+  .orbit-icon { @apply w-8 h-8 lg:w-12 lg:h-12 rounded-full border border-white/50 bg-[#1a253a] shadow-md; }
+  .orbit-figure { @apply flex flex-col items-center; }
+  .orbit-tag { @apply mt-1 text-[10px] sm:text-xs bg-white/60 text-slate-900 px-2 py-0.5 rounded; }
+
+  .orbit:hover, .orbit:hover .spinfix { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce){
+    .orbit, .spinfix { animation: none !important; }
+  }
+}
+
+
+
 /* Hamburger Menu */
 #hamburger.active .bar:nth-of-type(1) {
 	transform: rotate(45deg) translateY(10px);
