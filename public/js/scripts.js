@@ -732,3 +732,90 @@ document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('theme-toggle').addEventListener('click', () => {
   document.documentElement.classList.toggle('dark');
 });
+
+
+// Slide Switcher 
+(() => {
+  const monthlyBtn = document.getElementById('monthlyBtn');
+  const yearlyBtn  = document.getElementById('yearlyBtn');
+  if (!monthlyBtn || !yearlyBtn) return;
+
+  const wrap = monthlyBtn.parentElement;
+  wrap.classList.add('relative','overflow-hidden','rounded-full');
+
+  // Ensure buttons render above the thumb
+  monthlyBtn.classList.add('relative','z-10');
+  yearlyBtn.classList.add('relative','z-10');
+
+  // Create / reuse sliding thumb BEHIND content
+  let thumb = wrap.querySelector('[data-thumb]');
+  if (!thumb) {
+    thumb = document.createElement('span');
+    thumb.setAttribute('data-thumb','');
+    thumb.className = 'absolute z-0 bg-green-500 rounded-full pointer-events-none ' +
+                      'transition-[left,width] duration-300 will-change-transform';
+    // Insert as the FIRST child so it sits below buttons even without z-index
+    wrap.insertBefore(thumb, wrap.firstChild);
+  } else {
+    thumb.classList.add('z-0');
+  }
+
+  // Remove solid bg so thumb shows through
+  monthlyBtn.classList.remove('bg-green-500');
+  yearlyBtn.classList.remove('hover:bg-green-500');
+
+  let activeEl = monthlyBtn;
+
+  const px = v => `${Math.max(0, Math.round(v))}px`;
+
+  function layoutThumb(target){
+    const csWrap = getComputedStyle(wrap);
+    const padT = parseFloat(csWrap.paddingTop)    || 0;
+    const padB = parseFloat(csWrap.paddingBottom) || 0;
+
+    thumb.style.top    = px(padT);
+    thumb.style.height = px(wrap.clientHeight - padT - padB);
+    thumb.style.left   = px(target.offsetLeft);
+    thumb.style.width  = px(target.offsetWidth);
+    thumb.style.borderRadius = '9999px';
+  }
+
+  function setActive(target){
+    activeEl = target;
+    layoutThumb(target);
+
+    const yearlyBadge = yearlyBtn.querySelector('span');
+
+    const setBtn = (btn, isActive) => {
+      btn.classList.toggle('text-white', isActive);     // on green thumb
+      btn.classList.toggle('text-blue-500', !isActive); // on white/dark bg
+      btn.style.backgroundColor = 'transparent';
+    };
+
+    setBtn(monthlyBtn, target === monthlyBtn);
+    setBtn(yearlyBtn,  target === yearlyBtn);
+
+    if (yearlyBadge){
+      const on = target === yearlyBtn;
+      yearlyBadge.classList.toggle('bg-green-300', on);
+      yearlyBadge.classList.toggle('text-black',   on);
+      yearlyBadge.classList.toggle('bg-blue-500/10', !on);
+      yearlyBadge.classList.toggle('text-blue-500',  !on);
+    }
+  }
+
+  wrap.addEventListener('click', (e) => {
+    const btn = e.target.closest('#monthlyBtn, #yearlyBtn');
+    if (!btn) return;
+    setActive(btn);
+  });
+
+  // Realign on resize / font load / first paint
+  const realign = () => layoutThumb(activeEl);
+  window.addEventListener('resize', realign);
+  window.addEventListener('load',   realign);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(realign);
+
+  // Init
+  setActive(monthlyBtn);
+})();
